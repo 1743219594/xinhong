@@ -1,0 +1,39 @@
+<!-- 导航栏 -->
+<view style="height: {{menuBot+navHeight}}px;line-height: {{(menuBot+navHeight+menuBot)}}px;" class="nav">
+  <text style="font-size: 30rpx;margin-left: 50%;transform:translateX(-50%);">咨询</text>
+</view>
+<!-- 选择区 -->
+<view class="header" style="margin-top:{{menuBot+navHeight+5}}px ;font-size: 25rpx;">
+  <view class="category" style="color: {{Recommend_font}};" bindtap="recommed_tap">
+      总览
+      <image class="background" src="../../image/selected.png" wx:if="{{Recommend_image}}"></image>
+  </view>
+  <view class="category" style="color: {{first_font}};" bindtap="first_tap">
+      书记
+      <image class="background" src="../../image/selected.png" wx:if="{{first_image}}"></image>
+  </view>
+  <view class="category" style="color: {{seconde_font}};" bindtap="second_tap">
+      辅导员
+      <image class="background" src="../../image/selected.png" wx:if="{{second_image}}"></image>
+  </view>
+  <view class="category" style="color: {{third_font}};" bindtap="third_tap">
+      咨询中心老师
+      <image class="background" src="../../image/selected.png" wx:if="{{third_image}}"></image>
+  </view>
+</view>
+<!-- 展示区 -->
+<view class="content">
+     <view class="item" wx:for="{{showlist}}" wx:key="id">
+          <navigator url="../map/map?message={{item.message}}" class="to_detail">详情></navigator>
+          <image src="{{item.photo}}" mode="" style="width:50px;height:50px;border-radius: 50%;margin-top: 30px;" bindtap="look" data-index="{{item.photo}}"/>
+          <text style="font-size: 26rpx;">{{item.name}}</text>
+         
+          <text class="time" style="color: #383838;" user-select="true">工作时间：{{item.work_time}}</text>
+          <text style="color: #383838;font-size: 20rpx;" user-select="true" >地点：{{item.work_place}}</text>
+          <text style="color: #383838;font-size: 20rpx;" user-select="true" >电话：{{item.reservation_phone}}</text>
+     </view>
+    
+    
+</view>
+<!-- 管理员上传 -->
+<navigator url="../upload_teach/upload_teach" class="send" wx:if="{{isboss}}" ><image src="../../image/add.png" mode="" style="width:120rpx;height: 120rpx;"/></navigator>

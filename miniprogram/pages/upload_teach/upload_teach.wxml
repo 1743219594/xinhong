@@ -1,0 +1,36 @@
+<!--pages/upload_teach/upload_teach.wxml-->
+<view style="text-align: center;">
+<text>头像：</text>
+<van-uploader file-list="{{ filelist }}" bind:after-read="afterRead"  class="file" bind:delete="delete"  multiple max-count="1"/>
+</view>
+
+   <view class="item">
+       <text>姓名</text>
+       <input type="text" placeholder="请输入姓名" bindinput="getnickname" value="{{nickname}}"/>
+   </view > 
+   <view class="item">
+    <text>工作地点</text>
+       <input type="text" placeholder="请输入工作地点" bindinput="getworkplace" value="{{work_place}}"/>
+   </view>
+   <view class="item">
+    <text>工作时间</text>
+       <textarea  placeholder="请输入工作时间" bindinput="getworktime" value="{{work_time}}" style="height: 50%;"/>
+   </view>
+   <view class="item">
+    <text>详细信息</text>
+       <textarea  placeholder="请输入详细信息" bindinput="getmessage" value="{{message}}" style="height: 50%;" maxlength="10000"/>
+   </view>
+   <view class="item">
+    <text>电话号码</text>
+       <input type="text" placeholder="请输入电话" bindinput="getphonenumber" value="{{phonenumber}}"/>
+   </view>
+   <view>
+    <button bindtap="select" style="margin-top: 50rpx;background-color: #e0e0e0;">{{select}}</button>
+    <van-transition show="{{picker}}" custom-class="block" name="fade">
+    <van-picker wx:if="{{picker}}"  columns="{{ columns }}"  default-index="{{0}}" show-toolbar  title="职务"
+bind:cancel="onCancel"
+  bind:confirm="onConfirm" />
+</van-transition>
+</view>
+<button style="margin-top: 50rpx;background-color: #e0e0e0;" bindtap="insert">确认添加</button>
+

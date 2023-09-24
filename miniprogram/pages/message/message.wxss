@@ -1,0 +1,10 @@
+/* pages/message/message.wxss */
+item_user{
+    display: flex;
+    background-color:white;
+    border: 1px solid #c0c0c0;
+    margin-top: 30rpx;
+    border-radius:20rpx;
+    box-shadow: 4px 4px 15px #c0c0c0;
+   
+}

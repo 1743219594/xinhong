@@ -1,0 +1,10 @@
+{
+  "usingComponents": {"van-icon": "@vant/weapp/icon/index",
+    "van-empty": "@vant/weapp/empty/index"
+},
+  "navigationBarTitleText": "建议列表",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": false,
+  "backgroundTextStyle":"dark"
+  
+}

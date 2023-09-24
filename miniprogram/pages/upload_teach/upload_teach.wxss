@@ -1,0 +1,42 @@
+/* pages/upload_teach/upload_teach.wxss */
+page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.name{
+   border: 1px solid #333333;
+   
+}
+ 
+
+.item{
+    display: flex;
+    margin-top: 30rpx;
+    color: #333333;
+    background-color:#e0e0e0;
+    width: 550rpx;
+    height: 100rpx;
+    align-items: center;
+    font-size: 14px;
+    border-radius: 45rpx;
+    padding-left: 30rpx;
+}
+.item text{
+    margin-right: 20rpx;
+}
+.agree{
+    width: 550rpx;
+    height: 100rpx;
+    margin-top: 10rpx;
+}
+van-picker{
+    width: 100%;
+    border-top:2px solid #ccccee;
+    border-radius: 15rpx 15rpx 0 0;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+}

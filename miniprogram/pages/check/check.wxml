@@ -1,0 +1,45 @@
+<view style="width: 95%;border-bottom: 1px dashed #333;">
+<text>消息查询：</text>
+ <view style="display: flex;flex-direction: column;justify-content: center;">
+      <view style="display: flex;flex-direction: column;align-items: center;">
+      <input type="text" style="border:1px solid #333;width: 90%;border-radius: 15rpx;margin-top: 15rpx;padding-left: 10rpx;" placeholder="学号" bindinput="getstudentid"/>
+      </view>
+      <view style="display: flex;flex-direction: column;justify-content: center;">
+      <view style="display: flex;flex-direction: column;align-items: center;">
+      <input type="text" style="border:1px solid #333;width: 90%;border-radius: 15rpx;margin-top: 15rpx;padding-left: 10rpx;" placeholder="消息内容" bindinput="getcontent"/>
+      </view>
+      </view>
+      <view style="display: flex;flex-direction: column;justify-content: center;">
+      <view style="display: flex;flex-direction: column;align-items: center;">
+      <textarea value="{{results}}" style="border:1px solid #333;width: 90%;border-radius: 15rpx;margin-top: 15rpx;padding-left: 10rpx;" placeholder="查询结果" disabled="true"/>
+      </view>
+           
+ </view>
+ <button style="margin-bottom: 15rpx;margin-top: 15rpx;" bindtap="check">查询</button>
+ </view>
+</view>
+<view style="width: 95%;margin-top: 30rpx;border-bottom: 1px dashed #333;">
+<text>回复查询：</text>
+    <view style="display: flex;flex-direction: column;justify-content: center;">
+      <view style="display: flex;flex-direction: column;align-items: center;">
+      <input type="text" style="border:1px solid #333;width: 90%;border-radius: 15rpx;margin-top: 15rpx;padding-left: 10rpx;" placeholder="学号" bindinput="getotherstudentid"/>
+      </view>
+      <view style="display: flex;flex-direction: column;justify-content: center;">
+      <view style="display: flex;flex-direction: column;align-items: center;">
+      <input type="text" style="border:1px solid #333;width: 90%;border-radius: 15rpx;margin-top: 15rpx;padding-left: 10rpx;" placeholder="消息内容" bindinput="getothercontent"/>
+      </view>
+      </view>
+      <view style="display: flex;flex-direction: column;justify-content: center;">
+      <view style="display: flex;flex-direction: column;align-items: center;">
+      <textarea value="{{other_results}}" style="border:1px solid #333;width: 90%;border-radius: 15rpx;margin-top: 15rpx;padding-left: 10rpx;" placeholder="查询结果" disabled="true"/>
+      </view>
+           
+ </view>
+ <button style="margin-bottom: 15rpx;margin-top: 15rpx;" bindtap="other_check">查询</button>
+ </view>
+</view>
+<view style="width: 95%;margin-top: 30rpx;display: flex;flex-direction: column;justify-content: center;">
+  <view>推文删除</view>
+  <input type="text" style="border:1px solid #333;width: 90%;border-radius: 15rpx;margin-top: 15rpx;padding-left: 10rpx;" placeholder="推文题目" bindinput="gettweet"/>
+  <button style="margin-bottom: 15rpx;margin-top: 15rpx;display: inline-block;" bindtap="delete_tweet">删除</button>
+</view>

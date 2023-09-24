@@ -1,0 +1,6 @@
+{   "navigationBarTitleText": "添加老师",
+    "usingComponents": {
+        "van-uploader": "@vant/weapp/uploader/index",
+        "van-picker": "@vant/weapp/picker/index"
+    }
+}

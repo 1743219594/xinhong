@@ -1,0 +1,14 @@
+
+    <view wx:if="{{list.length>0}}">
+    <navigator style="display: flex;width:600rpx;margin-top: 25rpx;align-items: center;flex-direction: column;width: 700rpx;border: 1px solid white;border-radius: 25rpx;padding: 15rpx;background-color: white;box-shadow:5rpx 5rpx 5rpx 5rpx #E0E3DA;" wx:for="{{list}}" wx:key="id" url="../detail/detail?id={{item.id}}">
+       
+        <view style="text-align: left;width: 100%;">{{item.title}}</view>
+        <view style="font-size: 25rpx;color: grey;text-align: right;width: 100%;">{{item.send_time}}</view>
+        
+</navigator>
+</view>
+
+
+ 
+
+

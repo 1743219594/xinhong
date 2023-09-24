@@ -1,0 +1,55 @@
+<view class="content" bindtap="restart">
+<text style="font-size: 16px;margin-bottom: 10rpx;" selectable="true">{{title}}</text>
+<view style="font-size: 12px;color: grey;margin-bottom: 10rpx;">{{time}}</view>
+<view style="font-size: 12px;color: grey;margin-bottom: 10rpx;">广州大学计算机学院心协</view>
+<image src="{{content}}" mode="widthFix" style="width:700rpx" bindtap="look"/>
+</view>
+<view class="function" style="height: 60px;">
+
+    <view class="share" bindtap="share_tweet">
+    <button open-type="share" class="share" >
+        <van-icon name="share-o" style="font-size: 20px;color: #6AC41B;"/>
+    <text style="font-size: 12px;">分享</text></button>
+  </view>
+
+  <view class="right">
+   <view class="good" bindtap="thumbsup">
+    <van-icon name="good-job-o" style="font-size: 20px;color: {{isselected}};"  />
+    <text style="font-size: 12px;">{{likenum}}</text>
+   </view>
+   <view class="comment" bindtap="commented" >
+    <van-icon name="comment-o"  style="font-size: 20px;color: #6AC41B;"/>
+    <text style="font-size: 12px;">评论</text>
+   </view>
+   <view class="good" bindtap="collect">
+    <van-icon name="flower-o"  style="font-size: 20px;color: {{iscollect}};"/>
+    <text style="font-size: 12px;">收藏</text>
+  </view>
+  </view>
+</view>
+<view class="comment_area" bindtap="restart">
+   <text style="color: grey;font-size: 14px;">留言</text>
+    <view class="container" style="display: flex;flex-direction: row;justify-content: space-between;padding-left: 10px;padding-top: 10px;padding-bottom: 10px;" wx:for="{{comment_list}}"wx:key="id">
+    <view style="display: flex;">
+        <image src="{{item.r_photo}}" mode="" style="width: 30px;height: 30px;margin-right: 5px;"/>
+    <view style="height: 30px;">
+    <view style="font-size: 13px;">{{item.r_name}}</view>
+    <view style="font-size: 14px;">{{item.re_content}}</view>
+    </view></view>
+    <view style="font-size: 12px;color: grey;text-align: right;">
+    <view>{{item.time}}</view>
+   
+  
+        <navigator url="../post/post?studentid={{item.reply_id}}">联系</navigator>
+        <view bindtap="cancel" wx:if="{{item.reply_id==studentid}}" bindtap="cancel" data-index="{{item.id}}">删除</view>
+
+    </view>
+    </view>
+    <text style="color: grey;font-size: 13px;">阅读数：{{readnum}}</text>
+    
+</view>
+<view class="reply" style="bottom: {{bottom}};left: {{left}};transform: translateY({{y}})translateX(37.5rpx);" wx:if="{{iscomment}}">
+   <textarea value="{{reply_content}}" style="height: 160rpx;background-color: honeydew;margin-bottom: 20rpx;width: 80%;border-radius: 30rpx;padding-left: 15rpx;margin-top: 60rpx;"  bindinput="inputed" focus="{{iscomment}}" maxlength="-1" placeholder="请输入内容"/>
+   <view style="width:80%;"> 
+    <button class="to_reply" size="mini" type="primary" style="float: right;" bindtap="to_comment">确定</button></view>
+</view>

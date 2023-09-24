@@ -1,0 +1,12 @@
+<view wx:if="{{notelist.length>0}}">
+    <navigator style="display: flex;width:600rpx;margin-top: 25rpx;align-items: center;flex-direction: column;width: 700rpx;border: 1px solid white;border-radius: 25rpx;padding: 15rpx;background-color: white; box-shadow:5rpx 5rpx 5rpx 5rpx #E0E3DA;" wx:for="{{notelist}}" wx:key="id" url="../note/note?title={{item.title}}&content={{item.content}}&time={{item.time}}&id={{item.id}}">
+       
+        <view style="text-align: left;width: 100%;padding-left: 15rpx;">{{item.title}}</view>
+        <text style="text-align: left;width: 100%;padding-left: 15rpx;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;overflow: hidden;text-overflow: ellipsis;">{{item.content}}</text>
+        <text style="font-size: 25rpx;color: grey;text-align: right;width: 100%;">{{item.time}}</text>
+        
+</navigator>
+</view>
+<navigator url="../write/write">
+        <van-icon name="records" style="font-size:140rpx;border-radius: 50%;border:2px solid #6AC41B;color: #6AC41B;position: fixed;right: 50rpx;bottom: 100rpx;"/>
+</navigator>

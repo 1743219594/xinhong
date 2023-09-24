@@ -1,0 +1,127 @@
+<view class="navgiton"  style="height: {{(menuBot+navHeight)}}px;line-height: {{(menuBot+navHeight+menuBot)}}px;">
+    <text  style="margin-left:50%;transform:translateX(-50%) ;color: #000000;font-size: 30rpx;">用户中心</text>
+</view>
+
+<!-- 监测到本地存储没有登录信息 -->
+<view wx:if="{{!hasmessage&&!hasuserinfo}}" class="container" style="margin-top:{{menuBot+navHeight+50}}px">
+<button bindtap="login" plain="true" style="background-color: #f0fff0;border-radius: 30rpx;margin-top: 60rpx;">微信一键登录/注册</button>
+</view>
+<view wx:if="{{hasmessage&&!hasuserinfo}}" class="write" style="margin-top: {{(menuBot+navHeight*2.6)*(screenheight/736)}}px;">
+  <image src="{{userinfo.avatarUrl}}" class="img" style="width: {{130*(widthed/414.0)}}px;height: {{130*(widthed/414.0)}}px;"></image>
+  <button open-type="chooseAvatar" bindchooseavatar='getmessage' style="margin-top: 50rpx;width: 37px;height: 37px;padding: 0;position: absolute;top:{{(menuBot+navHeight*2.6)*(screenheight/736)+130*(widthed/414.0)*3/4}}px;left: {{widthed/2+130*(widthed/414.0)/3}}px;"><image src="../../image/camera.png" mode="" style="width: 37px;height: 37px;"/> </button>
+ <view class="bottom">
+   <view class="item">
+       <text>昵称</text>
+       <input type="text" placeholder="请输入昵称，最多4个字" bindinput="getnickname"  maxlength="4"/>
+   </view > 
+   <view class="item">
+    <text>学号</text>
+       <input type="text" placeholder="请输入学号" bindinput="getstudentid"/>
+   </view>
+   <view class="item">
+    <text>手机号</text>
+       <input type="text" placeholder="请输入手机号" bindinput="getphonenumber"/>
+   </view>
+   <view class="item">
+    <text>验证码</text>
+       <input type="text" placeholder="请输入验证码" bindinput="gettextnumber"/>
+       <view style="color: #6AC41B;" bindtap="getnumber">
+          {{content}}
+       </view>
+   </view>
+   <view class="agree">
+        <label for="Isagree" style="margin: 0;padding: 0;display: flex;"> 
+       <checkbox value="" checked="true" id="Isagree" style="border-color: #6AC41B;transform: scale(0.7);"/>
+      <view style="color: #6AC41B;display: flex;"> 
+      <text>同意并勾选</text>
+      <navigator url="../agreement/agreement" style="text-decoration: underline;color: black;">协议</navigator></view>
+       </label>
+       <button style="width: 200rpx;color: #6AC41B;" bindtap="serve">注册</button>
+    </view>
+  
+ 
+ </view>
+</view>
+<!-- 检测到本地存储有登录信息 -->
+<view wx:if="{{hasuserinfo}}" class="content"style="margin-top: 50rpx;" >
+<div class="header" >
+    <div bindtap="preview"><image src="{{userinfo.avatarUrl}}" class="avator" style="width: 100rpx;height: 100rpx;"></image></div>
+    <div style="font-size: 40rpx; color: black;display: flex;flex-direction: column;">
+    <text>{{userinfo.nickname}}</text>
+    <text style="font-size: 30rpx;color: grey;">{{identity}}</text>
+    </div>
+</div>
+<view style="width: 600rpx;display: flex;height: 150rpx;background-color: white;border-radius: 30rpx;margin-left: 75rpx;margin-top: 20rpx;">
+ 
+ <view style="flex: 1;display: flex;flex-direction: column;justify-content: center;align-items: center;" bindtap="tomessage">
+    <van-icon name="chat-o"  style="font-size: 60rpx;margin-bottom: 20rpx;color: green;"/>
+    <text style="font-size: 30rpx;">我的消息</text>
+ </view>
+<view style="flex:1;display: flex;flex-direction: column;justify-content: center;align-items: center;">
+ <button open-type="contact" class="serve"  style=" display: flex;flex-direction: column;justify-content: center;align-items: center; flex: 1;border:none;line-height:normal" plain>
+    <van-icon name="service-o" style="font-size: 60rpx;margin-bottom: 20rpx;color: green;"/>
+<text style="font-size: 30rpx;">联系客服</text></button>
+</view>
+</view>
+
+<swiper style="width: 95%;border-radius: 30rpx;height: 190rpx;margin-left: 18.75rpx;margin-top: 30rpx;" indicator-dots="true" indicator-active-color="green" indicator-color="grey" autoplay="true" circular="true">
+    <swiper-item>
+        <image src="../../image/swiper_item1.png" mode="" style="width: 100%;border-radius: 30rpx;height: 190rpx;"/>
+    </swiper-item>
+    <swiper-item>
+        <image src="../../image/swiper-item2.png" mode="" style="width: 100%;height: 190rpx;border-radius: 30rpx;"/>
+    </swiper-item>
+</swiper>
+<view class="function" style="width: 100%;border-radius: 30rpx;padding-top: 30rpx;margin-bottom: 30rpx;"> 
+    <navigator class="Integral" url="../ranking/ranking">
+    <view>
+        <van-icon name="medal-o" style="margin-right:40rpx ;margin-left: 10rpx;"/>
+    <text>我的积分</text>
+    </view>
+    <van-icon name="arrow" />
+</navigator>
+<navigator class="myself" url="../collect/collect?id={{userinfo.studentid}}">
+    <view>
+        <van-icon name="goods-collect-o" style="margin-right:35rpx ;margin-left: 10rpx;" />
+    <text>我的收藏</text>
+    </view>
+    <van-icon name="arrow" />
+</navigator>
+<navigator class="myself" url="../message/message">
+    <view>
+        <van-icon name="user-circle-o" style="margin-right:35rpx ;margin-left: 10rpx;" />
+       
+    <text>我的信息</text>
+    </view>
+    <van-icon name="arrow" />
+</navigator>
+<navigator class="myself" url="../recode/recode">
+    <view>
+        <van-icon name="notes-o" style="margin-right:35rpx ;margin-left: 10rpx;" />
+      
+    <text>我的记录本</text>
+    </view>
+    <van-icon name="arrow" />
+</navigator>
+<view bindtap="show" class="myself" >
+<view>
+    <van-icon name="home-o"  style="margin-right:35rpx ;margin-left: 10rpx;"/>
+<text>关于小程序</text></view>
+<van-icon name="arrow" />
+</view>
+<view bindtap="Administrators" class="myself" wx:if="{{isboss}}" >
+<view>
+    <van-icon name="manager-o" style="margin-right:35rpx ;margin-left: 10rpx;"/>
+<text>管理员操作</text></view>
+<van-icon name="arrow" />
+</view>
+</view>
+<button  bindtap="loginout" class="loginout">
+  退出登录
+</button>
+
+
+
+</view>
+
+<image src="../../image/background.png" mode="" class="background" style="margin-top:{{(menuBot+navHeight)*750/widthed}}rpx;" wx:if="{{!hasuserinfo}}"/>

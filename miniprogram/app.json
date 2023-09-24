@@ -1,0 +1,64 @@
+{
+    "usingComponents": {
+        "van-button": "@vant/weapp/button/index"
+    },
+    "pages": [
+        "pages/list/list",
+        "pages/suggestion/suggestion",
+        "pages/user/user",
+        "pages/post/post",
+        "pages/detail/detail",
+        "pages/form/form",
+        "pages/message/message",
+        "pages/consulation/consulation",
+        "pages/map/map",
+        "pages/upload_teach/upload_teach",
+        "pages/reply/reply",
+        "pages/ranking/ranking",
+        "pages/agreement/agreement",
+        "pages/collect/collect",
+        "pages/write/write",
+        "pages/note/note",
+        "pages/recode/recode",
+        "pages/about/about",
+        "pages/check/check"
+    ],
+
+    "tabBar": {
+        "backgroundColor": "#EEF2E4",
+        "list": [
+            {
+                "pagePath": "pages/list/list",
+                "text": "首页",
+                "selectedIconPath": "/image/tweet_selected.png",
+                "iconPath": "/image/tweet.png"
+            },
+            {
+                "pagePath": "pages/suggestion/suggestion",
+                "text": "聊天",
+                "selectedIconPath": "/image/suggestion.active.png",
+                "iconPath": "/image/suggestion.png"
+            },
+            {
+                "pagePath": "pages/consulation/consulation",
+                "text": "咨询",
+                "selectedIconPath": "/image/consulation_active.png",
+                "iconPath": "/image/consulation.png"
+            },
+            {
+                "pagePath": "pages/user/user",
+                "text": "用户",
+                "selectedIconPath": "/image/user.active.png",
+                "iconPath": "/image/user.png"
+            }
+        ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json"
+  
+}

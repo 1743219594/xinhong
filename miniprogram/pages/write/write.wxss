@@ -1,0 +1,6 @@
+/* pages/write/write.wxss */
+page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

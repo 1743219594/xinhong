@@ -1,0 +1,5 @@
+<!--pages/write/write.wxml-->
+<input type="text" style="border-bottom: 1px solid #333;padding-left: 15rpx;height: 70rpx;width: 95%;margin-bottom: 20rpx;" placeholder="标题" maxlength="20" bindinput="gettitle"/>
+<textarea value="{{content}}" style="width: 95%;height: 700rpx;margin-bottom: 20rpx;padding-left: 15rpx" maxlength="1000" placeholder="想写点什么吗？" bindinput="getcontent"/>
+
+<button style="width:700rpx;height: 70rpx;border-radius: 60rpx;border: none;line-height: 70rpx;position: fixed;bottom: 10rpx;background-color: #CED094;color: white;" bindtap="serve" plain>确定创建</button>

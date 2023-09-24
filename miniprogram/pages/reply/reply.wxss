@@ -1,0 +1,23 @@
+/* pages/reply/reply.wxss */
+
+page{
+    height: 100%;
+    background-color:#EEF2E4;
+
+    
+}
+.content{
+    width: 100%;
+    min-height: 100%;
+}
+.reply{
+    background-color: #99ba7d;
+    position: fixed;
+    height: 300rpx;
+    width: 90%;
+   border-radius: 50rpx;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   opacity: 0.9;
+}

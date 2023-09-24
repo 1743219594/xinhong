@@ -1,0 +1,16 @@
+<van-collapse accordion value="{{ activeName }}" bind:change="onChange">
+  <van-collapse-item title="我的昵称" name="1">
+    {{nickname}}
+  </van-collapse-item>
+  <van-collapse-item title="我的头像" name="2">
+    <image src="{{avatorurl}}" mode="" style="width: 150rpx;height: 150rpx;"/>
+  </van-collapse-item>
+  <van-collapse-item title="我的学号" name="3">
+   {{studentid}}
+  </van-collapse-item>
+  <van-collapse-item title="我的手机号" name="4">
+    {{phonenumber}}
+  </van-collapse-item>
+</van-collapse>
+
+

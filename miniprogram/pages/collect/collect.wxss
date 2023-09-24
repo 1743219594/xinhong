@@ -1,0 +1,8 @@
+/* pages/collect/collect.wxss */
+page{
+    background-color:#f7f7f7 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

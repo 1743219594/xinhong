@@ -1,0 +1,15 @@
+
+<input type="text" placeholder="推文封面" style="width: 100%;margin: 0 auto; border: 1px solid #6AC41B;border-radius: 15rpx;height: 80rpx;margin-bottom: 15rpx;"
+bindinput="input_cover" maxlength="-1"/>
+
+
+
+    <input type="text" placeholder="推文内容" style="width: 100%;margin: 0 auto; border: 1px solid #6AC41B;border-radius: 15rpx;height: 80rpx;margin-bottom: 15rpx;"
+bindinput="input_content" maxlength="-1"/>
+
+<input type="text" placeholder="推文主题" style="width: 100%;margin: 0 auto; border: 1px solid #6AC41B;border-radius: 15rpx;height: 80rpx;margin-bottom: 15rpx;"
+bindinput="inputs" maxlength="-1"/>
+<button bindtap="send" style="margin-top: 20px;width: 300rpx;height: 80rpx; border: 1px solid #6AC41B;color: #4B660f;border-radius: 40rpx;text-align: center;line-height: 80rpx;">点击上传</button>
+
+
+

@@ -1,0 +1,26 @@
+<view class="content" bindtap="cancel" >
+    <view style="text-align: center;color: grey;font-size: 13px">{{time}}</view>
+    <view class="item" style="text-align: {{first_from}};margin-top: 15rpx;">
+    <view style="display: inline-block;position: relative;max-width:375rpx;">
+        <text style="border:{{first_from=='right'?'1px solid #99ba7d':'1px solid #FFCB96'}};color: #99ba7d;word-wrap:break-word;padding: 10rpx;border-radius: 15rpx; font-size: 28rpx;word-break: break-all;display: inline-block;text-align: left;" space="emsp"  user-select="true">{{content}}</text>
+        <image wx:if="{{first_from=='right'}}" src="../../image/rainbow.png" mode="" style="position:absolute;width: 30rpx;height: 30rpx;top: -15rpx;left: -15rpx;"/>
+    </view>
+       
+    </view>
+    <view  wx:for="{{list}}" wx:key="id">
+      <view style="text-align: center;color: grey;font-size: 13px;">{{item.time}}</view>
+        <view style="text-align:{{item.isuser}};width: 100%;margin-top: 15rpx;">
+        <view style="display: inline-block;position: relative;max-width:375rpx;" >
+            <text style="border: {{item.isuser=='right'?'1px solid #99ba7d':'1px solid #FFCB96'}};color: #99ba7d;border-radius: 20rpx;word-wrap: break-word;padding: 10rpx;font-size: 28rpx;max-width:375rpx;display: inline-block;word-break: break-all;text-align: left;" user-select="true" wx:if="{{item.content}}">{{item.content}}
+        </text>
+        <image wx:if="{{item.isuser=='right'}}" src="../../image/rainbow.png" mode="" style="position:absolute;width: 30rpx;height: 30rpx;top: -15rpx;left: -15rpx;"/>
+        </view>
+        </view>     
+    </view>
+</view>
+<view class="reply" style="bottom: {{bottom}};left: {{left}};transform: translateX(37.5rpx);z-index: 2;display: flex;">
+   <textarea value="{{reply_content}}" style="height: 160rpx;background-color: honeydew;margin-bottom: 20rpx;width: 80%;border-radius: 30rpx;padding-left: 15rpx;margin-top: 60rpx;" bindfocus="focus" bindinput="inputed"/>
+   <view style="width:80%;"> 
+    <button class="to_reply" size="mini" type="primary" style="float: right;" bindtap="to_reply">{{btnname}}</button></view>
+</view>
+<view style="height: 300rpx;"></view>

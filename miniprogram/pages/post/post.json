@@ -1,0 +1,6 @@
+{
+  "usingComponents": {"van-nav-bar": "@vant/weapp/nav-bar/index",
+    "van-picker": "@vant/weapp/picker/index",
+    "van-transition": "@vant/weapp/transition/index"},
+  "navigationBarTitleText": "匿名发消息"
+}

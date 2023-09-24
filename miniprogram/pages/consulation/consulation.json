@@ -1,0 +1,11 @@
+{  
+    "navigationStyle": "custom",
+    "enablePullDownRefresh":true,
+    "navigationBarBackgroundColor": "#D2691E",
+ 
+    "usingComponents": {
+        "van-icon": "@vant/weapp/icon/index"
+    }
+    
+    
+}

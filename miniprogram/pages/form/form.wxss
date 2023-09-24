@@ -1,0 +1,28 @@
+/* pages/form/form.wxss */
+
+
+.text{
+    width: 98%;
+    border: 1px solid #6AC41B;
+    border-radius: 15rpx;
+    min-height: 200rpx;
+    word-wrap: break-word;
+    word-break: break-all;
+    margin-bottom: 20rpx;
+    
+}
+page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sended{
+    width: 300rpx;
+    height:80rpx;
+    border: 1px solid #6AC41B;
+    color: #4B660f;
+    border-radius: 40rpx;
+ text-align: center;
+margin-top: 20px;
+line-height: 80rpx;
+}
