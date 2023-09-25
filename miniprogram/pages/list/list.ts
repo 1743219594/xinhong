@@ -47,9 +47,10 @@ Page({
                     else if(res.data.status==201)
                 {
                     if(res.data.data.length>0)
-                    {
+                    { 
+                    
                         this.setData({
-                            list:[...this.data.list,res.data.data[0]],
+                            list:[...this.data.list,...res.data.data],
                         })
                     }
                     this.setData({

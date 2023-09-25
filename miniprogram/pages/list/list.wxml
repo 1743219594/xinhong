@@ -16,7 +16,7 @@
         </view>
 </navigator>
 </view>
-<text wx:if="{{!hasremain}}" style="margin-top: 15rpx;color: grey;">---没有更多了---</text>
+<text wx:if="{{!hasremain}}" style="margin-top: 15rpx;color: grey;font-size: 27rpx;">---没有更多了---</text>
 <van-empty description="空空如也" wx:if="{{list.length==0}}" style="margin-top: 300rpx;"/>
 
 <navigator url="../form/form" class="navig" wx:if="{{isboss}}"><image src="../../image/puton.png" style="width: 120rpx;height: 120rpx;" mode=""/></navigator>
