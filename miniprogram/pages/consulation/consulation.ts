@@ -133,7 +133,7 @@ Page({
             success:(res:any)=>{
                 this.setData({
                     datalist:res.data.data,
-                    showlist:res.data.data
+                   
                 })
                 var length=this.data.datalist.length
         for(var i=0;i<length;i++)
@@ -160,13 +160,18 @@ Page({
         menuBot:app.globalData.menuBot,
        })
        this.getlistdata()
-      
         if(wx.getStorageSync('userinfo').isboss=='1')
         {   
             this.setData({
                 isboss:true
             })
         }
+        let time=setInterval(()=>{
+            this.setData({
+                showlist:this.data.datalist
+            })
+            clearInterval(time)
+        },100)
     },
 
     /**
@@ -237,7 +242,7 @@ Page({
                 })
             }
             clearInterval(time)
-        },50)
+        },100)
         wx.stopPullDownRefresh()
     },
 
