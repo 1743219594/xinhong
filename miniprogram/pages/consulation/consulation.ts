@@ -133,7 +133,7 @@ Page({
             success:(res:any)=>{
                 this.setData({
                     datalist:res.data.data,
-                   
+                    showlist:res.data.data
                 })
                 var length=this.data.datalist.length
         for(var i=0;i<length;i++)
@@ -160,12 +160,7 @@ Page({
         menuBot:app.globalData.menuBot,
        })
        this.getlistdata()
-      var time=setInterval(()=>{
-        this.setData({
-            showlist:this.data.datalist
-          })
-          clearInterval(time)
-      },100)
+      
         if(wx.getStorageSync('userinfo').isboss=='1')
         {   
             this.setData({
