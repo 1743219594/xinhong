@@ -4,10 +4,10 @@
 <view style="font-size: 12px;color: grey;margin-bottom: 10rpx;">广州大学计算机学院心协</view>
 <image src="{{content}}" mode="widthFix" style="width:700rpx" bindtap="look"/>
 </view>
-<view class="function" style="height: 60px;">
+<view class="function" style="height: 40px;">
 
     <view class="share" bindtap="share_tweet">
-    <button open-type="share" class="share" >
+    <button open-type="share" style="border: none;display: flex;flex-direction: column;align-items: center;justify-content: center;" plain>
         <van-icon name="share-o" style="font-size: 20px;color: #6AC41B;"/>
     <text style="font-size: 12px;">分享</text></button>
   </view>
