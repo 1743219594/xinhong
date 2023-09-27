@@ -1,6 +1,6 @@
 {  
     "navigationStyle": "custom",
-    "enablePullDownRefresh":true,
+    "enablePullDownRefresh":false,
     "navigationBarBackgroundColor": "#D2691E",
  
     "usingComponents": {

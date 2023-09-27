@@ -133,7 +133,7 @@ Page({
             success:(res:any)=>{
                 this.setData({
                     datalist:res.data.data,
-                   
+                   showlist:res.data.data
                 })
                 var length=this.data.datalist.length
         for(var i=0;i<length;i++)
