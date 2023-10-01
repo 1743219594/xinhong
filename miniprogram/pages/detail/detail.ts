@@ -274,10 +274,11 @@ Page({
     /* 点击评论 */
     commented(){
         this.setData({
-            iscomment:true
+            iscomment:true,
+           
         })
        let time=setInterval(()=>{
-        wx.onKeyboardHeightChange((res) => {  
+        wx.onKeyboardHeightChange(() => {  
             this.setData({
                 bottom:'140rpx'
             })

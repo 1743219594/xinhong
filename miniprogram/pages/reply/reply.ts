@@ -20,7 +20,7 @@ Page({
     },
     focus(){
         this.setData({
-            bottom: '60rpx',
+            bottom: '50rpx',
           });
     },
     inputed(event:any){
