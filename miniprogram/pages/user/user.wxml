@@ -44,13 +44,14 @@
 </view>
 <!-- 检测到本地存储有登录信息 -->
 <view wx:if="{{hasuserinfo}}" class="content"style="margin-top: 50rpx;" >
-<div class="header" >
-    <div bindtap="preview"><image src="{{userinfo.avatarUrl}}" class="avator" style="width: 100rpx;height: 100rpx;"></image></div>
-    <div style="font-size: 40rpx; color: black;display: flex;flex-direction: column;">
+<view class="header" >
+    <view bindtap="preview"><image src="{{userinfo.avatarUrl}}" class="avator" style="width: 100rpx;height: 100rpx;"></image></view>
+    <view style="font-size: 40rpx; color: black;display: flex;flex-direction: column;">
     <text>{{userinfo.nickname}}</text>
     <text style="font-size: 30rpx;color: grey;">{{identity}}</text>
-    </div>
-</div>
+    </view>
+
+</view>
 <view style="width: 600rpx;display: flex;height: 150rpx;background-color: white;border-radius: 30rpx;margin-left: 75rpx;margin-top: 20rpx;">
  
  <view style="flex: 1;display: flex;flex-direction: column;justify-content: center;align-items: center;" bindtap="tomessage">

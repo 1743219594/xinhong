@@ -1,9 +1,14 @@
 .sended{
     width: 300rpx;
     height:80rpx;
-    border: 1px solid #6AC41B;
+    border: 1px solid ;
     color: #4B660f;
     border-radius: 40rpx;
  text-align: center;
  line-height: 80rpx;
+}
+page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

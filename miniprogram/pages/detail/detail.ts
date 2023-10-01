@@ -14,7 +14,7 @@ Page({
        content:'',
        readnum:0,
        likenum:0,
-       bottom:0,
+       bottom:'0',
          left:0,
          y:'0',
          iscomment:false,
@@ -274,9 +274,16 @@ Page({
     /* 点击评论 */
     commented(){
         this.setData({
-            iscomment:true,
-            y:'-780rpx'
+            iscomment:true
         })
+       let time=setInterval(()=>{
+        wx.onKeyboardHeightChange((res) => {  
+            this.setData({
+                bottom:'140rpx'
+            })
+          });
+          clearInterval(time)
+       },100)
     },
     thumbsup(){
          if(wx.getStorageSync('userinfo'))
@@ -403,7 +410,7 @@ Page({
      this.setData({
          isshow:true
      })
-     console.log(111);
+
      
  },
   getstatus(){

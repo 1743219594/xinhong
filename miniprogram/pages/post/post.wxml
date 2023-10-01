@@ -1,9 +1,9 @@
-<textarea style="border: 1px solid #6AC41B;width: 100%;border-radius: 15rpx;margin-bottom: 30rpx;" bindinput="getdata" value="{{content}}" maxlength="-1" placeholder="请不要发送侮辱、伤害他人的话语!"></textarea>
+<textarea style="border: 1px solid ;width: 100%;border-radius: 15rpx;margin-bottom: 30rpx;width: 96%;padding-left: 10rpx;" bindinput="getdata" value="{{content}}" maxlength="-1" placeholder="写点什么吧!"></textarea>
 <view style="display: flex;align-items: center;margin-bottom: 20rpx;justify-content: center;">
-    <text style="font-size: 50rpx;color: #6AC41B;">学号：</text>
-     <input type="text" style="border: 1px solid #6AC41B;width: 400rpx;border-radius: 10rpx;height: 60rpx;" bindinput="gettoid" value="{{to_id}}"/>
+    <text style="font-size: 45rpx;">学号：</text>
+     <input type="text" style="border: 1px solid ;width: 400rpx;border-radius: 10rpx;height: 60rpx;" bindinput="gettoid" value="{{to_id}}"/>
 </view>
- <button bindtap="send" class="sended">点击确定</button>
+ <button bindtap="send" class="sended">点击发送</button>
 
 
 

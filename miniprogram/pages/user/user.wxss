@@ -2,7 +2,7 @@
     border-radius: 50%;
     z-index: 2;
     margin-left: 40rpx;
-    margin-right: 50rpx;
+    margin-right: 60rpx;
 }
 .content{
     display: flex;
@@ -98,6 +98,7 @@ page{
 .header{
    display: flex;
 align-items: center;
+vertical-align:middle;
 }
 .Integral{
     display: inline-block;
@@ -158,4 +159,3 @@ align-items: center;
     height: 100rpx;
     margin-top: 10rpx;
 }
-

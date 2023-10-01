@@ -122,6 +122,7 @@ Page({
     onPullDownRefresh() {
         this.data.page=0;
         this.data.hasremain=true;
+        this.data.list=[];
        this.getlist()
        
        wx.stopPullDownRefresh()

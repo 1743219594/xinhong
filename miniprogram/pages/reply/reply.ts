@@ -14,17 +14,14 @@ Page({
          to_id:'',
          bottom:'0',
          left:0,
-        
          reply_content:"",
          list:[{from_id:'',isuser:''}],
-         first_from:'',
-         btnname:'确定'
+         first_from:''
     },
     focus(){
-       this.setData({
-           bottom:'30%'
-       })
-        
+        this.setData({
+            bottom: '60rpx',
+          });
     },
     inputed(event:any){
         this.setData({
@@ -179,6 +176,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad(e) {
+        
          this.setData({
              content:e.content,
              time:e.time,
@@ -190,7 +188,7 @@ Page({
          {
              this.setData({
                  first_from:'right',
-                 btnname:'to:'+this.data.to_id
+            
              })
          }
          else{
@@ -213,7 +211,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-      
+       
     },
 
     /**

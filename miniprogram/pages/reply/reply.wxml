@@ -18,9 +18,8 @@
         </view>     
     </view>
 </view>
-<view class="reply" style="bottom: {{bottom}};left: {{left}};transform: translateX(37.5rpx);z-index: 2;display: flex;">
-   <textarea value="{{reply_content}}" style="height: 160rpx;background-color: honeydew;margin-bottom: 20rpx;width: 80%;border-radius: 30rpx;padding-left: 15rpx;margin-top: 60rpx;" bindfocus="focus" bindinput="inputed"/>
-   <view style="width:80%;"> 
-    <button class="to_reply" size="mini" type="primary" style="float: right;" bindtap="to_reply">{{btnname}}</button></view>
+<view class="reply" style="bottom: {{bottom}};z-index: 2;display: flex;position: fixed;">
+   <input value="{{reply_content}}" style="height: 70rpx;width: 600rpx;border-radius: 30rpx;padding-left: 15rpx;color: #7F7F7F;background-color: #fff;margin-right: 10rpx;border: 1rpx solid #333;" placeholder="写点什么" bindfocus="focus" bindinput="inputed"/>
+    <view class="to_reply" size="mini" type="primary" style="background-color: green;color: white;border: solid 1rpx #7F7F7F;border-radius: 10rpx;padding: 10rpx 15rpx;direction:ltr;" bindtap="to_reply">发送</view>
 </view>
 <view style="height: 300rpx;"></view>
