@@ -48,8 +48,8 @@
     <text style="color: grey;font-size: 13px;">阅读数：{{readnum}}</text>
     
 </view>
-<view class="reply" style="bottom: {{bottom}};left: {{left}};transform: translateX(37.5rpx);" wx:if="{{iscomment}}">
-   <textarea value="{{reply_content}}" style="height: 160rpx;background-color: honeydew;margin-bottom: 20rpx;width: 80%;border-radius: 30rpx;padding-left: 15rpx;margin-top: 60rpx;"  bindinput="inputed" focus="{{iscomment}}" maxlength="-1" placeholder="请输入内容" bindblur="restart"/>
-   <view style="width:80%;"> 
-    <button class="to_reply" size="mini" type="primary" style="float: right;" bindtap="to_comment">确定</button></view>
+<view class="reply" style="bottom: {{bottom}};left: 0;position: fixed;transform: translateY(60rpx);" wx:if="{{iscomment}}">
+   <input value="{{reply_content}}" style="height: 70rpx;width: 600rpx;border-radius: 30rpx;padding-left: 15rpx;color: #7F7F7F;background-color: #fff;margin-right: 10rpx;border: 1rpx solid #333;"  bindinput="inputed" focus="{{iscomment}}" maxlength="-1" placeholder="请输入内容" bindblur="restart"/>
+  
+    <view class="to_reply" size="mini" type="primary" style="background-color: green;color: white;border: solid 1rpx #7F7F7F;border-radius: 10rpx;padding: 10rpx 15rpx;direction:ltr;" bindtap="to_comment">发送</view>
 </view>

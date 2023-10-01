@@ -275,16 +275,9 @@ Page({
     commented(){
         this.setData({
             iscomment:true,
-           
+            bottom:'50%'
         })
-       let time=setInterval(()=>{
-        wx.onKeyboardHeightChange(() => {  
-            this.setData({
-                bottom:'140rpx'
-            })
-          });
-          clearInterval(time)
-       },100)
+    
     },
     thumbsup(){
          if(wx.getStorageSync('userinfo'))
