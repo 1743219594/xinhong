@@ -67,10 +67,7 @@ Page({
  
      /* 发帖子功能 */
      send(){
-        
-         
-         
-         if(this.data.cover==''||this.data.content==''||this.data.title=='')
+         if(this.data.filelist.length==0||this.data.contentlist.length==0||this.data.title=='')
          {
             return wx.showModal({
                 content:'请输入完整',
@@ -80,41 +77,44 @@ Page({
          else{
             var time=new Date()
             var nowtime=time.getFullYear()+'年'+(time.getMonth()+1)+'月'+time.getDate()+'日'+(time.getHours()<10?('0'+time.getHours()):time.getHours())+':'+(time.getMinutes()<10?('0'+time.getMinutes()):time.getMinutes())
-           wx.request({
-            method:'POST',
-            url:app.globalData.url+'api/upload_tweet',
-            header:{
-              'content-type':'application/x-www-form-urlencoded'
-          },
-          data:{
-              content:this.data.content,
-              cover:this.data.cover,
-              title:this.data.title,
-              time:nowtime
-          },
-          success:(res:any)=>{
-            if(res.data.status==202)
-            {
-                wx.showToast({
-                    title:'发布成功',
-                    icon:'success'
-                })
-                this.setData({
-                    cover:'',
-                    content:'',
-                    title:''
-                })
-            }
-            else{
-                wx.showToast({
-                    title:'发布失败',
-                    icon:'error'
-                })
-            }
-          }
-
-
-           })
+            wx.uploadFile({
+                url:app.globalData.url+'api/contentphoto',
+                name:'avator',
+                filePath:this.data.contentlist[0].url,
+                success:()=>{
+                    wx.uploadFile({
+                        url:app.globalData.url+'api/upload_tweet',
+                        name:'avator',
+                        filePath:this.data.filelist[0].url,
+                        formData:{
+                           
+                            title:this.data.title,
+                            time:nowtime
+                        },
+                        success:(res:any)=>{
+                            if(res.data.status==200)
+                            {
+                                wx.showToast({
+                                    icon:"success",
+                                    title:'发布失败'
+                                })
+                            }
+                            else{
+                                wx.showToast({
+                                    icon:"success",
+                                    title:'发布成功'
+                                })
+                                this.setData({
+                                    filelist:[],
+                                    title:'',
+                                    contentlist:[]
+                                })
+                               
+                            }
+                        }
+                     })
+                }
+            })
             
             
            
