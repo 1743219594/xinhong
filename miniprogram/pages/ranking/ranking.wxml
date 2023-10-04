@@ -6,6 +6,7 @@
 <image src="{{item.photo}}" mode="" style="width: 60rpx;height: 60rpx;border-radius: 50%;margin-right: 50rpx;"/>
  <text style="margin-right: 30rpx;width: 190rpx;font-size: 28rpx;">{{item.nick_name}}</text>
  <text style="text-align: center;width: 150rpx;">{{item.integral}}积分</text>
+ 
  </view>
 
 
@@ -15,6 +16,7 @@
    <view wx:if="{{index>2}}" style="width: 70rpx;text-align: center;">{{index+1}}</view>
  <image src="{{user.photo}}" mode="" style="width: 90rpx;height: 90rpx;margin-left: 80rpx;border-radius: 50%;" />
  <text style="margin-left: 80rpx">{{user.nick_name}}</text>
- <text style="margin-left: 150rpx;color: yellow;">{{user.integral}}积分</text>
+ <text style="margin-left: 150rpx;color: yellow;">{{user.integral}}</text>
+ <text>积分</text>
  </view>
 </view>

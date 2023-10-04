@@ -1,11 +1,12 @@
 .sended{
     width: 300rpx;
     height:80rpx;
-    border: 1px solid ;
-    color: #4B660f;
+
+    color: white;
     border-radius: 40rpx;
  text-align: center;
  line-height: 80rpx;
+ background:linear-gradient(to right, #bbdbec, #6AC41B);
 }
 page{
     display: flex;

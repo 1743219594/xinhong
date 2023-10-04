@@ -4,7 +4,10 @@
 
 <!-- 监测到本地存储没有登录信息 -->
 <view wx:if="{{!hasmessage&&!hasuserinfo}}" class="container" style="margin-top:{{menuBot+navHeight+50}}px">
-<button bindtap="login" plain="true" style="background-color: #f0fff0;border-radius: 30rpx;margin-top: 60rpx;">微信一键登录/注册</button>
+<button bindtap="login" plain="true" style="background-color: #f0fff0;border-radius: 30rpx;margin-top: 60rpx;" >
+ <van-icon name="wechat" style="margin-right: 10rpx;font-size: 35rpx;color: green;"/>
+<text>微信一键登录/注册</text>
+</button>
 </view>
 <view wx:if="{{hasmessage&&!hasuserinfo}}" class="write" style="margin-top: {{(menuBot+navHeight*2.6)*(screenheight/736)}}px;">
   <image src="{{userinfo.avatarUrl}}" class="img" style="width: {{130*(widthed/414.0)}}px;height: {{130*(widthed/414.0)}}px;"></image>
@@ -33,10 +36,10 @@
         <label for="Isagree" style="margin: 0;padding: 0;display: flex;"> 
        <checkbox value="" checked="true" id="Isagree" style="border-color: #6AC41B;transform: scale(0.7);"/>
       <view style="color: #6AC41B;display: flex;"> 
-      <text>同意并勾选</text>
-      <navigator url="../agreement/agreement" style="text-decoration: underline;color: black;">协议</navigator></view>
+      <text>我已阅读并同意</text>
+      <navigator url="../agreement/agreement" style="text-decoration: underline;color: black;">《用户信息协议》</navigator></view>
        </label>
-       <button style="width: 200rpx;color: #6AC41B;" bindtap="serve">注册</button>
+       <button style="width: 150rpx;color: white;background: linear-gradient(to right, #bbdbec, #6AC41B);height: 70rpx;line-height: 70rpx;" bindtap="serve">注册</button>
     </view>
   
  
@@ -76,21 +79,21 @@
 <view class="function" style="width: 100%;border-radius: 30rpx;padding-top: 30rpx;margin-bottom: 30rpx;"> 
     <navigator class="Integral" url="../ranking/ranking">
     <view>
-        <van-icon name="medal-o" style="margin-right:40rpx ;margin-left: 10rpx;"/>
+        <van-icon name="medal-o" style="margin-right:40rpx ;margin-left: 10rpx;color: #F7C643;"/>
     <text>我的积分</text>
     </view>
     <van-icon name="arrow" />
 </navigator>
 <navigator class="myself" url="../collect/collect?id={{userinfo.studentid}}">
     <view>
-        <van-icon name="goods-collect-o" style="margin-right:35rpx ;margin-left: 10rpx;" />
+        <van-icon name="goods-collect-o" style="margin-right:35rpx ;margin-left: 10rpx;color:#ee883b;" />
     <text>我的收藏</text>
     </view>
     <van-icon name="arrow" />
 </navigator>
 <navigator class="myself" url="../message/message">
     <view>
-        <van-icon name="user-circle-o" style="margin-right:35rpx ;margin-left: 10rpx;" />
+        <van-icon name="user-circle-o" style="margin-right:35rpx ;margin-left: 10rpx;color: #5fcda2;" />
        
     <text>我的信息</text>
     </view>
@@ -98,21 +101,21 @@
 </navigator>
 <navigator class="myself" url="../recode/recode">
     <view>
-        <van-icon name="notes-o" style="margin-right:35rpx ;margin-left: 10rpx;" />
-      
+        <van-icon name="notes-o" style="margin-right:35rpx ;margin-left: 10rpx;color:#54b4ef;" />
     <text>我的记录本</text>
     </view>
     <van-icon name="arrow" />
 </navigator>
 <view bindtap="show" class="myself" >
 <view>
-    <van-icon name="home-o"  style="margin-right:35rpx ;margin-left: 10rpx;"/>
+    <van-icon name="home-o"  style="margin-right:35rpx ;margin-left: 10rpx;color: #ee883b;"/>
 <text>关于小程序</text></view>
 <van-icon name="arrow" />
 </view>
 <view bindtap="Administrators" class="myself" wx:if="{{isboss}}" >
 <view>
-    <van-icon name="manager-o" style="margin-right:35rpx ;margin-left: 10rpx;"/>
+    <van-icon name="manager-o" style="margin-right:35rpx ;margin-left: 10rpx;color:#009E9D;"/>
+    
 <text>管理员操作</text></view>
 <van-icon name="arrow" />
 </view>

@@ -79,9 +79,10 @@ Page({
                                if(res.data.status==202)
                                { 
                                
-                                 return wx.showModal({
-                                       title:'请注册'
-                                   })
+                                 return wx.showToast({
+                                     title:'请注册',
+                                     icon:'none'
+                                 })
                                }
                                /* 存在该用户 */
                                if(res.data.status==200){
@@ -224,7 +225,7 @@ Page({
                   phonenumber:this.data.userinfo.phonenumber
               },
                 success:(res:any)=>{
-                    console.log(res);
+                    
                     
                     if(res.data.status==200)
                     {

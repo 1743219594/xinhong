@@ -1,4 +1,7 @@
-<textarea style="border: 1px solid ;width: 100%;border-radius: 15rpx;margin-bottom: 30rpx;width: 96%;padding-left: 10rpx;" bindinput="getdata" value="{{content}}" maxlength="-1" placeholder="写点什么吧!"></textarea>
+<view style="width: 100%;display: flex;justify-content: center;margin-top: 20rpx;">
+    <textarea style="border: 1px solid ;width: 100%;border-radius: 15rpx;margin-bottom: 30rpx;width: 96%;padding-left: 10rpx;padding-top: 20rpx;" bindinput="getdata" value="{{content}}" maxlength="-1" placeholder="写点什么吧!"></textarea>
+    <text style="position: absolute;top:-1rpx;left: 50rpx;background-color: white;color: rgb(144, 147, 167);font-size: 25rpx;">内容</text>
+</view>
 <view style="display: flex;align-items: center;margin-bottom: 20rpx;justify-content: center;">
     <text style="font-size: 45rpx;">学号：</text>
      <input type="text" style="border: 1px solid ;width: 400rpx;border-radius: 10rpx;height: 60rpx;" bindinput="gettoid" value="{{to_id}}"/>
