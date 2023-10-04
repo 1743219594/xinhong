@@ -121,9 +121,8 @@ vertical-align:middle;
  }
  
 .bottom{
-    position: absolute;
-    bottom: 10rpx;
-    right: 2%;
+   margin-top: 25rpx;
+   margin-left: 5rpx;
     box-sizing:border-box;
     width: 96%;
     height: 680rpx;
@@ -150,7 +149,7 @@ vertical-align:middle;
     padding-left: 30rpx;
 }
 .item text{
-    margin-right: 20rpx;
+    margin-right: 10rpx;
 }
 .agree{
     width: 550rpx;

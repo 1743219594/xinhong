@@ -10,7 +10,7 @@ App<IAppOption>({
     menuBot:0,
     windowWidth:0,
     windowheight:0,
-   url:'http://127.0.0.1:8080/',
+   url:'http://192.168.13.48:8080/',
    tabbarheight:0,
    screenheight:0,
    token:'',

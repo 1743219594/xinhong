@@ -4,6 +4,7 @@
 
 <!-- 监测到本地存储没有登录信息 -->
 <view wx:if="{{!hasmessage&&!hasuserinfo}}" class="container" style="margin-top:{{menuBot+navHeight+50}}px">
+
 <button bindtap="login" plain="true" style="background-color: #f0fff0;border-radius: 30rpx;margin-top: 60rpx;" >
  <van-icon name="wechat" style="margin-right: 10rpx;font-size: 35rpx;color: green;"/>
 <text>微信一键登录/注册</text>
