@@ -1,12 +1,7 @@
 {
     "description": "项目配置文件",
-    "packOptions": {
-        "ignore": [],
-        "include": []
-    },
     "miniprogramRoot": "miniprogram/",
     "compileType": "miniprogram",
-    "projectname": "miniprogram-5",
     "setting": {
         "urlCheck": false,
         "es6": true,
@@ -27,8 +22,6 @@
         "compileHotReLoad": true,
         "lazyloadPlaceholderEnable": false,
         "useMultiFrameRuntime": true,
-        "useApiHook": true,
-        "useApiHostProcess": true,
         "babelSetting": {
             "ignore": [],
             "disablePlugins": [],
@@ -55,12 +48,15 @@
     },
     "simulatorType": "wechat",
     "simulatorPluginLibVersion": {},
-    "appid": "wx3ddc0ddad04bc402",
-    "libVersion": "2.30.2",
     "condition": {},
     "srcMiniprogramRoot": "miniprogram/",
     "editorSetting": {
         "tabIndent": "insertSpaces",
         "tabSize": 4
-    }
+    },
+    "packOptions": {
+        "ignore": [],
+        "include": []
+    },
+    "appid": "wx3ddc0ddad04bc402"
 }

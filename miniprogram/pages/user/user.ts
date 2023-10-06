@@ -101,7 +101,8 @@ Page({
                                  if(wx.getStorageSync('userinfo').isboss=='1')
            {
                this.setData({
-                   identity:'管理员'
+                   identity:'管理员',
+                   isboss:true
                })
            }
                                  
@@ -341,6 +342,8 @@ Page({
              hasuserinfo:true,
              userinfo:wx.getStorageSync('userinfo')
            })
+           
+           
            if(wx.getStorageSync('userinfo').isboss=='1')
            {
                this.setData({

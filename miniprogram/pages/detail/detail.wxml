@@ -2,7 +2,7 @@
 <text style="font-size: 16px;margin-bottom: 10rpx;" selectable="true">{{title}}</text>
 <view style="font-size: 12px;color: grey;margin-bottom: 10rpx;">{{time}}</view>
 <view style="font-size: 12px;color: grey;margin-bottom: 10rpx;">广州大学计算机学院心协</view>
-<image src="{{content}}" mode="widthFix" style="width:700rpx" bindtap="look"/>
+<image src="{{content}}" mode="widthFix" style="width:700rpx" bindtap="look" referrerPolicy="no-referrer"/>
 </view>
 <view class="function" style="height: 40px;">
 
@@ -31,7 +31,7 @@
    <text style="color: grey;font-size: 14px;">留言</text>
     <view class="container" style="display: flex;flex-direction: row;justify-content: space-between;padding-left: 10px;padding-top: 10px;padding-bottom: 10px;" wx:for="{{comment_list}}"wx:key="id">
     <view style="display: flex;">
-        <image src="{{item.r_photo}}" mode="" style="width: 30px;height: 30px;margin-right: 5px;"/>
+        <image src="{{item.r_photo}}" mode="" style="width: 30px;height: 30px;margin-right: 5px;" referrerPolicy="no-referrer"/>
     <view style="height: 30px;">
     <view style="font-size: 13px;">{{item.r_name}}</view>
     <view style="font-size: 14px;">{{item.re_content}}</view>

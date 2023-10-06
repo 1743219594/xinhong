@@ -49,7 +49,7 @@
 <!-- 检测到本地存储有登录信息 -->
 <view wx:if="{{hasuserinfo}}" class="content"style="margin-top: 50rpx;" >
 <view class="header" >
-    <view bindtap="preview"><image src="{{userinfo.avatarUrl}}" class="avator" style="width: 100rpx;height: 100rpx;"></image></view>
+    <view bindtap="preview"><image src="{{userinfo.avatarUrl}}" class="avator" style="width: 100rpx;height: 100rpx;" referrerPolicy="no-referrer"></image></view>
     <view style="font-size: 40rpx; color: black;display: flex;flex-direction: column;">
     <text>{{userinfo.nickname}}</text>
     <text style="font-size: 30rpx;color: grey;">{{identity}}</text>

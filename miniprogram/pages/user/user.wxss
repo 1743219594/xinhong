@@ -40,6 +40,7 @@ page{
     display: inline-block;
     width: 50%;
     height: 100rpx;
+    line-height: 100rpx;
     font-size: 35rpx;
     border-radius: 50rpx;
     margin-top: 0;
