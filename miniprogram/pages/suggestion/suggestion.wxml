@@ -1,6 +1,6 @@
 <view class="navgiton"  style="height: {{navHeight+menuBot}}px;line-height:{{menuBot+navHeight+menuBot}}px ;">
-    <image src="../../image/logo.png" mode="" style="width:{{menuBot}}px;height: {{menuBot}}px;margin-left: 10rpx;display: block;margin-top:{{navHeight}}px;" />
-    <text style="font-size: 30rpx;margin-left:50%;transform:translateX(-50%) translateX(-45px);">聊天</text>
+    
+    <text style="font-size: 30rpx;margin-left:50%;transform:translateX(-50%);">聊天</text>
 </view>
 
 

@@ -1,6 +1,6 @@
 <!-- 自定义导航栏 -->
 <view style="height: {{menuBot+navHeight}}px;line-height: {{(menuBot+navHeight+menuBot)}}px;" class="nav">
-  <text style="font-size: 30rpx;margin-left: 50%;transform:translateX(-50%);">首页</text>
+  <text style="font-size: 30rpx;margin-left: 50%;transform:translateX(-50%);color: black;">首页</text>
 </view>
 
 

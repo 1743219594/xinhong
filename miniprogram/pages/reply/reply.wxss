@@ -18,7 +18,7 @@ page{
     width: 100%;
    display: flex;
   align-items: center;
-  background-color: #f0fff0;
+  background-color: #f7f7f7;
  padding-top:20rpx;
  padding-bottom: 20rpx;
   justify-content: center;

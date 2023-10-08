@@ -32,10 +32,6 @@
           <text style="color: #383838;font-size: 20rpx;" user-select="true" >地点：{{item.work_place}}</text>
           <text style="color: #383838;font-size: 20rpx;" user-select="true" >电话：{{item.reservation_phone}}</text>
      </view>
-    
-    <input type="text" bindinput="getc"/>
-    <input type="text" bindinput="getid"/>
-    <button bindtap="send">发送</button>
 </view>
 <!-- 管理员上传 -->
 <navigator url="../upload_teach/upload_teach" class="send" wx:if="{{isboss}}" ><image src="../../image/add.png" mode="" style="width:120rpx;height: 120rpx;"/></navigator>

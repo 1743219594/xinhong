@@ -2,7 +2,7 @@
     <view style="text-align: center;color: grey;font-size: 13px">{{time}}</view>
     <view class="item" style="text-align: {{first_from}};margin-top: 15rpx;">
     <view style="display: inline-block;position: relative;max-width:375rpx;">
-        <text style="border:{{first_from=='right'?'1px solid #99ba7d':'1px solid #FFCB96'}};color: #99ba7d;word-wrap:break-word;padding: 10rpx;border-radius: 15rpx; font-size: 28rpx;word-break: break-all;display: inline-block;text-align: left;" space="emsp"  user-select="true">{{content}}</text>
+        <text style="border:{{first_from=='right'?'1px solid #99ba7d':'1px solid #FFCB96'}};color: black;word-wrap:break-word;padding: 10rpx;border-radius: 15rpx; font-size: 28rpx;word-break: break-all;display: inline-block;text-align: left;background-color: white;" space="emsp"  user-select="true">{{content}}</text>
         <image wx:if="{{first_from=='right'}}" src="../../image/rainbow.png" mode="" style="position:absolute;width: 30rpx;height: 30rpx;top: -15rpx;left: -15rpx;"/>
     </view>
        
@@ -11,7 +11,7 @@
       <view style="text-align: center;color: grey;font-size: 13px;">{{item.time}}</view>
         <view style="text-align:{{item.isuser}};width: 100%;margin-top: 15rpx;">
         <view style="display: inline-block;position: relative;max-width:375rpx;" >
-            <text style="border: {{item.isuser=='right'?'1px solid #99ba7d':'1px solid #FFCB96'}};color: #99ba7d;border-radius: 20rpx;word-wrap: break-word;padding: 10rpx;font-size: 28rpx;max-width:375rpx;display: inline-block;word-break: break-all;text-align: left;" user-select="true" wx:if="{{item.content}}">{{item.content}}
+            <text style="border: {{item.isuser=='right'?'1px solid #99ba7d':'1px solid #FFCB96'}};color: black;border-radius: 20rpx;word-wrap: break-word;padding: 10rpx;font-size: 28rpx;max-width:375rpx;display: inline-block;word-break: break-all;text-align: left;background-color: white" user-select="true" wx:if="{{item.content}}">{{item.content}}
         </text>
         <image wx:if="{{item.isuser=='right'}}" src="../../image/rainbow.png" mode="" style="position:absolute;width: 30rpx;height: 30rpx;top: -15rpx;left: -15rpx;"/>
         </view>
@@ -19,7 +19,7 @@
     </view>
 </view>
 <view class="reply" style="bottom: {{bottom}};z-index: 2;display: flex;position: fixed;">
-   <input value="{{reply_content}}" style="height: 70rpx;width: 600rpx;border-radius: 30rpx;padding-left: 15rpx;color: #7F7F7F;background-color: #fff;margin-right: 10rpx;border: 1rpx solid #333;" placeholder="写点什么" bindfocus="focus" bindinput="inputed"/>
-    <view class="to_reply" size="mini" type="primary" style="background-color: green;color: white;border: solid 1rpx #7F7F7F;border-radius: 10rpx;padding: 10rpx 15rpx;direction:ltr;" bindtap="to_reply">发送</view>
+   <input value="{{reply_content}}" style="height: 60rpx;width: 600rpx;border-radius: 10rpx;padding-left: 15rpx;color: #7F7F7F;margin-right: 10rpx;border: 1rpx solid #333;background-color: #fff;" placeholder="写点什么" bindfocus="focus" bindinput="inputed"/>
+    <view class="to_reply" size="mini" type="primary" style="background-color: #05c25f;color: white;border: solid 1rpx #7F7F7F;border-radius: 10rpx;padding: 10rpx 15rpx;direction:ltr;" bindtap="to_reply">发送</view>
 </view>
 <view style="height: 300rpx;"></view>
