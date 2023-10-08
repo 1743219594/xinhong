@@ -2,7 +2,8 @@
     border-radius: 50%;
     z-index: 2;
     margin-left: 40rpx;
-    margin-right: 60rpx;
+    margin-right: 40rpx;
+
 }
 .content{
     display: flex;
@@ -16,6 +17,7 @@ page{
    flex-direction: column;
    margin: 0;
    padding: 0;
+
    background-color: #f0fff0;
 }
 .container{
@@ -97,7 +99,7 @@ page{
 }
 .header{
    display: flex;
-align-items: center;
+
 vertical-align:middle;
 }
 .Integral{

@@ -23,7 +23,9 @@ Page({
      secondlist:[],
      thirdlist:[],
      showlist:[],
-     isboss:false
+     isboss:false,
+    
+    
     },
    
     //点击推荐按钮
@@ -173,7 +175,19 @@ Page({
             clearInterval(time)
         },100)
     },
-
+    getc(e:any){
+     this.setData({
+         content:e.detail.value
+     })
+    },
+    getid(e:any){
+        this.setData({
+            id:e.detail.value
+        })
+    },
+    send(){
+        
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -185,14 +199,14 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-      
+       
     },
 
     /**
      * 生命周期函数--监听页面隐藏
      */
     onHide() {
-
+        
     },
 
     /**

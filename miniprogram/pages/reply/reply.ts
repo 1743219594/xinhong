@@ -16,7 +16,8 @@ Page({
          left:0,
          reply_content:"",
          list:[{from_id:'',isuser:''}],
-         first_from:''
+         first_from:'',
+         ws:{}
     },
     focus(){
         this.setData({
@@ -93,12 +94,18 @@ Page({
                 },
                 success:(res)=>{
                   
-                   
+                    const messageObject = {
+                        content: this.data.reply_content,
+                         id:this.data.id
+                       }; 
+                  wx.sendSocketMessage({
+                      data:JSON.stringify(messageObject)
+                  })
                     this.setData({
                         reply_content:'',
                         bottom:'0'
                     })
-                    this.getdatalist()
+                    
                 }
             })
                              
@@ -176,7 +183,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad(e) {
-        
+       
          this.setData({
              content:e.content,
              time:e.time,
@@ -211,14 +218,27 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-       
+        this.data.ws=wx.connectSocket({
+            url:'ws://127.0.0.1:7070?id='+this.data.id,
+            header: {
+                'content-type': 'application/json'
+              }
+        })
+        wx.onSocketMessage((res)=>{
+            this.getdatalist()
+        
+           
+        })
     },
 
     /**
      * 生命周期函数--监听页面隐藏
      */
     onHide() {
-        
+        wx.closeSocket({
+            fail:()=>{
+            }
+        })
       
     },
 

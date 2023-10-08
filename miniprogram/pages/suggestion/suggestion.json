@@ -4,7 +4,7 @@
 },
   "navigationBarTitleText": "建议列表",
   "navigationStyle": "custom",
-  "enablePullDownRefresh": false,
-  "backgroundTextStyle":"dark"
+  "enablePullDownRefresh": false
+
   
 }

@@ -97,14 +97,21 @@ Page({
                                        integral:res.data.integral
                                    }
                                  })
+                                 if(res.data.Isboss=='1')
+                                 {
+                                     this.setData({
+                                         isboss:true,
+                                         identity:'管理员'
+                                     })
+                                 }
+                                 else{
+                                    this.setData({
+                                        isboss:false,
+                                        identity:'学生'
+                                    })
+                                 }
                                  wx.setStorageSync('userinfo',this.data.userinfo)
-                                 if(wx.getStorageSync('userinfo').isboss=='1')
-           {
-               this.setData({
-                   identity:'管理员',
-                   isboss:true
-               })
-           }
+                             
                                  
                                }
                            },

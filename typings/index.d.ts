@@ -13,7 +13,8 @@ interface IAppOption {
     windowheight:Number,
     tabbarheight:Number,
     screenheight:Number,
-    token:String
+    token:String,
+
   }
   userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback,
 }

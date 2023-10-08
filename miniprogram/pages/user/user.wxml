@@ -49,8 +49,8 @@
 <!-- 检测到本地存储有登录信息 -->
 <view wx:if="{{hasuserinfo}}" class="content"style="margin-top: 50rpx;" >
 <view class="header" >
-    <view bindtap="preview"><image src="{{userinfo.avatarUrl}}" class="avator" style="width: 100rpx;height: 100rpx;" referrerPolicy="no-referrer"></image></view>
-    <view style="font-size: 40rpx; color: black;display: flex;flex-direction: column;">
+    <view bindtap="preview" ><image src="{{userinfo.avatarUrl}}" class="avator" style="width: 100rpx;height: 100rpx;" referrerPolicy="no-referrer"></image></view>
+    <view style="font-size: 45rpx; color: black;display: flex;flex-direction: column;">
     <text>{{userinfo.nickname}}</text>
     <text style="font-size: 30rpx;color: grey;">{{identity}}</text>
     </view>
@@ -68,7 +68,6 @@
 <text style="font-size: 30rpx;">联系客服</text></button>
 </view>
 </view>
-
 <swiper style="width: 95%;border-radius: 30rpx;height: 190rpx;margin-left: 18.75rpx;margin-top: 30rpx;" indicator-dots="true" indicator-active-color="green" indicator-color="grey" autoplay="true" circular="true">
     <swiper-item>
         <image src="../../image/swiper_item1.png" mode="" style="width: 100%;border-radius: 30rpx;height: 190rpx;"/>

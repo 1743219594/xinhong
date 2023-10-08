@@ -1,4 +1,5 @@
 // app.ts
+
 export{}
 const app=getApp()
 App<IAppOption>({
@@ -14,6 +15,7 @@ App<IAppOption>({
    tabbarheight:0,
    screenheight:0,
    token:'',
+  
   },
   onLaunch() {
     // 展示本地存储能力
@@ -50,8 +52,6 @@ App<IAppOption>({
         console.log(err)
       }
     })
-    const logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
   
 
    
