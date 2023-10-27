@@ -48,6 +48,8 @@ page{
     margin-top: 0;
     background-color: #6AC41B;
     color: white;
+    margin-bottom: 10rpx;
+    box-shadow: 4rpx 4rpx 4rpx 4rpx #c8c3c3;
 }
 
 .myself{

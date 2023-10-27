@@ -8,5 +8,5 @@
 </navigator>
 </view>
 <navigator url="../write/write">
-        <van-icon name="records" style="font-size:140rpx;border-radius: 50%;border:2px solid #6AC41B;color: #6AC41B;position: fixed;right: 50rpx;bottom: 100rpx;"/>
+        <van-icon name="records" style="font-size:120rpx;border-radius: 50%;border:2px solid #6AC41B;color: #6AC41B;position: fixed;right: 50rpx;bottom: 100rpx;"/>
 </navigator>

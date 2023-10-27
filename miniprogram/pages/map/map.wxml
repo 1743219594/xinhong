@@ -1,1 +1,1 @@
-<text style="width: 90%;border: 1px solid #333;padding: 15rpx;border-radius: 15rpx;">{{message}}</text>
+<text style="display:inline-block;width:90%;padding: 15rpx;border: 2px solid #eaeaea; box-shadow: 2rpx 2rpx 2rpx 2rpx #c8c3c3;margin-top: 30rpx;">{{message}}</text>

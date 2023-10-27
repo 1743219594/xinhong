@@ -1,9 +1,9 @@
-<input type="" bindinput="gettitle" value="{{title}}" style="width: 100%;"/>
-<text style="width: 100%;color: grey;font-size: 25rpx;">{{time}}</text>
-<textarea value="{{content}}" bindinput="getcontent" style="width: 100%;border-radius: 25rpx;min-height: 500rpx;"/>
+<input type="" bindinput="gettitle" value="{{title}}" style="width: 100%;margin-left: 20rpx;"/>
+<text style="width: 100%;color: grey;font-size: 25rpx;margin-left: 20rpx;">{{time}}</text>
+<textarea value="{{content}}" bindinput="getcontent" style="width: 100%;border-radius: 25rpx;min-height: 500rpx;padding-top: 10rpx;margin-left: 20rpx;"/>
 <view style="display: flex;justify-content: center;">
     <button style="width: 300rpx;height:80rpx;border: 1px solid #6AC41B; color: #4B660f;border-radius: 40rpx;text-align: center;line-height: 80rpx;margin-top: 30rpx;" bindtap="delete">删除</button>
-<button style="width: 300rpx;height:80rpx;border: 1px solid #6AC41B; color: #4B660f;border-radius: 40rpx;text-align: center;line-height: 80rpx;margin-top: 30rpx;" bindtap="serve">保存修改</button>
+<button style="width: 300rpx;height:80rpx;border: 1px solid #6AC41B; color: #4B660f;border-radius: 40rpx;text-align: center;line-height: 80rpx;margin-top: 30rpx;" bindtap="serve">保存</button>
 
 </view>
 

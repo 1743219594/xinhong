@@ -21,7 +21,8 @@ Page({
       getshorter:"",
       getlonger:"",
       data:"消息",
-      isload:false
+      isload:false,
+      my_id:0
     }, 
     reply(event:any){
      
@@ -291,6 +292,7 @@ Page({
         windowheight:app.globalData.windowheight,
         screenheight:app.globalData.screenheight,
         tabbarheight:app.globalData.tabbarheight,
+      
     })
     this.getlist()
     var time=setTimeout(()=>{this.setData({list:this.data.send
@@ -311,6 +313,9 @@ Page({
      */
     onShow() {
      this.getlist()
+     this.setData({
+         my_id:wx.getStorageSync('userinfo').studentid
+     })
      this.timer=setInterval(()=>{
          if(this.data.data=='消息')
          {

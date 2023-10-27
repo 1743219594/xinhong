@@ -28,7 +28,7 @@
           <image src="{{item.photo}}" mode="" style="width:50px;height:50px;border-radius: 50%;margin-top: 30px;" bindtap="look" data-index="{{item.photo}}"/>
           <text style="font-size: 26rpx;">{{item.name}}</text>
          
-          <text class="time" style="color: #383838;" user-select="true">工作时间：{{item.work_time}}</text>
+          <text class="time" style="color: #383838;text-align: center;" user-select="true">工作时间：{{item.work_time}}</text>
           <text style="color: #383838;font-size: 20rpx;" user-select="true" >地点：{{item.work_place}}</text>
           <text style="color: #383838;font-size: 20rpx;" user-select="true" >电话：{{item.reservation_phone}}</text>
      </view>

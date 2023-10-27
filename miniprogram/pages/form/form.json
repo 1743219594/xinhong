@@ -2,6 +2,6 @@
   "usingComponents": {
     "van-uploader": "@vant/weapp/uploader/index"
   },
-  "navigationBarTitleText": "发帖子"
+  "navigationBarTitleText": "帖子发布"
   
 }

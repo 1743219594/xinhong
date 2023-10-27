@@ -1,19 +1,21 @@
 <view class="content" bindtap="cancel" >
     <view style="text-align: center;color: grey;font-size: 13px">{{time}}</view>
-    <view class="item" style="text-align: {{first_from}};margin-top: 15rpx;">
+    <view class="item" style="text-align: {{first_from}};margin-top: 15rpx;padding-left: 12rpx;padding-right: 12rpx;">
     <view style="display: inline-block;position: relative;max-width:375rpx;">
-        <text style="border:{{first_from=='right'?'1px solid #99ba7d':'1px solid #FFCB96'}};color: black;word-wrap:break-word;padding: 10rpx;border-radius: 15rpx; font-size: 28rpx;word-break: break-all;display: inline-block;text-align: left;background-color: white;" space="emsp"  user-select="true">{{content}}</text>
+        <text style="color: black;word-wrap:break-word;padding: 10rpx;border-radius: 12rpx; font-size: 30rpx;word-break: break-all;display: inline-block;text-align: left;background-color: {{first_from=='right'?'#95ec69':'#ffffff'}};" space="emsp"  user-select="true">{{content}}</text>
         <image wx:if="{{first_from=='right'}}" src="../../image/rainbow.png" mode="" style="position:absolute;width: 30rpx;height: 30rpx;top: -15rpx;left: -15rpx;"/>
+        <view style="position: absolute;display: inline-block;content:'';width: 0px;height: 0px;top:10rpx;border: 12rpx solid transparent;left:{{first_from=='right'?'100%':'-13rpx'}};border-right: {{first_from=='right'?'0':'12rpx solid #FFFFFF'}};border-left: {{first_from=='right'?'12rpx solid #95ec69':'0'}};"></view>
     </view>
        
     </view>
     <view  wx:for="{{list}}" wx:key="id">
       <view style="text-align: center;color: grey;font-size: 13px;">{{item.time}}</view>
-        <view style="text-align:{{item.isuser}};width: 100%;margin-top: 15rpx;">
-        <view style="display: inline-block;position: relative;max-width:375rpx;" >
-            <text style="border: {{item.isuser=='right'?'1px solid #99ba7d':'1px solid #FFCB96'}};color: black;border-radius: 20rpx;word-wrap: break-word;padding: 10rpx;font-size: 28rpx;max-width:375rpx;display: inline-block;word-break: break-all;text-align: left;background-color: white" user-select="true" wx:if="{{item.content}}">{{item.content}}
+        <view style="text-align:{{item.isuser}};margin-top: 15rpx;padding-left: 12rpx;padding-right: 12rpx;">
+        <view style="display: inline-block;position: relative;max-width:500rpx;" >
+            <text style="color: black;border-radius: 12rpx;word-wrap: break-word;padding: 10rpx;font-size: 30rpx;max-width:500rpx;display: inline-block;word-break: break-all;text-align: left;background-color: {{item.isuser=='right'?'#95ec69':'#ffffff'}}" user-select="true" wx:if="{{item.content}}">{{item.content}}
         </text>
         <image wx:if="{{item.isuser=='right'}}" src="../../image/rainbow.png" mode="" style="position:absolute;width: 30rpx;height: 30rpx;top: -15rpx;left: -15rpx;"/>
+        <view style="position: absolute;display: inline-block;content:'';width: 0px;height: 0px;top:10rpx;border: 12rpx solid transparent;left:{{first_from=='right'?'100%':'-13rpx'}};border-right: {{first_from=='right'?'0':'12rpx solid #FFFFFF'}};border-left: {{first_from=='right'?'12rpx solid #95ec69':'0'}};"></view>
         </view>
         </view>     
     </view>

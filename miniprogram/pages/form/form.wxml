@@ -1,17 +1,17 @@
+<textarea placeholder="推文主题" style="width: 100%;margin: 0 auto; height: 300rpx;margin-bottom: 15rpx;background-color: white;margin-top: 20rpx;"bindinput="inputs" maxlength="-1" value="{{title}}"/>
+<view style="width: 100%;height: 400rpx;background-color: white;margin-top: 20px;">
 
-<view style="display: flex;justify-content: center;align-items: center;">
-    <text>封面上传：</text>
+    <view>封面上传：</view>
     <van-uploader file-list="{{ filelist }}" deletable="{{ true }}" max-count="1"
-    bind:after-read="afterRead" bind:delete="delete"/>
-</view>
-<view style="display: flex;justify-content: center;align-items: center;">
-    <text>内容上传：</text>
+    bind:after-read="afterRead" bind:delete="delete" style="margin-left: 60rpx;"/>
+
+
+    <view>内容上传：</view>
     <van-uploader file-list="{{ contentlist }}" deletable="{{ true }}" max-count="1"
-    bind:after-read="afterReaded" bind:delete="deleted"/>
+    bind:after-read="afterReaded" bind:delete="deleted" style="margin-left: 60rpx;"/>
 </view>
-<input type="text" placeholder="推文主题" style="width: 100%;margin: 0 auto; border: 1px solid #6AC41B;border-radius: 15rpx;height: 80rpx;margin-bottom: 15rpx;"
-bindinput="inputs" maxlength="-1" value="{{title}}"/>
-<button bindtap="send" style="margin-top: 20px;width: 300rpx;height: 80rpx; border: 1px solid #6AC41B;color: #4B660f;border-radius: 40rpx;text-align: center;line-height: 80rpx;">点击上传</button>
+
+<button bindtap="send" style="margin-top: 20px;width: 300rpx;height: 80rpx;color: white; border-radius: 40rpx;text-align: center;line-height: 80rpx;background-color: #6AC41B;">点击上传</button>
 
 
 

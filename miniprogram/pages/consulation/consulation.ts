@@ -135,12 +135,14 @@ Page({
             success:(res:any)=>{
                 this.setData({
                     datalist:res.data.data,
-                   showlist:res.data.data
+                   
                 })
                 var length=this.data.datalist.length
         for(var i=0;i<length;i++)
         {  
-        
+            this.data.firstshowlist=[]
+            this.data.secondlist=[]
+            this.data.thirdlist=[]
             if(res.data.data[i].level=='1')
                  {this.data.firstshowlist.push(this.data.datalist[i])}
             else if(res.data.data[i].level=='2')
@@ -174,20 +176,10 @@ Page({
             })
             clearInterval(time)
         },100)
+       
     },
-    getc(e:any){
-     this.setData({
-         content:e.detail.value
-     })
-    },
-    getid(e:any){
-        this.setData({
-            id:e.detail.value
-        })
-    },
-    send(){
-        
-    },
+  
+   
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -200,6 +192,8 @@ Page({
      */
     onShow() {
        
+        
+    
     },
 
     /**

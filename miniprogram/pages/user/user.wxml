@@ -1,4 +1,4 @@
-<view class="navgiton"  style="height: {{(menuBot+navHeight)}}px;line-height: {{(menuBot+navHeight+menuBot)}}px;">
+<view class="navgiton"  style="height: {{(menuBot+navHeight)}}px;line-height: {{(menuBot+navHeight+menuBot)}}px;background-color: #f0fff0;z-index: 2;">
     <text  style="margin-left:50%;transform:translateX(-50%) ;color: #000000;font-size: 30rpx;">用户中心</text>
 </view>
 
@@ -68,12 +68,12 @@
 <text style="font-size: 30rpx;">联系客服</text></button>
 </view>
 </view>
-<swiper style="width: 95%;border-radius: 30rpx;height: 190rpx;margin-left: 18.75rpx;margin-top: 30rpx;" indicator-dots="true" indicator-active-color="green" indicator-color="grey" autoplay="true" circular="true">
+<swiper style="width: 95%;border-radius: 30rpx;height: 190rpx;margin-left: 18.75rpx;margin-top: 30rpx;border: 1px solid #333333;" indicator-dots="true" indicator-active-color="#FFAA33" indicator-color="grey" autoplay="true" circular="true" 	interval="3000">
     <swiper-item>
         <image src="../../image/swiper_item1.png" mode="" style="width: 100%;border-radius: 30rpx;height: 190rpx;"/>
     </swiper-item>
     <swiper-item>
-        <image src="../../image/swiper-item2.png" mode="" style="width: 100%;height: 190rpx;border-radius: 30rpx;"/>
+        <image src="../../image/swiper_item2.jpg" mode="" style="width: 100%;height: 190rpx;border-radius: 30rpx;"/>
     </swiper-item>
 </swiper>
 <view class="function" style="width: 100%;border-radius: 30rpx;padding-top: 30rpx;margin-bottom: 30rpx;"> 

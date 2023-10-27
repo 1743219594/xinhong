@@ -1,9 +1,6 @@
 <view class="navgiton"  style="height: {{navHeight+menuBot}}px;line-height:{{menuBot+navHeight+menuBot}}px ;">
-    
     <text style="font-size: 30rpx;margin-left:50%;transform:translateX(-50%);">聊天</text>
 </view>
-
-
 <view class="content" >
     <view   class="left" >
     <image src="../../image/left.png" mode="" class="background" style="margin-top:{{menuBot+navHeight}}px;bottom: 0;left: 0;height: {{windowheight-tabbarheight}}px;" />
@@ -27,8 +24,9 @@
                   <van-icon data-index="{{index}}" name="warning-o" style="font-size: 50rpx;color:#6AC41B ;"  bindtap="select"/>
                   </view>
                   <view class="item-time">
-                       <text style="color: grey;">{{item.time}}</text>
-                       <navigator class="reply" style="margin-left: 70rpx;" url="../reply/reply?content={{item.content}}&&time={{item.time}}&&id={{item.id}}&&from_id={{item.from_id}}&&to_id={{item.to_id}}" bindtap="reply" data-index="{{item.id}}">回复</navigator>
+                        <text wx:if="{{my_id==item.from_id}}" style="font-size: 25rpx;">To:{{item.to_id}}</text>
+                       <text style="color: grey;font-size: 20rpx;margin-left: 10rpx;">{{item.time}}</text>
+                       <navigator class="reply" style="margin-left: 30rpx;" url="../reply/reply?content={{item.content}}&&time={{item.time}}&&id={{item.id}}&&from_id={{item.from_id}}&&to_id={{item.to_id}}" bindtap="reply" data-index="{{item.id}}">回复</navigator>
                   </view>
              </view>
              <van-empty  description="空空如也"  wx:if="{{list.length<=0}}"  style="width: 500rpx;height: 400rpx;margin-top:300rpx;"/>
