@@ -123,6 +123,14 @@
 <button  bindtap="loginout" class="loginout">
   退出登录
 </button>
+<view style="width: 100%;color: grey;text-align: center;font-size: 25rpx;margin-top: 20rpx;margin-bottom: 20rpx;"> 
+    <view>本小程序已备案</view>
+    <view>ICP备案号：粤ICP备2023123210号-1X</view>
+    <view>
+        <text>工信部网站：</text>
+        <a href="https://beian.miit.gov.cn">https://beian.miit.gov.cn</a>
+    </view>
+</view>
 
 
 

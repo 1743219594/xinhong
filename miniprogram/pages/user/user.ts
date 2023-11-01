@@ -124,11 +124,17 @@ Page({
                            
                        }
                    })
+                 },
+                 fail:(res:any)=>{
+                     wx.showToast({
+                         title:'请求失败',
+                         icon:'error'
+                     })
                  }
             })
-          } else {
+          } 
             
-          }
+          
         
         
         }

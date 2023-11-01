@@ -1,12 +1,13 @@
 <view class="content" bindtap="cancel" >
     <view style="text-align: center;color: grey;font-size: 13px">{{time}}</view>
-    <view class="item" style="text-align: {{first_from}};margin-top: 15rpx;padding-left: 12rpx;padding-right: 12rpx;">
-    <view style="display: inline-block;position: relative;max-width:375rpx;">
-        <text style="color: black;word-wrap:break-word;padding: 10rpx;border-radius: 12rpx; font-size: 30rpx;word-break: break-all;display: inline-block;text-align: left;background-color: {{first_from=='right'?'#95ec69':'#ffffff'}};" space="emsp"  user-select="true">{{content}}</text>
+    <view class="item" style="text-align: {{first_from}};margin-top: 15rpx;padding-right: 12rpx;padding-left: 12rpx;">
+    <view style="position: relative;max-width:375rpx;display: inline-block;vertical-align:text-top;">
+        <text style="color: black;word-wrap:break-word;padding: 10rpx;border-radius: 12rpx; font-size: 30rpx;word-break: break-all;display: inline-block;text-align: left;background-color: {{first_from=='right'?'#95ec69':'#ffffff'}};min-height: 50rpx;" space="emsp"  user-select="true">{{content}}</text>
         <image wx:if="{{first_from=='right'}}" src="../../image/rainbow.png" mode="" style="position:absolute;width: 30rpx;height: 30rpx;top: -15rpx;left: -15rpx;"/>
-        <view style="position: absolute;display: inline-block;content:'';width: 0px;height: 0px;top:10rpx;border: 12rpx solid transparent;left:{{first_from=='right'?'100%':'-13rpx'}};border-right: {{first_from=='right'?'0':'12rpx solid #FFFFFF'}};border-left: {{first_from=='right'?'12rpx solid #95ec69':'0'}};"></view>
+        <view style="position: absolute;display: inline-block;content:'';width: 0px;height: 0px;top:18rpx;border: 12rpx solid transparent;left:{{first_from=='right'?'100%':'-13rpx'}};border-right: {{first_from=='right'?'0':'12rpx solid #FFFFFF'}};border-left: {{first_from=='right'?'12rpx solid #95ec69':'0'}};"></view>
+        
     </view>
-       
+   
     </view>
     <view  wx:for="{{list}}" wx:key="id">
       <view style="text-align: center;color: grey;font-size: 13px;">{{item.time}}</view>

@@ -5,17 +5,13 @@ Page({
      * 页面的初始数据
      */
     data: {
-        activeName: '1',
+   
         nickname:'',
         phonenumber:0,
         avatorurl:'',
         studentid:0
       },
-      onChange(event:any) {
-        this.setData({
-          activeName: event.detail,
-        });
-      },
+    
       
 
     /**

@@ -1,3 +1,4 @@
+import { RED } from "../../miniprogram_npm/@vant/weapp/common/color"
 import { requestAnimationFrame } from "../../miniprogram_npm/@vant/weapp/common/utils"
 
 // pages/detail/detail.ts
@@ -162,9 +163,19 @@ Page({
               'content-type':'application/x-www-form-urlencoded'
           },
           success:(res:any)=>{
-           this.setData({
-               comment_list:res.data.data
-           })
+             
+              
+           if(res.data.data!=undefined)
+           {
+            this.setData({
+                comment_list:res.data.data
+            })
+           }
+           else{
+               this.setData({
+                   comment_list:[]
+               })
+           }
           }
         })
     },
@@ -186,7 +197,7 @@ Page({
                       integral:wx.getStorageSync('userinfo').integral
                   },
                   success:(res:any)=>{
-                      console.log(res);
+                    
                       
                       if(res.data.status==202)
                       {

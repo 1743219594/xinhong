@@ -1,16 +1,16 @@
-<van-collapse accordion value="{{ activeName }}" bind:change="onChange">
-  <van-collapse-item title="我的昵称" name="1">
-    {{nickname}}
-  </van-collapse-item>
-  <van-collapse-item title="我的头像" name="2">
-    <image src="{{avatorurl}}" mode="" style="width: 150rpx;height: 150rpx;"/>
-  </van-collapse-item>
-  <van-collapse-item title="我的学号" name="3">
-   {{studentid}}
-  </van-collapse-item>
-  <van-collapse-item title="我的手机号" name="4">
-    {{phonenumber}}
-  </van-collapse-item>
-</van-collapse>
-
-
+<view style="display: flex;justify-content: space-between;border-bottom: 1px solid #eaeaea;padding:10rpx;color: grey;align-items: center;">
+ <view>我的昵称</view>
+ <view>{{nickname}}</view>
+</view>
+<view style="display: flex;justify-content: space-between;border-bottom: 1px solid #eaeaea;padding:10rpx;color: grey;align-items: center;">
+ <view>我的头像</view>
+  <image src="{{avatorurl}}" mode="" style="height: 70rpx;width: 70rpx;"/>
+</view>
+<view style="display: flex;justify-content: space-between;border-bottom: 1px solid #eaeaea;padding:10rpx;color: grey;align-items: center;">
+ <view>我的学号</view>
+ <view>{{studentid}}</view>
+</view>
+<view style="display: flex;justify-content: space-between;border-bottom: 1px solid #eaeaea;padding:10rpx;color: grey;align-items: center;">
+ <view>我的手机号</view>
+ <view>{{phonenumber}}</view>
+</view>

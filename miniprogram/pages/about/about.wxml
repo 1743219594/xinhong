@@ -2,7 +2,9 @@
   <van-collapse-item title="小程序宗旨" name="0">
     该小程序名为心虹，由广州大学计算机学院学生团队联合开发。主要功能为用户提供一个了解心理知识、获取心理咨询信息的平台，从而为用户搭建起沟通交流的桥梁，促进用户心理健康发展以及心理知识普及。
   </van-collapse-item>
-  <van-collapse-item title="更换绑定信息" name="1">
+
+  <van-collapse-item title="更换绑定信息" name="2">
    目前暂不支持更换绑定信息，后续会开发上线
   </van-collapse-item>
+ 
 </van-collapse>

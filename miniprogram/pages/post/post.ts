@@ -99,10 +99,10 @@ Page({
                           }
                           else if(res.data.status==202)
                           {
-                             wx.showModal({
-                                 showCancel:false,
-                                 title:'该用户不存在'
-                             })
+                            wx.showToast({
+                                title:'该用户不存在',
+                                icon:'error'
+                            })
                           }
                         }
                       })

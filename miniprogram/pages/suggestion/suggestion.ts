@@ -184,7 +184,7 @@ Page({
     },   
     select(event:any){
         wx.showModal({
-            title:'确定拉黑该用户吗？',
+            content:'确定拉黑该用户吗？',
             success:(res:any)=>{
                 if(res.confirm){
                     var to_id=wx.getStorageSync('userinfo').studentid

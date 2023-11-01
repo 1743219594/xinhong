@@ -1,5 +1,5 @@
 <textarea placeholder="推文主题" style="width: 100%;margin: 0 auto; height: 300rpx;margin-bottom: 15rpx;background-color: white;margin-top: 20rpx;"bindinput="inputs" maxlength="-1" value="{{title}}"/>
-<view style="width: 100%;height: 400rpx;background-color: white;margin-top: 20px;">
+<view style="width: 100%;background-color: white;margin-top: 20px;">
 
     <view>封面上传：</view>
     <van-uploader file-list="{{ filelist }}" deletable="{{ true }}" max-count="1"

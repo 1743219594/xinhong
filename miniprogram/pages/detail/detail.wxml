@@ -29,7 +29,7 @@
 </view>
 <view class="comment_area" bindtap="restart">
    <text style="color: grey;font-size: 14px;">留言</text>
-    <view class="container" style="display: flex;flex-direction: row;justify-content: space-between;padding-left: 10px;padding-top: 10px;padding-bottom: 10px;" wx:for="{{comment_list}}"wx:key="id">
+    <view class="container" style="display: flex;flex-direction: row;justify-content: space-between;padding-left: 10px;padding-top: 10px;padding-bottom: 10px;" wx:for="{{comment_list}}" wx:key="id">
     <view style="display: flex;">
         <image src="{{item.r_photo}}" mode="" style="width: 30px;height: 30px;margin-right: 5px;" referrerPolicy="no-referrer"/>
     <view style="height: 30px;">

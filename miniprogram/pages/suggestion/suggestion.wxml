@@ -3,7 +3,7 @@
 </view>
 <view class="content" >
     <view   class="left" >
-    <image src="../../image/left.png" mode="" class="background" style="margin-top:{{menuBot+navHeight}}px;bottom: 0;left: 0;height: {{windowheight-tabbarheight}}px;" />
+    <image src="../../image/left.png" mode="" class="background" style="margin-top:{{menuBot+navHeight}}px;bottom: 0;left: 0;height:100%" />
     <view style="width: 160rpx;animation:{{getshorter}};" class="message" bindtap="messaged" >
         消息
     </view>

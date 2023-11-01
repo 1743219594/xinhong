@@ -76,7 +76,8 @@ overflow:visible;
 position: fixed;
 left: 0;
 z-index: 1;
-height: 500rpx;
+height:94vh;
+
 }
 .background {
     z-index: -2;
@@ -88,11 +89,11 @@ height: 500rpx;
   }
   .message{
 position: absolute;
-top:250rpx;
+top:25vh;
 left: 0;
   
-  height: 70rpx;
-  line-height: 70rpx;
+  height: 6vh;
+  line-height: 6vh;
   text-align: center;
   border-radius: 10rpx;
   margin-bottom: 50rpx;
@@ -102,10 +103,10 @@ left: 0;
 .accept{
    color: #ADB897;
     position:absolute;
-top:450rpx;
+top:40vh;
 left: 0;
-height: 70rpx;
-line-height: 70rpx;
+height: 6vh;
+line-height: 6vh;
 text-align: center;
 border-radius: 10rpx;
 margin-bottom: 50rpx;
