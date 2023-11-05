@@ -135,7 +135,7 @@ Page({
             success:(res:any)=>{
                 this.setData({
                     datalist:res.data.data,
-                   
+                   showlist:res.data.data
                 })
                 var length=this.data.datalist.length
         for(var i=0;i<length;i++)
@@ -170,12 +170,7 @@ Page({
                 isboss:true
             })
         }
-        let time=setInterval(()=>{
-            this.setData({
-                showlist:this.data.datalist
-            })
-            clearInterval(time)
-        },100)
+       
        
     },
   

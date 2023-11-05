@@ -44,7 +44,7 @@ Page({
 
     login(){      
         
-        const app=getApp()
+      const app=getApp()
       /* 获取用户的openid（唯一标识符) */
       wx.login({
         success:(res)=>{

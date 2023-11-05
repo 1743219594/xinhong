@@ -5,14 +5,44 @@ Page({
      * 页面的初始数据
      */
     data: {
-      message:""
+      message:"",
+      photo:"",
+      name:"",
+      level:"",
+      work_place:'',
+      work_time:"",
+      phone:""
     },
   
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad(e:any) {
-      this.setData({message:e.message})
+      this.setData({
+          message:e.message,
+          photo:e.photo,
+          name:e.name,
+          phone:e.reservation_phone,
+          work_place:e.work_place,
+          work_time:e.work_time
+    })
+    if(e.level==1)
+    {
+        this.setData({
+            level:"书记"
+        })
+    }
+    else if(e.level==2)
+    {
+        this.setData({
+            level:"辅导员"
+        })
+    }
+    else{
+        this.setData({
+            level:"咨询中心老师"
+        })
+    }
        
     },
 

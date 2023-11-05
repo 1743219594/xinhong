@@ -1,22 +1,44 @@
+<view wx:if="{{isload}}" style="width: 100%;display: flex;background: linear-gradient(to right, rgb(150, 211, 142), rgb(132, 211, 47));justify-content: center;z-index: 2;flex-direction: column;align-items: center;height: 30vh;">
+    <image src="{{user.photo}}" mode="" style="width: 150rpx;height: 150rpx;border-radius: 50%;margin-top: 50rpx;border: 4px solid white;"  referrerPolicy="no-referrer"/>
+ <view style="display: flex;align-items: center;width: 100%;height: 150rpx;justify-content: space-around;">
 
- <view style="height: 100rpx;line-height: 100rpx;display: flex;align-items: center;padding-left: 25px;padding-right: 25px;width: 100%;border-bottom: 1px solid #eaeaea;" wx:for="{{list}}" wx:key="id">
- <view style="margin-right: 40rpx;display: flex;align-items: center;">
-   <image src="../../image/{{index+1}}.png" mode="" wx:if="{{index<=2}}" style="width: 70rpx;height: 70rpx;margin-left: 30rpx;"/>
-   <view wx:if="{{index>2}}" style="width: 70rpx;text-align: center;">{{index+1}}</view>
- </view>
-<image src="{{item.photo}}" mode="" style="width: 80rpx;height: 80rpx;border-radius: 50%;margin-right: 50rpx;"/>
- <text style="margin-right: 100rpx;width: 230rpx;font-size: 35rpx;">{{item.nick_name}}</text>
- <text style="text-align: center;width: 150rpx;font-size: 35rpx;color: grey;">{{item.integral}}分</text>
- 
- </view>
- <view wx:if="{{isload}}" style="width: 100%;height: 150rpx;position: fixed;bottom: 0;right: 0;display: flex;justify-content: center;z-index: 2;">
- <view style="display: flex;align-items: center;width: 100%;background-color: #329132;height: 150rpx;padding-left: 30rpx;">
-    <image src="../../image/{{index+1}}.png" mode="" wx:if="{{index<=2}}" style="width: 70rpx;height: 70rpx;" referrerPolicy="no-referrer"/>
-   <view wx:if="{{index>2}}" style="width: 70rpx;text-align: center;">{{index+1}}</view>
- <image src="{{user.photo}}" mode="" style="width: 90rpx;height: 90rpx;margin-left: 50rpx;border-radius: 50%;"  referrerPolicy="no-referrer"/>
- <text style="margin-left: 80rpx;font-size: 40rpx;color: white;">{{user.nick_name}}</text>
- <text style="margin-left: 150rpx;font-size: 40rpx;color: white;width: 150rpx;text-align: center;">{{user.integral}}分</text>
+   <view style="display: flex;flex-direction: column;justify-content: center;align-items: center;flex: 1;border-right: 1px solid grey;">
+    <view style="width: 70rpx;text-align: center;font-weight: bold;font-size: 40rpx">{{index+1}}</view>
+    <view>Ranking</view>
+   </view>
+   <view style="display: flex;flex-direction: column;justify-content: center;align-items: center;flex: 1;border-right: 1px solid grey;">
+    <text style="font-size: 40rpx;">{{user.nick_name}}</text>
+    <text>Nickname</text>
+   </view>
+   <view style="display: flex;flex-direction: column;justify-content: center;align-items: center;flex: 1;">
+    <text style="font-size: 40rpx;text-align: center;font-weight: bold;">{{user.integral}}分</text>
+    <text>Score</text>
+   </view>
+
 
  </view>
 </view>
+<view style="height: 5vh;width: 100%;background-color:rgb(150, 211, 142);display: flex;align-items: center;">
+  <text style="width: 70rpx;text-align: center;margin-left: 30rpx;">排名</text>
+  <text style="width: 80rpx;margin-right: 50rpx;margin-left: 50rpx;text-align: center;">头像</text>
+  <text style="margin-right: 100rpx;width: 230rpx;text-align: center;text-align: center;">昵称</text>
+  <text style="text-align: center;width: 150rpx;text-align: center;">积分</text>
+</view>
+<scroll-view scroll-y="true" style="width: 100%;height: 65vh;">
+    <view style="line-height: 100rpx;height: 100rpx;display: flex;align-items: center;width: 100%;border-bottom: 1px solid #eaeaea;" wx:for="{{list}}" wx:key="id">
+ <view style="margin-right: 50rpx;display: flex;align-items: center;margin-left: 30rpx;">
+   <image src="../../image/{{index+1}}.png" mode="" wx:if="{{index<=2}}" style="width: 70rpx;height: 70rpx;"/>
+   <view wx:if="{{index>2}}" style="width: 70rpx;text-align: center;font-weight: bold;">{{index+1}}</view>
+ </view>
+<view style="margin-right: 50rpx;display: flex;justify-content: center;align-items: center;">
+    <image src="{{item.photo}}" mode="" style="width: 80rpx;height: 80rpx;border-radius: 50%;"/>
+</view>
+
+
+ <text style="margin-right: 100rpx;width: 230rpx;font-size: 35rpx;text-align: center;">{{item.nick_name}}</text>
+ <text style="text-align: center;width: 150rpx;font-size: 35rpx;color: grey;font-weight:bold;;">{{item.integral}}分</text>
+ 
+ </view>
+
+</scroll-view>
 

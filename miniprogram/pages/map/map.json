@@ -1,3 +1,5 @@
 {"navigationBarTitleText": "详细信息",
-    "usingComponents": {}
+    "usingComponents": {
+      "van-icon": "@vant/weapp/icon/index"
+    }
 }
