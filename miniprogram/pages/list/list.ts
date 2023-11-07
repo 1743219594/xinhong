@@ -14,12 +14,17 @@ Page({
      isload:false,
      list:[{}],
      isboss:false,
-     datalist:[],
-  
+      isshow:"show 1s forwards",
       page:0,
-      hasremain:true
+      hasremain:true,
+      show:true
     },
-    
+    onClickHide(){
+      this.setData({
+        isshow:"hide 1s forwards",
+        show:false
+      })
+    },
     getlist(){
         wx.showLoading({
             mask:true,
@@ -66,7 +71,13 @@ Page({
                 }
         })
     },
- 
+    imageerror(){
+      wx.showToast({
+        title:'图片加载失败',
+        icon:'error'
+        
+      })
+    },
    
     /**
      * 生命周期函数--监听页面加载

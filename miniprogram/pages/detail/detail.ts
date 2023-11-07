@@ -29,6 +29,13 @@ Page({
        studentid:0,
        iscollect:'#6AC41B'
     },
+    imageerror(){
+      wx.showToast({
+        title:'图片加载失败',
+        icon:'error'
+        
+      })
+    },
     collect(){
         
         

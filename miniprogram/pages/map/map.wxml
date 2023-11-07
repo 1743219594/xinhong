@@ -20,5 +20,5 @@
 
 <view style="width: 100%;padding: 30rpx;background-color: white;margin-top: 30rpx;">
   <view style="color: black;font-size: 30rpx;font-weight: bold;margin-bottom: 10rpx;">个人介绍</view>
-  <view>{{message}}</view>
+  <text>{{message}}</text>
 </view>

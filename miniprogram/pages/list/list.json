@@ -3,7 +3,7 @@
 
  
   "van-icon": "@vant/weapp/icon/index",
-
+  "van-overlay": "@vant/weapp/overlay/index",
   "van-notice-bar": "@vant/weapp/notice-bar/index",
   "van-empty": "@vant/weapp/empty/index"
   },

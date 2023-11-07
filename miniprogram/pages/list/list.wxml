@@ -2,23 +2,26 @@
 <view style="height: {{menuBot+navHeight}}px;line-height: {{(menuBot+navHeight+menuBot)}}px;" class="nav">
   <text style="font-size: 30rpx;margin-left: 50%;transform:translateX(-50%);color: black;">首页</text>
 </view>
-
-
-
 <!-- 推文列表 -->
 <view wx:if="{{list.length>0}}" style="margin-top: {{menuBot+navHeight}}px;">
     <navigator style="display: flex;width:600rpx;margin-top: 25rpx;align-items: center;flex-direction: column;" wx:for="{{list}}" wx:key="id" url="../detail/detail?id={{item.id}}">
         <text style="color:grey;margin-bottom: 10rpx;font-size: 13px;">{{item.send_time}}</text>
         <view style="width: 100%;text-align:left;border-radius: 15px;background-color:white">
-            <image src="{{item.o_photo}}" mode=""  style="width: 100%;height: 230rpx;object-fit: contain;border-radius: 15px 15px 0 0;border-bottom: 1px solid #cdcdb4;" referrerPolicy="no-referrer"/>
-       <text style="background-color: white;min-height:55rpx;display: inline-block;padding: 5rpx;font-size: 32rpx;border-radius: 15px;">{{item.title}}</text>
-       
+            <image src="{{item.o_photo}}" mode=""  style="width: 100%;height: 230rpx;object-fit: contain;border-radius: 15px 15px 0 0;border-bottom: 1px solid #cdcdb4;" referrerPolicy="no-referrer" binderror="imageerror"/>
+             <text style="background-color: white;min-height:55rpx;display: inline-block;padding: 5rpx;font-size: 32rpx;border-radius: 15px;">{{item.title}}</text>
         </view>
 </navigator>
 </view>
 <text wx:if="{{!hasremain&&list.length>=4}}" style="margin-top: 15rpx;color:  rgb(126, 138, 155);font-size: 27rpx;">已加载全部</text>
 <van-empty description="空空如也" wx:if="{{list.length==0}}" style="margin-top: 300rpx;"/>
-
+<!-- 遮罩层 -->
+<van-overlay style="z-index: 99;" show="{{show}}">
+  <view class="wrapper" style="animation:{{isshow}};">
+      <image src="../../image/cover.png" mode="" style="width: 500rpx;height: 600rpx;"/>
+    <van-icon name="cross" style="width: 60rpx;height: 60rpx;border: 1px solid rgb(231, 222, 210);border-radius: 50%;color: rgb(231, 222, 210);" bind:click="onClickHide"/>
+  </view>
+</van-overlay>
+<!-- 发布推文跳转导航 -->
 <navigator url="../form/form" class="navig" wx:if="{{isboss}}"><image src="../../image/puton.png" style="width: 120rpx;height: 120rpx;" mode=""/></navigator>
 
 
