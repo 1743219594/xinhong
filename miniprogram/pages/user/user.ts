@@ -1,4 +1,3 @@
-import { GRAY_DARK } from "../../miniprogram_npm/@vant/weapp/common/color";
 
 // pages/user/user.ts
 export{}
@@ -160,6 +159,8 @@ Page({
     },
     //注册时选择头像
     getmessage(event:any){
+ 
+      
     this.setData({
       userinfo:{
         avatarUrl:event.detail.avatarUrl,
@@ -315,10 +316,14 @@ Page({
                                             studentid:this.data.userinfo.studentid,
                                             isboss:res.data.Isboss,
                                             integral:res.data.integral,
-                                            role:this.data.role
+                                            role:res.data.role
                                           },
                                           hasuserinfo:true
-                                        },()=>{wx.setStorageSync('userinfo',this.data.userinfo)})
+                                        },()=>{wx.setStorageSync('userinfo',this.data.userinfo)
+                                        this.setData({
+                                          identity:'学生'
+                                        })
+                                     })
                                         
                                           wx.showToast({
                                               title:'注册成功',
@@ -417,10 +422,13 @@ Page({
                                               studentid:this.data.userinfo.studentid,
                                               isboss:res.data.Isboss,
                                               integral:res.data.integral,
-                                              role:this.data.role
+                                              role:res.data.role
                                             },
                                             hasuserinfo:true
-                                          },()=>{wx.setStorageSync('userinfo',this.data.userinfo)})
+                                          },()=>{wx.setStorageSync('userinfo',this.data.userinfo)
+                                          this.setData({
+                                            identity:'教师'
+                                          })})
                                           
                                             wx.showToast({
                                                 title:'注册成功',
