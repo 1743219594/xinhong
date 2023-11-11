@@ -18,7 +18,7 @@
     </view>
 </view>
 </view>
-<view wx:if="{{hasmessage&&!hasuserinfo}}" class="write" style="margin-top: {{(menuBot+navHeight*2.6)*(screenheight/736)}}px;">
+<view wx:if="{{hasmessage&&!hasuserinfo}}" class="write" style="margin-top: {{(menuBot+navHeight*4)}}px;">
   <image src="{{userinfo.avatarUrl}}" class="img" style="width: {{130*(widthed/414.0)}}px;height: {{130*(widthed/414.0)}}px;"></image>
   <button open-type="chooseAvatar" bindchooseavatar='getmessage' style="margin-top: 50rpx;width: 37px;height: 37px;padding: 0;position: absolute;top:{{(menuBot+navHeight*2.6)*(screenheight/736)+130*(widthed/414.0)*3/4}}px;left: {{widthed/2+130*(widthed/414.0)/3}}px;background-color: transparent !important;border: none;" plain><image src="../../image/camera.png" mode="" style="width: 37px;height: 37px;"/> </button>
  <view class="bottom">
@@ -41,7 +41,16 @@
           {{content}}
        </view>
    </view>
-
+   <view style="margin-top: 10rpx;">
+  <radio-group bindchange="radioChange" style="width: 550rpx;display: flex;justify-content: space-around">
+    <label class="radio-label">
+      <radio value="s" checked="{{role=='s'}}">学生</radio>
+    </label>
+    <label class="radio-label">
+      <radio value="t" checked="{{role=='t'}}">教师</radio>
+    </label>
+  </radio-group>
+</view>
    <view class="agree">
         <label for="Isagree" style="margin: 0;padding: 0;display: flex;"> 
       <checkbox-group bindchange="toggleCheckbox" style="display: flex;">
@@ -95,6 +104,13 @@
     </view>
     <van-icon name="arrow" />
 </navigator>
+<navigator class="myself" url="../message/message">
+    <view>
+      <van-icon name="user-o" style="margin-right:35rpx ;margin-left: 10rpx;color: #87cd5f;" />
+    <text>我的咨询</text>
+    </view>
+    <van-icon name="arrow" />
+</navigator>
 <navigator class="myself" url="../collect/collect?id={{userinfo.studentid}}">
     <view>
         <van-icon name="goods-collect-o" style="margin-right:35rpx ;margin-left: 10rpx;color:#ee883b;" />
@@ -110,13 +126,7 @@
     </view>
     <van-icon name="arrow" />
 </navigator>
-<navigator class="myself" url="../message/message">
-    <view>
-      <van-icon name="user-o" style="margin-right:35rpx ;margin-left: 10rpx;color: #87cd5f;" />
-    <text>我的咨询</text>
-    </view>
-    <van-icon name="arrow" />
-</navigator>
+
 <navigator class="myself" url="../recode/recode">
     <view>
         <van-icon name="notes-o" style="margin-right:35rpx ;margin-left: 10rpx;color:#54b4ef;" />

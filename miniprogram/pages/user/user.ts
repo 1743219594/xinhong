@@ -1,3 +1,5 @@
+import { GRAY_DARK } from "../../miniprogram_npm/@vant/weapp/common/color";
+
 // pages/user/user.ts
 export{}
  const app=getApp()
@@ -13,7 +15,8 @@ Page({
           studentid:'',
           phonenumber:'',
           isboss:false,
-          integral:0
+          integral:0,
+          role:''
         },
         hasmessage:false,
         hasuserinfo:false,
@@ -27,15 +30,20 @@ Page({
         windowheight:0,
         flag:true,
         isselected:true,
-        content:"获取验证码",
+        content:"获取",
         time:60,
         testnumber:'1111',
         //用户输入的验证码
         inputnum:'',
         //单选框
         Ischecked:true,
-        isboss:false
-        
+        isboss:false,
+        role: 's',
+    },
+    radioChange: function (e:any) {
+      this.setData({
+        role: e.detail.value,
+      });
     },
     tomessage(){
        wx.switchTab({
@@ -52,7 +60,7 @@ Page({
 
 },
   login(){        
-      const app=getApp()
+    const app=getApp()
       /* 获取用户的openid（唯一标识符) */
       wx.login({
         success:(res)=>{
@@ -94,6 +102,8 @@ Page({
                            }
                            /* 存在该用户 */
                            if(res.data.status==200){
+                             console.log(res.data);
+                             
                               this.setData({
                                 hasuserinfo:true,
                                userinfo:{
@@ -102,7 +112,8 @@ Page({
                                    phonenumber:res.data.phonenumber,
                                    studentid:res.data.studentid,
                                    isboss:res.data.Isboss,
-                                   integral:res.data.integral
+                                   integral:res.data.integral,
+                                   role:res.data.role
                                }
                              })
                              if(res.data.Isboss=='1')
@@ -112,11 +123,17 @@ Page({
                                      identity:'管理员'
                                  })
                              }
+                             else if(res.data.role=='s'){
+                              this.setData({
+                                isboss:false,
+                                identity:'学生'
+                            })
+                             }
                              else{
-                                this.setData({
-                                    isboss:false,
-                                    identity:'学生'
-                                })
+                               this.setData({
+                                isboss:false,
+                                identity:'教师'
+                               })
                              }
                              wx.setStorageSync('userinfo',this.data.userinfo)
                          
@@ -157,7 +174,8 @@ Page({
         phonenumber:this.data.userinfo.phonenumber,
         studentid:this.data.userinfo.studentid,
         isboss:false,
-        integral:0
+        integral:0,
+        role:this.data.role
       }
     })
     },
@@ -170,7 +188,8 @@ Page({
            phonenumber:this.data.userinfo.phonenumber,
            studentid:this.data.userinfo.studentid,
            isboss:false,
-           integral:0
+           integral:0,
+           role:this.data.role
          }
        })
     },
@@ -183,7 +202,8 @@ Page({
               phonenumber:this.data.userinfo.phonenumber,
               studentid:event.detail.value,
               isboss:false,
-              integral:0
+              integral:0,
+              role:this.data.role
             }
           })
     },
@@ -196,7 +216,8 @@ Page({
               phonenumber:event.detail.value,
               studentid:this.data.userinfo.studentid,
               isboss:false,
-              integral:0
+              integral:0,
+              role:this.data.role
             }
           })
     },
@@ -236,105 +257,209 @@ Page({
     serve(){
       if(this.data.userinfo.avatarUrl!='../../image/avator.png'&&this.data.userinfo.avatarUrl!=''&&this.data.userinfo.nickname!=''&&this.data.userinfo.phonenumber!=''&&this.data.userinfo.studentid!=''&&this.data.Ischecked&&this.data.testnumber==this.data.inputnum&&this.data.isselected)
       {
+       if(this.data.role=='s')
+      {
         wx.request({
-            method:'POST',
-                  url:app.globalData.url+'api/test',
-                  header:{
-                    'content-type':'application/x-www-form-urlencoded'
-                },
-              data:{
-                  studentid:this.data.userinfo.studentid,
-                  phonenumber:this.data.userinfo.phonenumber
+          method:'POST',
+                url:app.globalData.url+'api/test',
+                header:{
+                  'content-type':'application/x-www-form-urlencoded'
               },
-                success:(res:any)=>{
-                    
-                    
-                    if(res.data.status==200)
-                    {
-                        var open_id=wx.getStorageSync('openid')
-      wx.uploadFile({
-          url:app.globalData.url+'api/avator',
-          name:'avator',
-          filePath:this.data.userinfo.avatarUrl,
-          formData:{
-               openid:open_id,
-               nick_name:this.data.userinfo.nickname,
-               phonenumber:this.data.userinfo.phonenumber,
-               studentid:this.data.userinfo.studentid
-           },
-           header:{
-               'content-type':'application/x-www-form-urlencoded'
-           },
-           fail:(res)=>{
-           
-            wx.showToast({
-                title:'错误：'+res,
-                icon:"error"
-            })
-           },
-           success:(res:any)=>{
-             
-               if(JSON.parse(res.data).status==201)
-               {
-                   wx.showToast({
-                       title:'注册失败',
-                       icon:'none'
-                   })
-               }else if(JSON.parse(res.data).status==200)
-               { 
-                   wx.request({
-                       method:'POST',
-                       url:app.globalData.url+'api/login',
-                       data:{
-                           openid:wx.getStorageSync('openid')
-                       },
-                       header:{
-                           'content-type':'application/x-www-form-urlencoded'
-                       },
-                       success:(res:any)=>{
-                           this.setData({
-                            userinfo:{
-                               avatarUrl:res.data.avator,
-                               nickname:this.data.userinfo.nickname,
-                               phonenumber:this.data.userinfo.phonenumber,
-                               studentid:this.data.userinfo.studentid,
-                               isboss:res.data.Isboss,
-                               integral:res.data.integral
-                            },
-                            hasuserinfo:true
-                           },()=>{wx.setStorageSync('userinfo',this.data.userinfo)})
-                           
-                             wx.showToast({
-                                 title:'注册成功',
-                                 icon:'success'
-                             })
-                       }
-                   })
+            data:{
+                studentid:this.data.userinfo.studentid,
+                phonenumber:this.data.userinfo.phonenumber
+            },
+              success:(res:any)=>{
+                  if(res.data.status==200)
+                  {
+                      var open_id=wx.getStorageSync('openid')
+                      wx.uploadFile({
+                        url:app.globalData.url+'api/avator',
+                        name:'avator',
+                        filePath:this.data.userinfo.avatarUrl,
+                        formData:{
+                            openid:open_id,
+                            nick_name:this.data.userinfo.nickname,
+                            phonenumber:this.data.userinfo.phonenumber,
+                            studentid:this.data.userinfo.studentid,
+                            role:this.data.role
+                        },
+                        header:{
+                            'content-type':'application/x-www-form-urlencoded'
+                        },
+                        fail:(res)=>{
+                        
+                          wx.showToast({
+                              title:'错误：'+res,
+                              icon:"error"
+                          })
+                        },
+                        success:(res:any)=>{
+                          
+                            if(JSON.parse(res.data).status==201)
+                            {
+                                wx.showToast({
+                                    title:'注册失败',
+                                    icon:'none'
+                                })
+                            }else if(JSON.parse(res.data).status==200)
+                            { 
+                                wx.request({
+                                    method:'POST',
+                                    url:app.globalData.url+'api/login',
+                                    data:{
+                                        openid:wx.getStorageSync('openid')
+                                    },
+                                    header:{
+                                        'content-type':'application/x-www-form-urlencoded'
+                                    },
+                                    success:(res:any)=>{
+                                        this.setData({
+                                          userinfo:{
+                                            avatarUrl:res.data.avator,
+                                            nickname:this.data.userinfo.nickname,
+                                            phonenumber:this.data.userinfo.phonenumber,
+                                            studentid:this.data.userinfo.studentid,
+                                            isboss:res.data.Isboss,
+                                            integral:res.data.integral,
+                                            role:this.data.role
+                                          },
+                                          hasuserinfo:true
+                                        },()=>{wx.setStorageSync('userinfo',this.data.userinfo)})
+                                        
+                                          wx.showToast({
+                                              title:'注册成功',
+                                              icon:'success'
+                                          })
+                                    }
+                                })
+                                
+                            }
+                            else if(JSON.parse(res.data).status==202)
+                            {
+                                wx.showToast({
+                                    title:'该学号已注册',
+                                    icon:'none'
+                                    
+                                })
+                            }
+                        }
+                    })
                   
-               }
-               else if(JSON.parse(res.data).status==202)
-               {
-                   wx.showToast({
-                       title:'该学号已注册',
+                  }
+                 else{
+                     wx.showToast({
+                       title:'学号和手机号不匹配',
                        icon:'none'
-                       
-                   })
-               }
-           }
-       })
-                    
-                    }
-                   else{
-                       wx.showToast({
-                         title:'学号和手机号不匹配',
-                         icon:'none'
-                       })
-                   }
-                 
-                },
-            
-        })
-      
+                     })
+                 }
+               
+              },
+          
+      })
+      }
+      else{
+        wx.request({
+          method:'POST',
+                url:app.globalData.url+'api/teacher_test',
+                header:{
+                  'content-type':'application/x-www-form-urlencoded'
+              },
+            data:{
+                studentid:this.data.userinfo.studentid,
+                phonenumber:this.data.userinfo.phonenumber
+            },
+              success:(res:any)=>{
+                  
+                  
+                  if(res.data.status==200)
+                  {
+                      var open_id=wx.getStorageSync('openid')
+                      wx.uploadFile({
+                          url:app.globalData.url+'api/avator',
+                          name:'avator',
+                          filePath:this.data.userinfo.avatarUrl,
+                          formData:{
+                              openid:open_id,
+                              nick_name:this.data.userinfo.nickname,
+                              phonenumber:this.data.userinfo.phonenumber,
+                              studentid:this.data.userinfo.studentid,
+                              role:this.data.role
+                          },
+                          header:{
+                              'content-type':'application/x-www-form-urlencoded'
+                          },
+                          fail:(res)=>{
+                          
+                            wx.showToast({
+                                title:'错误：'+res,
+                                icon:"error"
+                            })
+                          },
+                          success:(res:any)=>{
+                            
+                              if(JSON.parse(res.data).status==201)
+                              {
+                                  wx.showToast({
+                                      title:'注册失败',
+                                      icon:'none'
+                                  })
+                              }else if(JSON.parse(res.data).status==200)
+                              { 
+                                  wx.request({
+                                      method:'POST',
+                                      url:app.globalData.url+'api/login',
+                                      data:{
+                                          openid:wx.getStorageSync('openid')
+                                      },
+                                      header:{
+                                          'content-type':'application/x-www-form-urlencoded'
+                                      },
+                                      success:(res:any)=>{
+                                          this.setData({
+                                            userinfo:{
+                                              avatarUrl:res.data.avator,
+                                              nickname:this.data.userinfo.nickname,
+                                              phonenumber:this.data.userinfo.phonenumber,
+                                              studentid:this.data.userinfo.studentid,
+                                              isboss:res.data.Isboss,
+                                              integral:res.data.integral,
+                                              role:this.data.role
+                                            },
+                                            hasuserinfo:true
+                                          },()=>{wx.setStorageSync('userinfo',this.data.userinfo)})
+                                          
+                                            wx.showToast({
+                                                title:'注册成功',
+                                                icon:'success'
+                                            })
+                                      }
+                                  })
+                                  
+                              }
+                              else if(JSON.parse(res.data).status==202)
+                              {
+                                  wx.showToast({
+                                      title:'该学号已注册',
+                                      icon:'none'
+                                      
+                                  })
+                              }
+                          }
+                      })
+                  
+                  }
+                 else{
+                     wx.showToast({
+                       title:'学号和手机号不匹配',
+                       icon:'none'
+                     })
+                 }
+               
+              },
+          
+      })
+      }
         
        
       }
@@ -355,7 +480,43 @@ Page({
       url:'../message/message'
     })
    },
-  
+  /* 退出登录 */
+  loginout(){
+    wx.showModal({
+      content:'确定退出登录吗？',
+      success:(res)=>{
+        if(res.confirm)
+        {   wx.clearStorageSync()
+         this.setData({
+           hasuserinfo:false,
+           hasmessage:false,
+           userinfo:{
+             avatarUrl:'../../image/avator.png',
+             nickname:'',
+             studentid:'',
+             phonenumber:'',
+             isboss:false,
+             integral:0,
+             role:''
+           }
+         })
+       }
+      
+      }
+    })
+     },
+     
+     preview(){
+       wx.previewImage({
+         current:this.data.userinfo.avatarUrl,
+         urls:[this.data.userinfo.avatarUrl]
+       })
+     },
+     show(){
+      wx.navigateTo({
+          url:'../about/about'
+      })
+     },
     /**
      * 生命周期函数--监听页面加载
      */
@@ -370,8 +531,6 @@ Page({
            screenheight:app.globalData.screenheight,
            windowheight:app.globalData.windowheight
         })
-       
-
          if(wx.getStorageSync('userinfo'))
          {
            this.setData({
@@ -387,6 +546,11 @@ Page({
                    isboss:true
                })
            }
+           else{
+             this.setData({
+               identity:wx.getStorageSync('userinfo').role=='s'?'学生':'教师'
+             })
+           }
            
            
          };
@@ -395,42 +559,7 @@ Page({
          
          
     },
-    /* 退出登录 */
-    loginout(){
-   wx.showModal({
-     content:'确定退出登录吗？',
-     success:(res)=>{
-       if(res.confirm)
-       {   wx.clearStorageSync()
-        this.setData({
-          hasuserinfo:false,
-          hasmessage:false,
-          userinfo:{
-            avatarUrl:'../../image/avator.png',
-            nickname:'',
-            studentid:'',
-            phonenumber:'',
-            isboss:false,
-            integral:0
-          }
-        })
-      }
-     
-     }
-   })
-    },
     
-    preview(){
-      wx.previewImage({
-        current:this.data.userinfo.avatarUrl,
-        urls:[this.data.userinfo.avatarUrl]
-      })
-    },
-    show(){
-     wx.navigateTo({
-         url:'../about/about'
-     })
-    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
