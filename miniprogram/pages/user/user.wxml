@@ -18,9 +18,11 @@
     </view>
 </view>
 </view>
-<view wx:if="{{hasmessage&&!hasuserinfo}}" class="write" style="margin-top: {{(menuBot+navHeight*4)}}px;">
-  <image src="{{userinfo.avatarUrl}}" class="img" style="width: {{130*(widthed/414.0)}}px;height: {{130*(widthed/414.0)}}px;"></image>
-  <button open-type="chooseAvatar" bindchooseavatar='getmessage' style="margin-top: 50rpx;width: 37px;height: 37px;padding: 0;position: absolute;top:{{(menuBot+navHeight*2.6)*(screenheight/736)+130*(widthed/414.0)*3/4}}px;left: {{widthed/2+130*(widthed/414.0)/3}}px;background-color: transparent !important;border: none;" plain><image src="../../image/camera.png" mode="" style="width: 37px;height: 37px;"/> </button>
+<view wx:if="{{hasmessage&&!hasuserinfo}}" class="write" style="margin-top: 23vh">
+ <view style="position: relative;">
+  <image src="{{userinfo.avatarUrl}}" class="img" style="width: 120px;height:120px;"></image>
+  <button open-type="chooseAvatar" bindchooseavatar='getmessage' style="margin-top: 50rpx;width: 37px;height: 37px;padding: 0;position: absolute;bottom:0;right: -10rpx;background-color: transparent !important;border: none;" plain><image src="../../image/camera.png" mode="" style="width: 37px;height: 37px;"/> </button>
+ </view>
  <view class="bottom">
    <view class="item">
        <text>昵称</text>

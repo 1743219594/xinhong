@@ -102,8 +102,6 @@ Page({
                            }
                            /* 存在该用户 */
                            if(res.data.status==200){
-                             console.log(res.data);
-                             
                               this.setData({
                                 hasuserinfo:true,
                                userinfo:{
@@ -123,18 +121,13 @@ Page({
                                      identity:'管理员'
                                  })
                              }
-                             else if(res.data.role=='s'){
+                             else{
                               this.setData({
                                 isboss:false,
-                                identity:'学生'
+                                identity:res.data.role=='s'?'学生':'教师'
                             })
                              }
-                             else{
-                               this.setData({
-                                isboss:false,
-                                identity:'教师'
-                               })
-                             }
+                             
                              wx.setStorageSync('userinfo',this.data.userinfo)
                          
                              
@@ -537,8 +530,6 @@ Page({
              hasuserinfo:true,
              userinfo:wx.getStorageSync('userinfo')
            })
-           
-           
            if(wx.getStorageSync('userinfo').isboss=='1')
            {
                this.setData({
