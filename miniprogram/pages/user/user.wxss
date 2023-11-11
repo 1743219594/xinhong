@@ -70,10 +70,7 @@ page{
     border-bottom:1px solid #eaeaea ;
     line-height: 100rpx;
 }
-page{
-    padding-top: 80rpx;
-   
-}
+
 .background {
     position: fixed;
     top: 0;

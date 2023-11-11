@@ -1,8 +1,9 @@
 <view class="content" bindtap="cancel" >
     <view style="text-align: center;color: grey;font-size: 13px;margin-bottom: 10rpx;">{{time}}</view>
     <view class="item" style="text-align: {{first_from}};margin-top: 15rpx;padding-right: 12rpx;padding-left: 12rpx;">
-    <view style="position: relative;max-width:375rpx;display: inline-block;vertical-align:text-top;">
-        <text style="color: black;word-wrap:break-word;padding: 10rpx;border-radius: 12rpx; font-size: 30rpx;word-break: break-all;display: inline-block;text-align: left;background-color: {{first_from=='right'?'#95ec69':'#ffffff'}};min-height: 50rpx;" space="emsp"  user-select="true">{{content}}</text>
+    <view style="position: relative;max-width:500rpx;display: inline-block;">
+      <text style="color: #434343;border-radius: 12rpx;word-wrap: break-word;padding: 10rpx;font-size: 30rpx;max-width:500rpx;display: inline-block;word-break: break-all;text-align:left;background-color: {{first_from=='right'?'#95ec69':'#ffffff'}}" user-select="true">{{content}}
+        </text>
         <image wx:if="{{first_from=='right'}}" src="../../image/rainbow.png" mode="" style="position:absolute;width: 30rpx;height: 30rpx;top: -15rpx;left: -15rpx;"/>
         <view style="position: absolute;display: inline-block;content:'';width: 0px;height: 0px;top:18rpx;border: 12rpx solid transparent;left:{{first_from=='right'?'100%':'-13rpx'}};border-right: {{first_from=='right'?'0':'12rpx solid #FFFFFF'}};border-left: {{first_from=='right'?'12rpx solid #95ec69':'0'}};"></view>
         
@@ -11,9 +12,9 @@
     </view>
     <view  wx:for="{{list}}" wx:key="id" style="margin-bottom: 10rpx;">
       <view style="text-align: center;color: grey;font-size: 13px;margin-bottom: 10rpx;">{{item.time}}</view>
-        <view style="text-align:{{item.isuser}};margin-top: 15rpx;padding-left: 12rpx;padding-right: 12rpx;">
+        <view wx:if="{{item.isuser}}" style="text-align:{{item.isuser}};margin-top: 15rpx;padding-left: 12rpx;padding-right: 12rpx;">
         <view style="display: inline-block;position: relative;max-width:500rpx;" >
-            <text style="color: black;border-radius: 12rpx;word-wrap: break-word;padding: 10rpx;font-size: 30rpx;max-width:500rpx;display: inline-block;word-break: break-all;text-align: left;background-color: {{item.isuser=='right'?'#95ec69':'#ffffff'}}" user-select="true" wx:if="{{item.content}}">{{item.content}}
+            <text style="color: #434343;border-radius: 12rpx;word-wrap: break-word;padding: 10rpx;font-size: 30rpx;max-width:500rpx;display: inline-block;word-break: break-all;text-align: left;background-color: {{item.isuser=='right'?'#95ec69':'#ffffff'}}" user-select="true" wx:if="{{item.content}}">{{item.content}}
         </text>
         <image wx:if="{{item.isuser=='right'}}" src="../../image/rainbow.png" mode="" style="position:absolute;width: 30rpx;height: 30rpx;top: -15rpx;left: -15rpx;"/>
         <view style="position: absolute;display: inline-block;content:'';width: 0px;height: 0px;top:10rpx;border: 12rpx solid transparent;left:{{first_from=='right'?'100%':'-13rpx'}};border-right: {{first_from=='right'?'0':'12rpx solid #FFFFFF'}};border-left: {{first_from=='right'?'12rpx solid #95ec69':'0'}};"></view>
@@ -21,8 +22,16 @@
         </view>     
     </view>
 </view>
-<view class="reply" style="bottom: {{bottom}};z-index: 2;display: flex;position: fixed;">
-   <input value="{{reply_content}}" style="height: 60rpx;width: 600rpx;border-radius: 10rpx;padding-left: 15rpx;color: #7F7F7F;margin-right: 10rpx;border: 1rpx solid #333;background-color: #fff;" placeholder="写点什么" bindfocus="focus" bindinput="inputed"/>
-    <view class="to_reply" size="mini" type="primary" style="background-color: #05c25f;color: white;border: solid 1rpx #7F7F7F;border-radius: 10rpx;padding: 10rpx 15rpx;direction:ltr;" bindtap="to_reply">发送</view>
+<!-- 发送信息 -->
+<view class="footer">
+    <view class="row">
+        <view class="input-box">
+            <textarea class="text-area" placeholder-class="placeholder" show-confirm-bar="{{false}}" cursor-spacing="30" maxlength="500"
+            disable-default-padding="{{true}}"
+            confirm-hold="{{true}}" auto-height="false" placeholder="输入信息" bindinput="inputClick" value="{{reply_content}}"></textarea>
+        </view>
+        <view class="send-btn" wx:if="{{reply_content!=''}}">
+            <text class="send-text" bindtap="to_reply">发 送</text>
+        </view>
+    </view>
 </view>
-<view style="height: 300rpx;"></view>

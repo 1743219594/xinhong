@@ -19,22 +19,13 @@ Page({
          first_from:'',
          ws:{}
     },
-    focus(){
-        this.setData({
-            bottom: '50rpx',
-          });
-    },
-    inputed(event:any){
+  
+    inputClick(event:any){
         this.setData({
             reply_content:event.detail.value
         })
     },
-    cancel(){
-        this.setData({
-            reply_content:'',
-           bottom:'0'
-        })
-    },
+    
     to_reply(){
         if(this.data.reply_content=='')
         {
@@ -117,6 +108,14 @@ Page({
             
         }
     },
+    scrollToBottom() {
+      setTimeout(() => {
+          wx.pageScrollTo({
+              scrollTop: 200000,
+              duration: 3
+          });
+      }, 600)
+  },
     getdatalist(){
         wx.showLoading({
             title:'加载中',
@@ -192,19 +191,21 @@ Page({
              to_id:e.to_id
          })
          var time=setTimeout(()=>{if(this.data.from_id==wx.getStorageSync('userinfo').studentid)
-         {
+         {  
              this.setData({
                  first_from:'right',
             
              })
          }
          else{
+       
             this.setData({
                 first_from:'left',
             })
          }
         clearTimeout(time)},50)
         this.getdatalist()
+        this.scrollToBottom()
       },
      
     /**
@@ -219,7 +220,7 @@ Page({
      */
     onShow() {
         this.data.ws=wx.connectSocket({
-            url:'ws://127.0.0.1:7070?id='+this.data.id,
+            url:'ws://192.168.1.124:7070?id='+this.data.id,
             header: {
                 'content-type': 'application/json'
               }

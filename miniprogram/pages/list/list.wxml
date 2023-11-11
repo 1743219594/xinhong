@@ -17,8 +17,8 @@
 <!-- 遮罩层 -->
 <van-overlay style="z-index: 99;" show="{{show}}">
   <view class="wrapper" style="animation:{{isshow}};">
-      <image src="../../image/cover.png" mode="" style="width: 500rpx;height: 600rpx;"/>
-    <van-icon name="cross" style="width: 60rpx;height: 60rpx;border: 1px solid rgb(231, 222, 210);border-radius: 50%;color: rgb(231, 222, 210);" bind:click="onClickHide"/>
+      <image src="../../image/cover.png" mode="" style="width: 400px;height: 400px;"/>
+    <van-icon name="cross" style="width: 60rpx;height: 60rpx;border: 1px solid rgb(231, 222, 210);border-radius: 50%;color: rgb(231, 222, 210);" bind:tap="onClickHide"/>
   </view>
 </van-overlay>
 <!-- 发布推文跳转导航 -->

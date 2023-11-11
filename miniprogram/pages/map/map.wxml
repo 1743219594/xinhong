@@ -22,3 +22,5 @@
   <view style="color: black;font-size: 30rpx;font-weight: bold;margin-bottom: 10rpx;">个人介绍</view>
   <text>{{message}}</text>
 </view>
+
+<button style="width: 160rpx;height: 80rpx;background-color: rgb(150, 211, 142);margin: 0 auto;text-align: center;line-height: 80rpx;margin-top: 30rpx;" bind:tap="turn">咨询</button>

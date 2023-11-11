@@ -26,6 +26,7 @@ Page({
         screenheight:0,
         windowheight:0,
         flag:true,
+        isselected:true,
         content:"获取验证码",
         time:60,
         testnumber:'1111',
@@ -41,9 +42,16 @@ Page({
            url:'../suggestion/suggestion'
        })
     },
+ // 复选框状态切换函数
+ toggleCheckbox: function () {
+  var currentFlag = this.data.isselected;
 
-    login(){      
-        
+  this.setData({
+    isselected: !currentFlag
+  });
+
+},
+  login(){        
       const app=getApp()
       /* 获取用户的openid（唯一标识符) */
       wx.login({
@@ -206,7 +214,7 @@ Page({
             if(this.data.time>0)
             {
                 this.setData({
-                    content:this.data.time+"秒后重新获得验证码",
+                    content:this.data.time+"秒",
                     time:this.data.time-1,
                     flag:false
                 })
@@ -214,7 +222,7 @@ Page({
             else{
               clearInterval(timeout);
               this.setData({
-                content:"获取验证码",
+                content:"获取",
                   flag:true,
                   time:60
               })
@@ -226,7 +234,7 @@ Page({
     },
     /* 保存用户的头像和昵称 */
     serve(){
-      if(this.data.userinfo.avatarUrl!='../../image/avator.png'&&this.data.userinfo.avatarUrl!=''&&this.data.userinfo.nickname!=''&&this.data.userinfo.phonenumber!=''&&this.data.userinfo.studentid!=''&&this.data.Ischecked&&this.data.testnumber==this.data.inputnum)
+      if(this.data.userinfo.avatarUrl!='../../image/avator.png'&&this.data.userinfo.avatarUrl!=''&&this.data.userinfo.nickname!=''&&this.data.userinfo.phonenumber!=''&&this.data.userinfo.studentid!=''&&this.data.Ischecked&&this.data.testnumber==this.data.inputnum&&this.data.isselected)
       {
         wx.request({
             method:'POST',
@@ -270,7 +278,7 @@ Page({
                {
                    wx.showToast({
                        title:'注册失败',
-                       icon:'success'
+                       icon:'none'
                    })
                }else if(JSON.parse(res.data).status==200)
                { 
@@ -308,7 +316,7 @@ Page({
                {
                    wx.showToast({
                        title:'该学号已注册',
-                       icon:'error'
+                       icon:'none'
                        
                    })
                }
@@ -317,8 +325,9 @@ Page({
                     
                     }
                    else{
-                       wx.showModal({
-                           title:'学号与手机号不匹配'
+                       wx.showToast({
+                         title:'学号和手机号不匹配',
+                         icon:'none'
                        })
                    }
                  
@@ -328,6 +337,12 @@ Page({
       
         
        
+      }
+      else{
+        wx.showToast({
+          title:'信息填写不全',
+          icon:'none'
+        })
       }
     },
     Administrators(){

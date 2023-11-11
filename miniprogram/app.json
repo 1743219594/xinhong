@@ -21,9 +21,9 @@
         "pages/note/note",
         "pages/recode/recode",
         "pages/about/about",
-        "pages/check/check"
+        "pages/check/check",
+        "pages/contact/contact"
     ],
-
     "tabBar": {
         "backgroundColor": "#EEF2E4",
         "list": [
@@ -61,7 +61,6 @@
     },
     "sitemapLocation": "sitemap.json",
     "networkTimeout": {
-      "request":3000
+        "request": 3000
     }
-  
 }

@@ -9,7 +9,7 @@ page{
 .content{
     width: 100%;
     min-height: 100%;
-    
+    padding-bottom: 120rpx;
 }
 .reply{
     
@@ -23,3 +23,60 @@ page{
  padding-bottom: 20rpx;
   justify-content: center;
 }
+/* 以下为输入框样式 */
+/* 每行对话样式 */
+.row {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  background-color: white;
+  border-top: 1rpx solid #f1f1f1;
+}
+
+.input-box {
+  flex: 5;
+  border: 1rpx solid #f1f1f1;
+  border-radius: 10rpx;
+}
+
+.send-btn {
+  flex: 1;
+  text-align: center;
+  margin-left: 10rpx;
+  color: white;
+  margin-top: 10rpx;
+}
+
+.send-text {
+  background-color: #05c25f;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+  padding: 12rpx 20rpx;
+}
+
+.text-area {
+  max-height: 180rpx;
+  width: 98%;
+  padding: 15rpx 10rpx;
+  font-size: 30rpx;
+}
+
+.placeholder {
+  font-size: 30rpx;
+}
+
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
