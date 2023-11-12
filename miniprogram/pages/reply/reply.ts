@@ -108,14 +108,7 @@ Page({
             
         }
     },
-    scrollToBottom() {
-      setTimeout(() => {
-          wx.pageScrollTo({
-              scrollTop: 200000,
-              duration: 3
-          });
-      }, 600)
-  },
+ 
     getdatalist(){
         wx.showLoading({
             title:'加载中',
@@ -205,7 +198,7 @@ Page({
          }
         clearTimeout(time)},50)
         this.getdatalist()
-        this.scrollToBottom()
+        
       },
      
     /**
@@ -219,6 +212,8 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
+     
+      
         this.data.ws=wx.connectSocket({
             url:'ws://192.168.1.124:7070?id='+this.data.id,
             header: {
@@ -236,10 +231,8 @@ Page({
      * 生命周期函数--监听页面隐藏
      */
     onHide() {
-        wx.closeSocket({
-            fail:()=>{
-            }
-        })
+    
+       
       
     },
 
@@ -247,8 +240,10 @@ Page({
      * 生命周期函数--监听页面卸载
      */
     onUnload() {
-    
-      
+      wx.closeSocket({
+        fail:()=>{
+        }
+    })
         
     },
 

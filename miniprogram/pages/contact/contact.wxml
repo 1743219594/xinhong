@@ -1,15 +1,15 @@
 
 <view class="scroll-list">
     <block wx:for="{{chatList}}" wx:for-index="index" wx:for-item="item" wx:key="item">
-        <view wx:if="{{item.date}}" class="show-date">{{item.date}}</view>
-        <view class="{{login.id==item.msgId?'row row-self':'row'}}">
-            <view class="{{login.id==item.msgId?'head-self':'head-friend'}}">
-                <image class="avatar" src="{{item.avatar}}"></image>
+        <view wx:if="{{item.time}}" class="show-date">{{item.time}}</view>
+        <view class="{{my_id==item.from_id?'row row-self':'row'}}">
+            <view class="{{my_id==item.from_id?'head-self':'head-friend'}}">
+                <image class="avatar" src="{{item.from_avator}}"></image>
             </view>
             <view>
-                <view wx:if="{{login.id!=item.msgId}}" class="nick">{{item.nickname}}</view>
-                <view class="{{login.id==item.msgId?'message msg-self':'message msg-friend'}}">
-                    <text>{{item.message}}</text>
+                <view wx:if="{{my_id!=item.from_id}}" class="nick">{{item.from_name}}</view>
+                <view class="{{my_id==item.from_id?'message msg-self':'message msg-friend'}}">
+                    <text>{{item.content}}</text>
                 </view>
             </view>
         </view>
@@ -19,9 +19,9 @@
 <view class="footer">
     <view class="row">
         <view class="input-box">
-            <textarea class="text-area" placeholder-class="placeholder" show-confirm-bar="{{false}}" cursor-spacing="30" maxlength="500"
+            <textarea class="text-area" placeholder-class="placeholder" show-confirm-bar="{{false}}" cursor-spacing="30" maxlength="240"
             disable-default-padding="{{true}}"
-            confirm-hold="{{true}}" hold-keyboard="{{false}}" auto-height="false" placeholder="输入信息" bindinput="inputClick" value="{{content}}"></textarea>
+            confirm-hold="{{true}}" hold-keyboard="{{false}}" auto-height="false" placeholder="输入信息" bindinput="inputClick" value="{{content}}" fixed="true"></textarea>
         </view>
         <view class="send-btn" wx:if="{{content!=''}}">
             <text class="send-text" bindtap="sendClick">发 送</text>

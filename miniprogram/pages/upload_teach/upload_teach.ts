@@ -22,6 +22,7 @@ Page({
         work_time:'',
         phonenumber:'',
         message:'',
+        jobid:'',
         columns:[
             '1',
             '2',
@@ -35,6 +36,11 @@ Page({
             message:event.detail.value
         })
     },
+    getjobid(event:any){
+      this.setData({
+          jobid:event.detail.value
+      })
+  },
     select(){
         this.setData({
             picker:true
@@ -98,7 +104,7 @@ Page({
         })
     },
     insert(){
-        if(this.data.filelist.length>0&&this.data.message!=''&&this.data.nickname!=''&&this.data.select!='选择级别'&&this.data.work_place!=''&&this.data.work_time!=''){
+        if(this.data.filelist.length>0&&this.data.message!=''&&this.data.nickname!=''&&this.data.select!='选择级别'&&this.data.work_place!=''&&this.data.work_time!=''&&this.data.jobid!=''){
             wx.uploadFile({
                 url:app.globalData.url+'api/teacher_avator',
                 name:'teacher_avator',
@@ -113,7 +119,8 @@ Page({
                     work_time:this.data.work_time,
                     reservation_phone:this.data.phonenumber,
                     message:this.data.message,
-                    level:this.data.select
+                    level:this.data.select,
+                    jobid:this.data.jobid
                 },
                 header:{
                     'content-type':'application/x-www-form-urlencoded'
@@ -131,7 +138,8 @@ Page({
                             work_time:'',
                             phonenumber:'',
                             filelist:[],
-                            message:''
+                            message:'',
+                            jobid:''
                         })
                     }
                     else if(res.data.status==201)

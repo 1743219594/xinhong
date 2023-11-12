@@ -26,9 +26,10 @@
 <view class="footer">
     <view class="row">
         <view class="input-box">
-            <textarea class="text-area" placeholder-class="placeholder" show-confirm-bar="{{false}}" cursor-spacing="30" maxlength="500"
+            <textarea class="text-area" show-confirm-bar="{{false}}" cursor-spacing="30" maxlength="240"
             disable-default-padding="{{true}}"
-            confirm-hold="{{true}}" auto-height="false" placeholder="输入信息" bindinput="inputClick" value="{{reply_content}}"></textarea>
+            confirm-hold="{{true}}" auto-height="false" placeholder="输入信息" bindinput="inputClick" value="{{reply_content}}" fixed="true"></textarea>
+            
         </view>
         <view class="send-btn" wx:if="{{reply_content!=''}}">
             <text class="send-text" bindtap="to_reply">发 送</text>

@@ -11,11 +11,12 @@ Page({
       level:"",
       work_place:'',
       work_time:"",
-      phone:""
+      phone:"",
+      jobid:""
     },
     turn(){
       wx.navigateTo({
-        url:'../contact/contact'
+        url:'../contact/contact?jobid='+this.data.jobid
       })
     },
     /**
@@ -28,7 +29,8 @@ Page({
           name:e.name,
           phone:e.reservation_phone,
           work_place:e.work_place,
-          work_time:e.work_time
+          work_time:e.work_time,
+          jobid:e.jobid
     })
     if(e.level==1)
     {

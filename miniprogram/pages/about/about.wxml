@@ -2,9 +2,14 @@
   <van-collapse-item title="小程序宗旨" name="0">
     该小程序名为心虹，由广州大学计算机学院学生团队联合开发。主要功能为用户提供一个了解心理知识、获取心理咨询信息的平台，从而为用户搭建起沟通交流的桥梁，促进用户心理健康发展以及心理知识普及。
   </van-collapse-item>
-
-  <van-collapse-item title="更换绑定信息" name="2">
+  <van-collapse-item title="图片加载不出" name="2">
+   访问量大，重新加载即可
+  </van-collapse-item>
+  <van-collapse-item title="更换绑定信息" name="3">
    目前暂不支持更换绑定信息，后续会开发上线
   </van-collapse-item>
- 
+  <van-collapse-item title="注册时选择头像出错" name="4">
+   这个bug是微信官方的问题，等微信解决，退出重新选择或者直接从相册中选择
+  </van-collapse-item>
+  
 </van-collapse>

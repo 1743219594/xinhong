@@ -94,9 +94,10 @@ Page({
                            if(res.data.status==202)
                            { 
                            
-                             return wx.showToast({
-                                 title:'请注册',
-                                 icon:'none'
+                             return wx.showModal({
+                               content:'选择头像时请不要选择取消',
+                               showCancel:false
+
                              })
                            }
                            /* 存在该用户 */

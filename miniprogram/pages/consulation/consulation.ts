@@ -209,44 +209,7 @@ Page({
      * 页面相关事件处理函数--监听用户下拉动作
      */
     onPullDownRefresh() {
-        this.getlistdata()
-        this.setData({
-            showlist:[],
-            firstshowlist:[],
-            secondlist:[],
-            thirdlist:[]
-        })
-        var time=setInterval(()=>{
-           
-            if(this.data.selected_flag==1)
-            {   
-               
-                
-                this.setData({
-                    showlist:this.data.datalist
-                })
-            }
-            else if(this.data.selected_flag==2)
-            { 
-                this.setData({
-                showlist:this.data.firstshowlist
-            })
-    
-            }
-            else if(this.data.selected_flag==3)
-            {
-                this.setData({
-                    showlist:this.data.secondlist
-                })
-            }
-            else{
-                this.setData({
-                    showlist:this.data.thirdlist
-                })
-            }
-            clearInterval(time)
-        },100)
-        wx.stopPullDownRefresh()
+      
     },
 
     /**

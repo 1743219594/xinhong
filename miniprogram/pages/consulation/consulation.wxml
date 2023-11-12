@@ -24,7 +24,7 @@
 <!-- 展示区 -->
 <view class="content">
      <view class="item" wx:for="{{showlist}}" wx:key="id">
-          <navigator url="../map/map?message={{item.message}}&&name={{item.name}}&&photo={{item.photo}}&&level={{item.level}}&&work_place={{item.work_place}}&&work_time={{item.work_time}}&&reservation_phone={{item.reservation_phone}}" class="to_detail">详情></navigator>
+          <navigator url="../map/map?message={{item.message}}&&name={{item.name}}&&photo={{item.photo}}&&level={{item.level}}&&work_place={{item.work_place}}&&work_time={{item.work_time}}&&reservation_phone={{item.reservation_phone}}&&jobid={{item.jobid}}" class="to_detail">详情></navigator>
           <image src="{{item.photo}}" mode="" style="width:50px;height:50px;border-radius: 50%;margin-top: 30px;" bindtap="look" data-index="{{item.photo}}"/>
           <text style="font-size: 26rpx;">{{item.name}}</text>
          
