@@ -44,7 +44,7 @@
             "typescript"
         ],
         "ignoreUploadUnusedFiles": true,
-        "condition": false
+        "condition": true
     },
     "simulatorType": "wechat",
     "simulatorPluginLibVersion": {},

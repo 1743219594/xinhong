@@ -1,0 +1,41 @@
+<wxs src="../../filter/filter.wxs" module="wxs"></wxs>
+<view wx:if="{{list.length>0}}">
+    <view style="display: flex;margin-top: 25rpx;flex-direction: column;width: 650rpx;border: 1px solid white;border-radius: 25rpx;padding: 15rpx;background-color: white;box-shadow:5rpx 5rpx 5rpx 5rpx #E0E3DA;" wx:for="{{list}}" wx:key="id" >
+       <view wx:if="{{item.from_id==my_id}}">
+        <view style="text-align: left;width: 100%;">{{wxs.filter(item.to_id)}}</view>
+        <view style="display: flex;flex-direction: row;justify-content: flex-end;">
+          <view bind:tap="remarks" data-from_id="{{item.from_id}}" data-to_id="{{item.to_id}}">备注</view>
+          <navigator url="../contact/contact?jobid={{item.to_id}}" style="display:flex;margin-left: 20rpx;">
+         <text>咨询</text>
+         <van-icon name="arrow" />
+       </navigator>
+        </view>
+       </view>
+       <view wx:else>
+        <view style="text-align: left;width: 100%;">{{wxs.filter(item.from_id)}}</view>
+        <view style="display: flex;flex-direction: row;justify-content: flex-end;">
+          <view bind:tap="remarks" data-from_id="{{item.from_id}}" data-to_id="{{item.to_id}}">备注</view>
+          <navigator url="../contact/contact?jobid={{item.from_id}}" style="display:flex;margin-left: 20rpx;">
+         <text>咨询</text>
+         <van-icon name="arrow" />
+       </navigator>
+        </view>
+       </view>
+        
+       
+        
+</view>
+
+</view>
+<van-overlay show="{{ show }}">
+  <van-transition show="{{ show }}" custom-class="block" name="fade-up" style="position: absolute;left: 50%;top:50%;transform: translateX(-50%) translateY(-50%);">
+ <view style="width: 450rpx;height: 350rpx;border-radius: 20rpx;display: flex;flex-direction: column;justify-content: center;align-items: center;background-color: rgb(240, 255, 244);">
+  <textarea value="{{remark}}" style="width: 350rpx;height: 200rpx;background-color: white; " placeholder="备注不超过20字" maxlength="20" bindinput="getremark" fixed="true" show-confirm-bar="{{false}}" cursor-spacing="30" />
+  <view style="display: flex;justify-content: space-around;margin-top: 30rpx;width: 350rpx;"> 
+   <button style="width: 150rpx;height: 60rpx;font-size: 30rpx;border-radius: 15rpx;text-align: center;line-height: 60rpx;" bind:tap="reback" plain>返回</button>
+   <button style="width: 150rpx;height: 60rpx;font-size: 30rpx;border-radius: 15rpx;text-align: center;line-height: 60rpx;" plain bind:tap="serve">保存</button>
+  </view>
+   </view>
+
+</van-transition>
+</van-overlay>

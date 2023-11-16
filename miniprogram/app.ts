@@ -11,7 +11,7 @@ App<IAppOption>({
     menuBot:0,
     windowWidth:0,
     windowheight:0,
-   url:'http://192.168.1.124:8080/',
+   url:'http://114.132.219.156/',
    tabbarheight:0,
    screenheight:0,
    token:'',

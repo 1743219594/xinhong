@@ -26,7 +26,7 @@
  <view class="bottom">
    <view class="item">
        <text>昵称</text>
-       <input type="text" placeholder="请输入昵称，最多4个字" bindinput="getnickname"  maxlength="4"/>
+       <input type="text" placeholder="请输入昵称" bindinput="getnickname"  maxlength="6"/>
    </view > 
    <view class="item">
     <text>学号</text>
@@ -54,7 +54,7 @@
   </radio-group>
 </view>
    <view class="agree">
-        <label for="Isagree" style="margin: 0;padding: 0;display: flex;"> 
+        <label for="Isagree" style="margin: 0;padding: 0;display: flex;font-size: 28rpx;"> 
       <checkbox-group bindchange="toggleCheckbox" style="display: flex;">
         <checkbox value="{{isselected}}" checked="{{isselected}}" id="Isagree" style="border-color: #6AC41B;transform: scale(0.7);"/>
       <view style="color: #6AC41B;display: flex;"> 
@@ -106,7 +106,7 @@
     </view>
     <van-icon name="arrow" />
 </navigator>
-<navigator class="myself" url="../message/message">
+<navigator class="myself" url="../my_con/my_con">
     <view>
       <van-icon name="user-o" style="margin-right:35rpx ;margin-left: 10rpx;color: #87cd5f;" />
     <text>我的咨询</text>

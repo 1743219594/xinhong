@@ -17,7 +17,10 @@ Page({
          reply_content:"",
          list:[{from_id:'',isuser:''}],
          first_from:'',
-         ws:{}
+         ws:{},
+         windowheight:0,
+         navHeight:0,
+         menuBot:0,
     },
   
     inputClick(event:any){
@@ -129,6 +132,7 @@ Page({
              this.setData({
                  list:res.data.data
              })
+            
           var user=wx.getStorageSync('userinfo').studentid
           if(this.data.list!=undefined)
           { wx.request({
@@ -142,6 +146,7 @@ Page({
                     'content-type':'application/x-www-form-urlencoded'
                 },
                 success:()=>{
+
                 }
               
           })
@@ -171,6 +176,7 @@ Page({
         }
   })
     },
+  
     /**
      * 生命周期函数--监听页面加载
      */
@@ -181,7 +187,10 @@ Page({
              time:e.time,
              id:e.id,
              from_id:e.from_id,
-             to_id:e.to_id
+             to_id:e.to_id,
+             windowheight:app.globalData.windowheight,
+             navHeight:app.globalData.menuHeight,
+             menuBot:app.globalData.menuBot,
          })
          var time=setTimeout(()=>{if(this.data.from_id==wx.getStorageSync('userinfo').studentid)
          {  
@@ -198,31 +207,67 @@ Page({
          }
         clearTimeout(time)},50)
         this.getdatalist()
-        
+         let timer=setInterval(()=>{
+         
+            wx.createSelectorQuery().select('.content').boundingClientRect(rect => {
+              const pageHeight = rect.height;
+              
+                // 设置滚动位置
+              wx.pageScrollTo({
+                scrollTop: pageHeight,
+                duration: 300,
+              });
+              
+            }).exec();
+          clearInterval(timer)
+         },100)
       },
      
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady() {
-
+      
+         
+            
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
     onShow() {
+      
      
       
         this.data.ws=wx.connectSocket({
-            url:'ws://192.168.1.124:7070?id='+this.data.id,
+            url:'ws://114.132.219.156:443?id='+this.data.id,
             header: {
                 'content-type': 'application/json'
-              }
+              },
+            
+            
         })
+        
+        
         wx.onSocketMessage((res)=>{
             this.getdatalist()
-        
+       
+            let timer=setInterval(()=>{
+         
+              wx.createSelectorQuery().select('.content').boundingClientRect(rect => {
+                const pageHeight = rect.height;
+                
+                  // 设置滚动位置
+                wx.pageScrollTo({
+                  scrollTop: pageHeight,
+                  duration: 300,
+                });
+                
+              }).exec();
+            clearInterval(timer)
+           },100)
+           
+          
            
         })
     },

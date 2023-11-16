@@ -1,8 +1,9 @@
 <view class="content" bindtap="cancel" >
     <view style="text-align: center;color: grey;font-size: 13px;margin-bottom: 10rpx;">{{time}}</view>
     <view class="item" style="text-align: {{first_from}};margin-top: 15rpx;padding-right: 12rpx;padding-left: 12rpx;">
+    
     <view style="position: relative;max-width:500rpx;display: inline-block;">
-      <text style="color: #434343;border-radius: 12rpx;word-wrap: break-word;padding: 10rpx;font-size: 30rpx;max-width:500rpx;display: inline-block;word-break: break-all;text-align:left;background-color: {{first_from=='right'?'#95ec69':'#ffffff'}}" user-select="true">{{content}}
+      <text style="color: #434343;border-radius: 12rpx;word-wrap: break-word;padding: 15rpx;font-size: 35rpx;max-width:500rpx;display: inline-block;word-break: break-all;text-align:left;background-color: {{first_from=='right'?'#95ec69':'#ffffff'}}" user-select="true">{{content}}
         </text>
         <image wx:if="{{first_from=='right'}}" src="../../image/rainbow.png" mode="" style="position:absolute;width: 30rpx;height: 30rpx;top: -15rpx;left: -15rpx;"/>
         <view style="position: absolute;display: inline-block;content:'';width: 0px;height: 0px;top:18rpx;border: 12rpx solid transparent;left:{{first_from=='right'?'100%':'-13rpx'}};border-right: {{first_from=='right'?'0':'12rpx solid #FFFFFF'}};border-left: {{first_from=='right'?'12rpx solid #95ec69':'0'}};"></view>
@@ -14,7 +15,7 @@
       <view style="text-align: center;color: grey;font-size: 13px;margin-bottom: 10rpx;">{{item.time}}</view>
         <view wx:if="{{item.isuser}}" style="text-align:{{item.isuser}};margin-top: 15rpx;padding-left: 12rpx;padding-right: 12rpx;">
         <view style="display: inline-block;position: relative;max-width:500rpx;" >
-            <text style="color: #434343;border-radius: 12rpx;word-wrap: break-word;padding: 10rpx;font-size: 30rpx;max-width:500rpx;display: inline-block;word-break: break-all;text-align: left;background-color: {{item.isuser=='right'?'#95ec69':'#ffffff'}}" user-select="true" wx:if="{{item.content}}">{{item.content}}
+            <text style="color: #434343;border-radius: 12rpx;word-wrap: break-word;padding: 15rpx;font-size: 35rpx;max-width:500rpx;display: inline-block;word-break: break-all;text-align: left;background-color: {{item.isuser=='right'?'#95ec69':'#ffffff'}}" user-select="true" wx:if="{{item.content}}">{{item.content}}
         </text>
         <image wx:if="{{item.isuser=='right'}}" src="../../image/rainbow.png" mode="" style="position:absolute;width: 30rpx;height: 30rpx;top: -15rpx;left: -15rpx;"/>
         <view style="position: absolute;display: inline-block;content:'';width: 0px;height: 0px;top:10rpx;border: 12rpx solid transparent;left:{{first_from=='right'?'100%':'-13rpx'}};border-right: {{first_from=='right'?'0':'12rpx solid #FFFFFF'}};border-left: {{first_from=='right'?'12rpx solid #95ec69':'0'}};"></view>
@@ -22,13 +23,14 @@
         </view>     
     </view>
 </view>
+
 <!-- 发送信息 -->
 <view class="footer">
     <view class="row">
         <view class="input-box">
             <textarea class="text-area" show-confirm-bar="{{false}}" cursor-spacing="30" maxlength="240"
             disable-default-padding="{{true}}"
-            confirm-hold="{{true}}" auto-height="false" placeholder="输入信息" bindinput="inputClick" value="{{reply_content}}" fixed="true"></textarea>
+            confirm-hold="{{true}}" auto-height="false" placeholder="输入信息" bindinput="inputClick" value="{{reply_content}}" fixed="true" ></textarea>
             
         </view>
         <view class="send-btn" wx:if="{{reply_content!=''}}">

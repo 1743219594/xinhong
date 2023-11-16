@@ -1,0 +1,19 @@
+
+ 
+findKeyByValue=function(keyid){
+  if(keyid=='11')
+  {
+    return '吕志涛'
+  }
+  else if(keyid=='13457')
+  {
+    return '卢佳静'
+  }
+
+  // 如果找不到对应的键，返回 null 或其他合适的值
+  return keyid;
+}
+
+module.exports={
+  filter:findKeyByValue
+}

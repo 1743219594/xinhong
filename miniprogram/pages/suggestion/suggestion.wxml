@@ -25,8 +25,8 @@
                   </view>
                   <view class="item-time">
                         <text wx:if="{{my_id==item.from_id}}" style="font-size: 25rpx;">To:{{item.to_id}}</text>
-                       <text style="color: grey;font-size: 20rpx;margin-left: 10rpx;">{{item.time}}</text>
-                       <navigator class="reply" style="margin-left: 30rpx;" url="../reply/reply?content={{item.content}}&&time={{item.time}}&&id={{item.id}}&&from_id={{item.from_id}}&&to_id={{item.to_id}}" bindtap="reply" data-index="{{item.id}}">回复</navigator>
+                       <text style="color: grey;font-size: 23rpx;">{{item.time}}</text>
+                       <navigator class="reply"  url="../reply/reply?content={{item.content}}&&time={{item.time}}&&id={{item.id}}&&from_id={{item.from_id}}&&to_id={{item.to_id}}" bindtap="reply" data-index="{{item.id}}">回复</navigator>
                   </view>
              </view>
              <van-empty  description="空空如也"  wx:if="{{list.length<=0}}"  style="width: 500rpx;height: 400rpx;margin-top:300rpx;"/>

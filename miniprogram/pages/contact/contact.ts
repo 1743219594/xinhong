@@ -96,23 +96,41 @@ Page({
     })
   },
   onLoad(e:any) {
-
     this.setData({
       jobid:e.jobid,
       my_id:wx.getStorageSync('userinfo').studentid
     },()=>{
       this.getdata()
+      let timer=setInterval(()=>{
+        wx.createSelectorQuery().select('.scroll-list').boundingClientRect(rect => {
+          const pageHeight = rect.height;
+          // 设置滚动位置
+          wx.pageScrollTo({
+            scrollTop: pageHeight,
+            duration: 300,
+          });
+        }).exec();
+        clearInterval(timer)
+       },100)
     })
     this.data.ws=wx.connectSocket({
-      url:'ws://192.168.1.124:7070?id='+'xinhong'+'&from_id='+this.data.my_id+'&to_id='+this.data.jobid,
+      url:'ws://114.132.219.156:443?id='+'xinhong'+'&from_id='+this.data.my_id+'&to_id='+this.data.jobid,
       header: {
           'content-type': 'application/json'
         }
-  })
+    })
   wx.onSocketMessage(()=>{
       this.getdata()
-  
-     
+        wx.createSelectorQuery().select('.scroll-list').boundingClientRect(rect => {
+          const pageHeight = rect.height;
+          // 设置滚动位置
+          wx.pageScrollTo({
+            scrollTop: pageHeight,
+            duration: 300,
+          });
+        }).exec();
+      
+      
   })
 },
 onHide() {
@@ -120,7 +138,10 @@ onHide() {
 
 },
 onUnload() {
-console.log(111);
+  wx.closeSocket({
+    fail:()=>{
+    }
+})
 
 },
 

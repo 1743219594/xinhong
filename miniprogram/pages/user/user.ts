@@ -60,103 +60,103 @@ Page({
 },
   login(){        
     const app=getApp()
-      /* 获取用户的openid（唯一标识符) */
-      wx.login({
-        success:(res)=>{
-          if (res.code) {
-            //发起网络请求
-            wx.request({
-                url:app.globalData.url+'api/getcode',
-                header:{
-                  'content-type':'application/x-www-form-urlencoded'
-              },
-              method:'POST',
-              data:{
-                code:res.code
-              },
-              success:(res)=>{
-                wx.setStorageSync('openid',res.data.openid);
-                
-                   /* 获取openid后在数据库查询是否存在 */
-                   wx.request({
-                       method:'POST',
-                       url:app.globalData.url+'api/login',
-                       data:{
-                           openid:res.data.valueOf().openid
-                       },
-                       header:{
-                           'content-type':'application/x-www-form-urlencoded'
-                       },
-                       success:(res:any)=>{  
-                           this.setData({
-                               hasmessage:true
-                           })
-                           if(res.data.status==202)
-                           { 
-                           
-                             return wx.showModal({
-                               content:'选择头像时请不要选择取消',
-                               showCancel:false
-
-                             })
-                           }
-                           /* 存在该用户 */
-                           if(res.data.status==200){
-                              this.setData({
-                                hasuserinfo:true,
-                               userinfo:{
-                                   avatarUrl:res.data.avator,
-                                   nickname:res.data.nickname,
-                                   phonenumber:res.data.phonenumber,
-                                   studentid:res.data.studentid,
-                                   isboss:res.data.Isboss,
-                                   integral:res.data.integral,
-                                   role:res.data.role
-                               }
-                             })
-                             if(res.data.Isboss=='1')
-                             {
-                                 this.setData({
-                                     isboss:true,
-                                     identity:'管理员'
-                                 })
-                             }
-                             else{
-                              this.setData({
-                                isboss:false,
-                                identity:res.data.role=='s'?'学生':'教师'
-                            })
-                             }
-                             
-                             wx.setStorageSync('userinfo',this.data.userinfo)
+    /* 获取用户的openid（唯一标识符) */
+    wx.login({
+      success:(res)=>{
+        if (res.code) {
+          //发起网络请求
+          wx.request({
+              url:app.globalData.url+'api/getcode',
+              header:{
+                'content-type':'application/x-www-form-urlencoded'
+            },
+            method:'POST',
+            data:{
+              code:res.code
+            },
+            success:(res)=>{
+              wx.setStorageSync('openid',res.data.openid);
+              
+                 /* 获取openid后在数据库查询是否存在 */
+                 wx.request({
+                     method:'POST',
+                     url:app.globalData.url+'api/login',
+                     data:{
+                         openid:res.data.valueOf().openid
+                     },
+                     header:{
+                         'content-type':'application/x-www-form-urlencoded'
+                     },
+                     success:(res:any)=>{  
+                         this.setData({
+                             hasmessage:true
+                         })
+                         if(res.data.status==202)
+                         { 
                          
-                             
+                           return wx.showModal({
+                             content:'选择头像时请不要选择取消',
+                             showCancel:false
+
+                           })
+                         }
+                         /* 存在该用户 */
+                         if(res.data.status==200){
+                            this.setData({
+                              hasuserinfo:true,
+                             userinfo:{
+                                 avatarUrl:res.data.avator,
+                                 nickname:res.data.nickname,
+                                 phonenumber:res.data.phonenumber,
+                                 studentid:res.data.studentid,
+                                 isboss:res.data.Isboss,
+                                 integral:res.data.integral,
+                                 role:res.data.role
+                             }
+                           })
+                           if(res.data.Isboss=='1')
+                           {
+                               this.setData({
+                                   isboss:true,
+                                   identity:'管理员'
+                               })
                            }
-                       },
-                       fail:()=>{
-                        wx.showToast({
-                            title:'出错了',
-                            icon:'error'
-                        })
-                          
+                           else{
+                            this.setData({
+                              isboss:false,
+                              identity:res.data.role=='s'?'学生':'教师'
+                          })
+                           }
                            
-                       }
+                           wx.setStorageSync('userinfo',this.data.userinfo)
+                       
+                           
+                         }
+                     },
+                     fail:()=>{
+                      wx.showToast({
+                          title:'出错了',
+                          icon:'error'
+                      })
+                        
+                         
+                     }
+                 })
+               },
+               fail:(res:any)=>{
+                   wx.showToast({
+                       title:'请求失败',
+                       icon:'error'
                    })
-                 },
-                 fail:(res:any)=>{
-                     wx.showToast({
-                         title:'请求失败',
-                         icon:'error'
-                     })
-                 }
-            })
-          } 
-            
+               }
+          })
+        } 
           
         
-        
-        }
-      })
+      
+      
+      }
+    })
     },
     //注册时选择头像
     getmessage(event:any){

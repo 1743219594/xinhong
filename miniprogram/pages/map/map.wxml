@@ -12,7 +12,7 @@
     <text>{{phone}}</text>
    </view>
    <view style="flex: 1;display: flex;align-items: center;justify-content: center;border-right: 1px solid grey;">
-    <van-icon name="clock-o" style="margin-right:5rpx;"/>
+    <van-icon name="clock-o" style="margin-right:10rpx;"/>
     <text style="font-size: 20rpx;text-align: center;">{{work_time}}</text>
    </view>
   </view>

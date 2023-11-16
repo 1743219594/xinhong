@@ -22,7 +22,8 @@
         "pages/recode/recode",
         "pages/about/about",
         "pages/check/check",
-        "pages/contact/contact"
+        "pages/contact/contact",
+        "pages/my_con/my_con"
     ],
     "tabBar": {
         "backgroundColor": "#EEF2E4",

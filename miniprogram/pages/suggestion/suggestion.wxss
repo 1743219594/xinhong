@@ -189,9 +189,12 @@ background-color: #E2E8D3;}
     border-radius: 50rpx;
 }
 .item-time{
-    width: 530rpx;
+
+    width: 500rpx;
     display: flex;
     align-items: center;
+    justify-content: space-around;
+    
 }
 .sendto{
     color: goldenrod;
