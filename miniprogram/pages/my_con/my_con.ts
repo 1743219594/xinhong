@@ -25,7 +25,8 @@ Page({
             'content-type':'application/x-www-form-urlencoded'
         },
         data:{
-          from_id:wx.getStorageSync('userinfo').studentid,
+          from_id:wx.getStorageSync('userinfo').studentid
+        
         },
         success:(res:any)=>{
           if(res.data.status==200)

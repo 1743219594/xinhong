@@ -18,7 +18,7 @@
             <text style="color: #434343;border-radius: 12rpx;word-wrap: break-word;padding: 15rpx;font-size: 35rpx;max-width:500rpx;display: inline-block;word-break: break-all;text-align: left;background-color: {{item.isuser=='right'?'#95ec69':'#ffffff'}}" user-select="true" wx:if="{{item.content}}">{{item.content}}
         </text>
         <image wx:if="{{item.isuser=='right'}}" src="../../image/rainbow.png" mode="" style="position:absolute;width: 30rpx;height: 30rpx;top: -15rpx;left: -15rpx;"/>
-        <view style="position: absolute;display: inline-block;content:'';width: 0px;height: 0px;top:10rpx;border: 12rpx solid transparent;left:{{first_from=='right'?'100%':'-13rpx'}};border-right: {{first_from=='right'?'0':'12rpx solid #FFFFFF'}};border-left: {{first_from=='right'?'12rpx solid #95ec69':'0'}};"></view>
+        <view style="position: absolute;display: inline-block;content:'';width: 0px;height: 0px;top:10rpx;border: 12rpx solid transparent;left:{{item.isuser=='right'?'100%':'-13rpx'}};border-right: {{item.isuser=='right'?'0':'12rpx solid #FFFFFF'}};border-left: {{item.isuser=='right'?'12rpx solid #95ec69':'0'}};"></view>
         </view>
         </view>     
     </view>
