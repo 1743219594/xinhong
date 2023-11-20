@@ -1,4 +1,4 @@
-<view class="navgiton"  style="height: {{(menuBot+navHeight)}}px;line-height: {{(menuBot+navHeight+menuBot)}}px;z-index: 2;">
+<view class="navgiton"  style="height: {{(menuBot+navHeight)}}px;line-height: {{(menuBot+navHeight+menuBot)}}px;z-index: 3;">
     <text  style="margin-left:50%;transform:translateX(-50%) ;color: #000000;font-size: 30rpx;">用户中心</text>
 </view>
 
@@ -71,11 +71,14 @@
 <!-- 检测到本地存储有登录信息 -->
 <view wx:if="{{hasuserinfo}}" class="content"style="margin-top: {{menuBot+navHeight}}px;">
 <view class="header" >
-    <view bindtap="preview" ><image src="{{userinfo.avatarUrl}}" class="avator" style="width: 100rpx;height: 100rpx;border: 4px solid rgb(150, 211, 142);line-height: 100rpx;" referrerPolicy="no-referrer"></image></view>
-    <view style="font-size: 45rpx; color: black;display: flex;flex-direction: column;align-items: center;">
-    <text>{{userinfo.nickname}}</text>
-    <text style="font-size: 30rpx;color: grey;">{{identity}}</text>
+    <image src="{{userinfo.avatarUrl}}" class="avator" style="width: 80rpx;height: 80rpx;border: 4px solid rgb(150, 211, 142);" bindtap="preview" referrerPolicy="no-referrer"></image>
+   
+    <view style="display: flex;flex-direction: column;justify-content: center;height: 100%;">
+      <text style="font-size: 35rpx;">{{userinfo.nickname}}</text>
+      <text style="color: grey;">{{identity}}</text>
     </view>
+   
+   
 
 </view>
 <view style="width: 600rpx;display: flex;height: 150rpx;background-color: white;border-radius: 30rpx;margin-left: 75rpx;margin-top: 20rpx;">

@@ -1,5 +1,5 @@
 <wxs src="../../filter/filter.wxs" module="wxs"></wxs>
-<view wx:if="{{list.length>0}}">
+<view>
     <view style="display: flex;margin-top: 25rpx;flex-direction: column;width: 650rpx;border: 1px solid white;border-radius: 25rpx;padding: 15rpx;background-color: white;box-shadow:5rpx 5rpx 5rpx 5rpx #E0E3DA;" wx:for="{{list}}" wx:key="id" >
        <view wx:if="{{item.from_id==my_id}}">
         <view style="text-align: left;width: 100%;">{{wxs.filter(item.to_id)}}</view>
@@ -12,7 +12,7 @@
         </view>
        </view>
        <view wx:else>
-        <view style="text-align: left;width: 100%;">{{wxs.filter(item.from_id)}}</view>
+        <view style="text-align: left;width: 100%;">{{item.from_id}}</view>
         <view style="display: flex;flex-direction: row;justify-content: flex-end;">
           <view bind:tap="remarks" data-from_id="{{item.from_id}}" data-to_id="{{item.to_id}}">备注</view>
           <navigator url="../contact/contact?jobid={{item.from_id}}" style="display:flex;margin-left: 20rpx;align-items: center;">

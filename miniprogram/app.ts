@@ -11,7 +11,7 @@ App<IAppOption>({
     menuBot:0,
     windowWidth:0,
     windowheight:0,
-   url:'http://114.132.219.156/',
+   url:'https://www.xhmental.cn/',
    tabbarheight:0,
    screenheight:0,
    token:'',

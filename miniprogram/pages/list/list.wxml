@@ -16,7 +16,7 @@
 <van-empty description="空空如也" wx:if="{{list.length==0}}" style="margin-top: 300rpx;"/>
 <!-- 遮罩层 -->
 <van-overlay style="z-index: 99;" show="{{show}}">
-  <view class="wrapper" style="animation:{{isshow}};">
+  <view class="wrapper" style="animation:{{isshow}}">
       <image src="../../image/cover.png" mode="" style="width: 400px;height: 400px;"/>
     <van-icon name="cross" style="width: 60rpx;height: 60rpx;border: 1px solid rgb(231, 222, 210);border-radius: 50%;color: rgb(231, 222, 210);" bind:tap="onClickHide"/>
   </view>

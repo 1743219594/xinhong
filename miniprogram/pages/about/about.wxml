@@ -8,8 +8,8 @@
   <van-collapse-item title="更换绑定信息" name="3">
    目前暂不支持更换绑定信息，后续会开发上线
   </van-collapse-item>
-  <van-collapse-item title="注册时选择头像出错" name="4">
-   这个bug是微信官方认为用户点击了取消意味着用户取消授权，默认不选择微信头像的问题，需要等微信解决，可以退出后台重新选择或者直接从相册中选择
+  <van-collapse-item title="注册时选择微信头像无效" name="4">
+   这个bug是微信官方接口的问题，需要等微信解决，可以退出后台重新选择或者直接从相册中选择或者拍摄
   </van-collapse-item>
   
 </van-collapse>

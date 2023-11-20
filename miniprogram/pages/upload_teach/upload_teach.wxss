@@ -17,11 +17,17 @@ page{
     color: #333333;
     background-color:#e0e0e0;
     width: 550rpx;
-    height: 100rpx;
+  
     align-items: center;
     font-size: 14px;
     border-radius: 45rpx;
     padding-left: 30rpx;
+}
+.text-area {
+  max-height: 180rpx;
+  width: 98%;
+  padding: 15rpx 10rpx;
+  font-size: 30rpx;
 }
 .item text{
     margin-right: 20rpx;

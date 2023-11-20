@@ -240,7 +240,7 @@ Page({
      
       
         this.data.ws=wx.connectSocket({
-            url:'ws://114.132.219.156:443?id='+this.data.id,
+            url:'wss://www.xhmental.cn:443?id='+this.data.id,
             header: {
                 'content-type': 'application/json'
               },

@@ -114,7 +114,7 @@ Page({
        },100)
     })
     this.data.ws=wx.connectSocket({
-      url:'ws://114.132.219.156:443?id='+'xinhong'+'&from_id='+this.data.my_id+'&to_id='+this.data.jobid,
+      url:'wss://www.xhmental.cn:443?id='+'xinhong'+'&from_id='+this.data.my_id+'&to_id='+this.data.jobid,
       header: {
           'content-type': 'application/json'
         }

@@ -148,13 +148,14 @@ page{
   line-height: 400rpx;
  
 }
+
 @keyframes show{
-    0%{
-       transform: scale(0);
+    from{
+      transform: scale(0);
         
     }
-    100%{
-       transform: scale(1);
+    to{
+      transform: scale(1);
     
     }
 

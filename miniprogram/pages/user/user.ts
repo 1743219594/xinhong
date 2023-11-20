@@ -7,7 +7,7 @@ Page({
      * 页面的初始数据
      */
     data: {
-       identity:'学生',
+       identity:'',
         userinfo:{
           avatarUrl:'../../image/avator.png',
           nickname:'',
@@ -95,7 +95,7 @@ Page({
                          { 
                          
                            return wx.showModal({
-                             content:'选择头像时请不要选择取消',
+                             content:'选择头像时如果选择微信头像无效请选择其他方式',
                              showCancel:false
 
                            })
@@ -547,9 +547,12 @@ Page({
                })
            }
            else{
-             this.setData({
-               identity:wx.getStorageSync('userinfo').role=='s'?'学生':'教师'
-             })
+             if(wx.getStorageSync('userinfo').role)
+             {
+              this.setData({
+                identity:wx.getStorageSync('userinfo').role=='s'?'学生':'教师'
+              })
+             }
            }
            
            

@@ -13,7 +13,8 @@ Page({
      show:false,
      remark:'',
      from_id:'',
-     to_id:''
+     to_id:'',
+     role:''
     },
     getlist(){
       if(wx.getStorageSync('userinfo').role=='s')
@@ -35,12 +36,7 @@ Page({
               list:res.data.data
             })
           }
-          else{
-            wx.showToast({
-              title:'加载失败',
-              icon:'error'
-            })
-          }
+         
         }
         })
       }
@@ -61,12 +57,7 @@ Page({
               list:res.data.data
             })
           }
-          else{
-            wx.showToast({
-              title:'加载失败',
-              icon:'error'
-            })
-          }
+         
         }
         })
       }
@@ -161,12 +152,12 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad() {
+    onLoad(e:any) {
       this.setData({
         my_id:wx.getStorageSync('userinfo').studentid
       })
-     
       this.getlist()
+      
     },
 
     /**
