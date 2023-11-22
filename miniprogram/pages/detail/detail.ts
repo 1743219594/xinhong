@@ -254,7 +254,7 @@ Page({
                        nickname:wx.getStorageSync('userinfo').nickname,
                        time:nowtime,
                        integral:wx.getStorageSync('userinfo').integral
-                      
+                    
                    },
                    header:{
                      'content-type':'application/x-www-form-urlencoded'
