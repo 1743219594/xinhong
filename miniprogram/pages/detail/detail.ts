@@ -214,7 +214,8 @@ Page({
                             isboss:wx.getStorageSync('userinfo').isboss,
                             nickname:wx.getStorageSync('userinfo').nickname,
                             phonenumber:wx.getStorageSync('userinfo').phonenumber,
-                            studentid:wx.getStorageSync('userinfo').studentid
+                            studentid:wx.getStorageSync('userinfo').studentid,
+                            role:wx.getStorageSync('userinfo').role
                         }
                         wx.setStorageSync('userinfo',newuserinfo)
                          this.getcomment()
@@ -253,6 +254,7 @@ Page({
                        nickname:wx.getStorageSync('userinfo').nickname,
                        time:nowtime,
                        integral:wx.getStorageSync('userinfo').integral
+                      
                    },
                    header:{
                      'content-type':'application/x-www-form-urlencoded'
@@ -273,7 +275,8 @@ Page({
                             isboss:wx.getStorageSync('userinfo').isboss,
                             nickname:wx.getStorageSync('userinfo').nickname,
                             phonenumber:wx.getStorageSync('userinfo').phonenumber,
-                            studentid:wx.getStorageSync('userinfo').studentid
+                            studentid:wx.getStorageSync('userinfo').studentid,
+                            role:wx.getStorageSync('userinfo').role
                         }
                         wx.setStorageSync('userinfo',newuserinfo)
                          this.getcomment()
@@ -333,7 +336,8 @@ Page({
                                     isboss:wx.getStorageSync('userinfo').isboss,
                                     nickname:wx.getStorageSync('userinfo').nickname,
                                     phonenumber:wx.getStorageSync('userinfo').phonenumber,
-                                    studentid:wx.getStorageSync('userinfo').studentid
+                                    studentid:wx.getStorageSync('userinfo').studentid,
+                                    role:wx.getStorageSync('userinfo').role
                                 }
                                 wx.setStorageSync('userinfo',newuserinfo)
                             }                  
@@ -373,7 +377,8 @@ Page({
                                     isboss:wx.getStorageSync('userinfo').isboss,
                                     nickname:wx.getStorageSync('userinfo').nickname,
                                     phonenumber:wx.getStorageSync('userinfo').phonenumber,
-                                    studentid:wx.getStorageSync('userinfo').studentid
+                                    studentid:wx.getStorageSync('userinfo').studentid,
+                                    role:wx.getStorageSync('userinfo').role
                                 }
                                 wx.setStorageSync('userinfo',newuserinfo)
                             }             

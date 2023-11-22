@@ -62,6 +62,6 @@
     },
     "sitemapLocation": "sitemap.json",
     "networkTimeout": {
-        "request": 3000
+        "request": 20000
     }
 }

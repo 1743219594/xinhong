@@ -533,6 +533,10 @@ Page({
            screenheight:app.globalData.screenheight,
            windowheight:app.globalData.windowheight
         })
+       
+       
+       
+        
          if(wx.getStorageSync('userinfo'))
          {
            this.setData({

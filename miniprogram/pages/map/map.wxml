@@ -5,11 +5,11 @@
   <view style="width: 100%; display: flex;margin-top: 15rpx;margin-bottom: 5rpx;">
    <view style="flex: 1;display: flex;align-items: center;justify-content: center;border-right: 1px solid grey;">
     <van-icon name="location-o" style="margin-right:5rpx;"/>
-    <text>{{work_place}}</text>
+    <text style="font-size: 30rpx;">{{work_place}}</text>
    </view>
    <view style="flex: 1;display: flex;align-items: center;justify-content: center;border-right: 1px solid grey;">
     <van-icon name="phone-o" style="margin-right:5rpx;" />
-    <text>{{phone}}</text>
+    <text style="font-size: 30rpx;">{{phone}}</text>
    </view>
    <view style="flex: 1;display: flex;align-items: center;justify-content: center;border-right: 1px solid grey;">
     <van-icon name="clock-o" style="margin-right:10rpx;"/>
@@ -20,7 +20,7 @@
 
 <view style="width: 100%;padding: 30rpx;background-color: white;margin-top: 30rpx;">
   <view style="color: black;font-size: 30rpx;font-weight: bold;margin-bottom: 10rpx;">个人介绍</view>
-  <text>{{message}}</text>
+  <text style="font-size: 30rpx;">{{message}}</text>
 </view>
 
 <button style="width: 160rpx;height: 80rpx;background-color: rgb(150, 211, 142);margin: 0 auto;text-align: center;line-height: 80rpx;margin-top: 30rpx;" bind:tap="turn">咨询</button>

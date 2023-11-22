@@ -80,8 +80,8 @@ Page({
       
       this.setData({
         show:true,
-        from_id:e.target.dataset.from_id,
-        to_id:e.target.dataset.to_id
+        from_id:e.target.dataset.from_id==wx.getStorageSync("userinfo").studentid?e.target.dataset.from_id:e.target.dataset.to_id,
+        to_id:e.target.dataset.to_id==wx.getStorageSync("userinfo").studentid?e.target.dataset.from_id:e.target.dataset.to_id
       },()=>{
         wx.request({
           url:app.globalData.url+'api/getremark',
@@ -90,8 +90,8 @@ Page({
             'content-type':'application/x-www-form-urlencoded'
         },
         data:{
-          from_id:e.target.dataset.from_id,
-          to_id:e.target.dataset.to_id
+          from_id:e.target.dataset.from_id==wx.getStorageSync("userinfo").studentid?e.target.dataset.from_id:e.target.dataset.to_id,
+          to_id:e.target.dataset.to_id==wx.getStorageSync("userinfo").studentid?e.target.dataset.from_id:e.target.dataset.to_id
         },
         success:(res:any)=>{
           if(res.data.status==200)
