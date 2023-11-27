@@ -111,7 +111,7 @@ Page({
           });
         }).exec();
         clearInterval(timer)
-       },100)
+       },200)
     })
     this.data.ws=wx.connectSocket({
       url:'wss://www.xhmental.cn:443?id='+'xinhong'+'&from_id='+this.data.my_id+'&to_id='+this.data.jobid,
@@ -121,6 +121,7 @@ Page({
     })
   wx.onSocketMessage(()=>{
       this.getdata()
+      let timer=setInterval(()=>{
         wx.createSelectorQuery().select('.scroll-list').boundingClientRect(rect => {
           const pageHeight = rect.height;
           // 设置滚动位置
@@ -129,6 +130,8 @@ Page({
             duration: 300,
           });
         }).exec();
+        clearInterval(timer)
+       },200)
       
       
   })

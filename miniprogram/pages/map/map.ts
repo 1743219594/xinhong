@@ -15,9 +15,18 @@ Page({
       jobid:""
     },
     turn(){
+     if(wx.getStorageSync('userinfo'))
+     {
       wx.navigateTo({
         url:'../contact/contact?jobid='+this.data.jobid
       })
+     }
+     else{
+       wx.showToast({
+         title:'请先登录',
+         icon:'error'
+       })
+     }
     },
     /**
      * 生命周期函数--监听页面加载

@@ -220,7 +220,7 @@ Page({
               
             }).exec();
           clearInterval(timer)
-         },100)
+         },200)
       },
      
     /**
@@ -265,7 +265,7 @@ Page({
                 
               }).exec();
             clearInterval(timer)
-           },100)
+           },200)
            
           
            
