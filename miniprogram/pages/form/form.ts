@@ -18,7 +18,8 @@ Page({
         ],
         cover:'',
         content:'',
-        title:''
+        title:'',
+        show:'eeee'
     },
     inputs:function(event:any){
         this.setData({
@@ -160,6 +161,20 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad() {
+      var timer='2023-12-18 15:30:00';
+      var time=new Date()
+      var nowtime=time.getFullYear()+'-'+(time.getMonth()+1)+'-'+(time.getDate()<10?('0'+time.getDate()):time.getDate())+' '+(time.getHours()<10?('0'+time.getHours()):time.getHours())+':'+(time.getMinutes()<10?('0'+time.getMinutes()):time.getMinutes())+":"+(time.getSeconds()<10?('0'+time.getSeconds()):time.getSeconds())
+      if(nowtime<timer)
+      {
+        this.setData({
+          show:'eeee'
+        })
+      }
+      else{
+        this.setData({
+          show:'dddd'
+        })
+      }
         this.setData({
             filelist:[],
             contentlist:[]

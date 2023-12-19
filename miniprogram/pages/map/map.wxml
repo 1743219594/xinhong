@@ -1,11 +1,11 @@
-<view style="width: 100%;background-color:  rgb(150, 211, 142);display: flex;flex-direction: column;align-items: center;">
+<view style="width: 100%;background-color:  rgb(150, 211, 142);display: flex;flex-direction: column;align-items: center;padding-bottom: 20rpx;">
   <image src="{{photo}}" mode="" style="height:10vh;width: 10vh;border-radius: 50%;border: 4px solid white;margin-top: 55rpx;"/>
-  <text style="font-weight: bolder;font-size: 35rpx;color: white;margin-top: 5rpx;">{{name}}</text>
-  <text style="font-weight: bolder;font-size: 35rpx;color: white;margin-top: 5rpx;">职务：{{level}}</text>
-  <view style="width: 100%; display: flex;margin-top: 15rpx;margin-bottom: 5rpx;">
+  <text style="font-weight: bolder;font-size: 38rpx;color: white;margin-top: 5rpx;">{{name}}</text>
+ 
+  <view style="width: 100%; display: flex;margin-top: 5rpx;margin-bottom: 5rpx;">
    <view style="flex: 1;display: flex;align-items: center;justify-content: center;border-right: 1px solid grey;">
     <van-icon name="location-o" style="margin-right:5rpx;"/>
-    <text style="font-size: 30rpx;">{{work_place}}</text>
+    <text style="font-size: 25rpx;">{{work_place}}</text>
    </view>
    <view style="flex: 1;display: flex;align-items: center;justify-content: center;border-right: 1px solid grey;">
     <van-icon name="phone-o" style="margin-right:5rpx;" />
@@ -18,9 +18,9 @@
   </view>
 </view>
 
-<view style="width: 100%;padding: 30rpx;background-color: white;margin-top: 30rpx;">
+<view style="width: 100%;padding: 30rpx;background-color: white;margin-top: 30rpx;box-sizing:border-box;">
   <view style="color: black;font-size: 30rpx;font-weight: bold;margin-bottom: 10rpx;">个人介绍</view>
   <text style="font-size: 30rpx;">{{message}}</text>
 </view>
 
-<button style="width: 160rpx;height: 80rpx;background-color: rgb(150, 211, 142);margin: 0 auto;text-align: center;line-height: 80rpx;margin-top: 30rpx;" bind:tap="turn">咨询</button>
+<button wx:if="{{show}}" style="width: 160rpx;height: 80rpx;background-color: rgb(150, 211, 142);margin: 0 auto;text-align: center;line-height: 80rpx;margin-top: 30rpx;color: white;" bind:tap="turn">咨询</button>

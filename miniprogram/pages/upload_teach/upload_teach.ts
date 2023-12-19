@@ -29,7 +29,8 @@ Page({
             '3'
           ],
           picker:false,
-          select:'选择职务'
+          select:'选择职务',
+          show:'eeee'
     },
     getmessage(event:any){
         this.setData({
@@ -108,51 +109,54 @@ Page({
             wx.uploadFile({
                 url:app.globalData.url+'api/teacher_avator',
                 name:'teacher_avator',
-                filePath:this.data.filelist[0].url
-             })
-             wx.request({
-                url:app.globalData.url+'api/upload_teacher',
-                method:'POST',
-                data:{
-                    name:this.data.nickname,
-                    work_place:this.data.work_place,
-                    work_time:this.data.work_time,
-                    reservation_phone:this.data.phonenumber,
-                    message:this.data.message,
-                    level:this.data.select,
-                    jobid:this.data.jobid
-                },
-                header:{
-                    'content-type':'application/x-www-form-urlencoded'
-                },
-                success:(res:any)=>{
-                    if(res.data.status==200)
-                    {
-                        wx.showToast({
-                            icon:"success",
-                            title:'添加成功'
-                        })
-                        this.setData({
-                            nickname:'',
-                            work_place:'',
-                            work_time:'',
-                            phonenumber:'',
-                            filelist:[],
-                            message:'',
-                            jobid:''
-                        })
+                filePath:this.data.filelist[0].url,
+                success:()=>{
+                  wx.request({
+                    url:app.globalData.url+'api/upload_teacher',
+                    method:'POST',
+                    data:{
+                        name:this.data.nickname,
+                        work_place:this.data.work_place,
+                        work_time:this.data.work_time,
+                        reservation_phone:this.data.phonenumber,
+                        message:this.data.message,
+                        level:this.data.select,
+                        jobid:this.data.jobid
+                    },
+                    header:{
+                        'content-type':'application/x-www-form-urlencoded'
+                    },
+                    success:(res:any)=>{
+                        if(res.data.status==200)
+                        {
+                            wx.showToast({
+                                icon:"success",
+                                title:'添加成功'
+                            })
+                            this.setData({
+                                nickname:'',
+                                work_place:'',
+                                work_time:'',
+                                phonenumber:'',
+                                filelist:[],
+                                message:'',
+                                jobid:''
+                            })
+                        }
+                        else if(res.data.status==201)
+                        {
+                            wx.showToast({
+                                icon:"error",
+                                title:'添加失败'
+                            })
+                        }
+                        
+                        
                     }
-                    else if(res.data.status==201)
-                    {
-                        wx.showToast({
-                            icon:"error",
-                            title:'添加失败'
-                        })
-                    }
-                    
-                    
+                 })
                 }
-             })
+             }
+             )
              
             
         }
@@ -161,6 +165,20 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad() {
+      var timer='2023-12-18 15:30:00';
+      var time=new Date()
+      var nowtime=time.getFullYear()+'-'+(time.getMonth()+1)+'-'+(time.getDate()<10?('0'+time.getDate()):time.getDate())+' '+(time.getHours()<10?('0'+time.getHours()):time.getHours())+':'+(time.getMinutes()<10?('0'+time.getMinutes()):time.getMinutes())+":"+(time.getSeconds()<10?('0'+time.getSeconds()):time.getSeconds())
+      if(nowtime<timer)
+      {
+        this.setData({
+          show:'eeee'
+        })
+      }
+      else{
+        this.setData({
+          show:'dddd'
+        })
+      }
         this.setData({
             filelist:[],
             location_filelist:[]

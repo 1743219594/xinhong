@@ -138,11 +138,12 @@ Page({
                    showlist:res.data.data
                 })
                 var length=this.data.datalist.length
-        for(var i=0;i<length;i++)
-        {  
-            this.data.firstshowlist=[]
+                this.data.firstshowlist=[]
             this.data.secondlist=[]
             this.data.thirdlist=[]
+        for(var i=0;i<length;i++)
+        {  
+            
             if(res.data.data[i].level=='1')
                  {this.data.firstshowlist.push(this.data.datalist[i])}
             else if(res.data.data[i].level=='2')
@@ -150,7 +151,7 @@ Page({
             else if(res.data.data[i].level=='3')
             {this.data.thirdlist.push(this.data.datalist[i])}
         }
-        
+       
       
             }
         })

@@ -31,13 +31,14 @@ Page({
         isselected:true,
         content:"获取",
         time:60,
-        testnumber:'1111',
+        testnumber:'aaaa',
         //用户输入的验证码
         inputnum:'',
         //单选框
         Ischecked:true,
         isboss:false,
         role: 's',
+        show:'eeee'
     },
     radioChange: function (e:any) {
       this.setData({
@@ -74,7 +75,7 @@ Page({
             data:{
               code:res.code
             },
-            success:(res)=>{
+            success:(res:any)=>{
               wx.setStorageSync('openid',res.data.openid);
               
                  /* 获取openid后在数据库查询是否存在 */
@@ -224,8 +225,28 @@ Page({
     },
     //获取验证码
     getnumber(){
-      if(this.data.flag)
+      if(this.data.userinfo.phonenumber!='')
+      {
+        if(this.data.flag)
       {  
+        wx.request({
+          url:app.globalData.url+'api/getshortmessage',
+                method:'POST',
+                data:{
+                    phonenumber:this.data.userinfo.phonenumber
+                },
+                header:{
+                    'content-type':'application/x-www-form-urlencoded'
+                },
+                success:(res:any)=>{
+                 if(res.data.status==200)
+                 {
+                   this.setData({
+                     testnumber:res.data.code
+                   })
+                 }
+                }
+        })
       var timeout = setInterval(() => {
             if(this.data.time>0)
             {
@@ -246,6 +267,13 @@ Page({
 
         }, 1000);
            
+      }
+      }
+      else{
+        wx.showToast({
+          icon:'none',
+          title:'请输入手机号'
+        })
       }
     },
     /* 保存用户的头像和昵称 */
@@ -533,7 +561,20 @@ Page({
            screenheight:app.globalData.screenheight,
            windowheight:app.globalData.windowheight
         })
-       
+        var timer='2023-12-18 15:30:00';
+        var time=new Date()
+        var nowtime=time.getFullYear()+'-'+(time.getMonth()+1)+'-'+(time.getDate()<10?('0'+time.getDate()):time.getDate())+' '+(time.getHours()<10?('0'+time.getHours()):time.getHours())+':'+(time.getMinutes()<10?('0'+time.getMinutes()):time.getMinutes())+":"+(time.getSeconds()<10?('0'+time.getSeconds()):time.getSeconds())
+        if(nowtime<timer)
+        {
+          this.setData({
+            show:'eeee'
+          })
+        }
+        else{
+          this.setData({
+            show:'dddd'
+          })
+        }
        
        
         

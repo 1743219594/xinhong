@@ -12,7 +12,8 @@ Page({
       work_place:'',
       work_time:"",
       phone:"",
-      jobid:""
+      jobid:"",
+      show:true
     },
     turn(){
      if(wx.getStorageSync('userinfo'))
@@ -55,7 +56,8 @@ Page({
     }
     else{
         this.setData({
-            level:"咨询中心老师"
+            level:"咨询中心老师",
+            show:false
         })
     }
        

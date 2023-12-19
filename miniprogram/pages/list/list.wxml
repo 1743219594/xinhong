@@ -17,7 +17,7 @@
 <!-- 遮罩层 -->
 <van-overlay style="z-index: 99;" show="{{show}}">
   <view class="wrapper" style="animation:{{isshow}}">
-      <image src="../../image/imagecover.png" mode="" style="width: 350px;height: 350px;"/>
+      <image src="../../image/imagecover.png" mode="" style="width: 450px;height: 380px;"/>
     <van-icon name="cross" style="width: 60rpx;height: 60rpx;border: 1px solid rgb(231, 222, 210);border-radius: 50%;color: rgb(231, 222, 210);margin-top: 50rpx;" bind:tap="onClickHide"/>
   </view>
 </van-overlay>

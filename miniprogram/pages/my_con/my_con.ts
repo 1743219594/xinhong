@@ -32,9 +32,61 @@ Page({
         success:(res:any)=>{
           if(res.data.status==200)
           {
-            this.setData({
-              list:res.data.data
-            })
+           
+            if(res.data.data.length>0)
+            {
+              res.data.data.forEach((item:any) => {
+                wx.request({
+                  url:app.globalData.url+'api/hasnoconsulation',
+                  method:'POST',
+                  header:{
+                      'content-type':'application/x-www-form-urlencoded'
+                  },
+                  data:{
+                    from_id:item.to_id==wx.getStorageSync('userinfo').studentid?item.from_id:item.to_id,
+                    to_id:item.from_id==wx.getStorageSync('userinfo').studentid?item.from_id:item.to_id
+                  },
+                  success:(res:any)=>{
+                    
+                    
+                    if(res.data.count>0)
+                    {
+                      item.hasnoread=true
+                    }
+                    else{
+                      item.hasnoread=false
+                    }
+                    
+                  }
+                })
+              });
+              res.data.data.forEach((item:any) => {
+               wx.request({
+                url:app.globalData.url+'api/getremark',
+                method:'POST',
+                header:{
+                    'content-type':'application/x-www-form-urlencoded'
+                },
+                data:{
+                  from_id:item.from_id==wx.getStorageSync('userinfo').studentid?item.from_id:item.to_id,
+                  to_id:item.from_id==wx.getStorageSync('userinfo').studentid?item.to_id:item.from_id
+                },
+                success:(res:any)=>{
+                  if(res.data.status==200)
+                  {   
+                    item.remark=res.data.data[0].remark
+                  }
+                }
+               })
+              });
+              let timer=setInterval(()=>{
+                this.setData({
+                  list:res.data.data
+                })
+                clearInterval(timer)
+              },300)
+            }
+            
           }
          
         }
@@ -56,6 +108,59 @@ Page({
             this.setData({
               list:res.data.data
             })
+            if(res.data.data.length>0)
+            {
+              res.data.data.forEach((item:any) => {
+                wx.request({
+                  url:app.globalData.url+'api/hasnoconsulation',
+                  method:'POST',
+                  header:{
+                      'content-type':'application/x-www-form-urlencoded'
+                  },
+                  data:{
+                    from_id:item.to_id==wx.getStorageSync('userinfo').studentid?item.from_id:item.to_id,
+                    to_id:item.from_id==wx.getStorageSync('userinfo').studentid?item.from_id:item.to_id
+                  },
+                  success:(res:any)=>{
+                   
+                    
+                    if(res.data.count>0)
+                    {
+                      item.hasnoread=true
+                    }
+                    else{
+                      item.hasnoread=false
+                    }
+                    
+                  }
+                })
+              });
+              res.data.data.forEach((item:any) => {
+                wx.request({
+                 url:app.globalData.url+'api/getremark',
+                 method:'POST',
+                 header:{
+                     'content-type':'application/x-www-form-urlencoded'
+                 },
+                 data:{
+                   from_id:item.from_id==wx.getStorageSync('userinfo').studentid?item.from_id:item.to_id,
+                   to_id:item.from_id==wx.getStorageSync('userinfo').studentid?item.to_id:item.from_id
+                 },
+                 success:(res:any)=>{
+                   if(res.data.status==200)
+                   {   
+                     item.remark=res.data.data[0].remark
+                   }
+                 }
+                })
+               });
+              let timer=setInterval(()=>{
+                this.setData({
+                  list:res.data.data
+                })
+                clearInterval(timer)
+              },300)
+            }
           }
          
         }
@@ -76,6 +181,7 @@ Page({
       })
     },
     remarks(e:any){
+    
      
       
       this.setData({
@@ -108,6 +214,26 @@ Page({
       })
     
     },
+    updatastatus(e:any){
+  
+     
+      
+      wx.request({
+        url:app.globalData.url+'api/change_con',
+        method:'POST',
+        header:{
+            'content-type':'application/x-www-form-urlencoded'
+        },
+        data:{
+          from_id:e.currentTarget.dataset.from_id==wx.getStorageSync("userinfo").studentid?e.currentTarget.dataset.to_id:e.currentTarget.dataset.from_id,
+          to_id:e.currentTarget.dataset.to_id==wx.getStorageSync("userinfo").studentid?e.currentTarget.dataset.to_id:e.currentTarget.dataset.from_id
+        },
+       success:(res)=>{
+         console.log(res);
+         
+       }
+      })
+    },
    serve(){
     if(this.data.remark.trim()=='')
     {
@@ -135,6 +261,7 @@ Page({
               title:'保存成功',
               icon:'none'
             })
+            this.getlist()
           }
           else{
             wx.showToast({
@@ -171,7 +298,8 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-
+      this.getlist()
+   
     },
 
     /**

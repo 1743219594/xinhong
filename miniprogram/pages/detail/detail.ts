@@ -27,7 +27,8 @@ Page({
         endtime:0,
        isshow:false,
        studentid:0,
-       iscollect:'#6AC41B'
+       iscollect:'#6AC41B',
+       show:'dddd'
     },
     imageerror(){
       wx.showToast({
@@ -464,12 +465,26 @@ Page({
          starttime:+new Date(),
          studentid:wx.getStorageSync('userinfo').studentid
      })
-   var time= setInterval(()=>{
+     var timer='2023-12-18 15:30:00';
+     var time=new Date()
+     var nowtime=time.getFullYear()+'-'+(time.getMonth()+1)+'-'+(time.getDate()<10?('0'+time.getDate()):time.getDate())+' '+(time.getHours()<10?('0'+time.getHours()):time.getHours())+':'+(time.getMinutes()<10?('0'+time.getMinutes()):time.getMinutes())+":"+(time.getSeconds()<10?('0'+time.getSeconds()):time.getSeconds())
+     if(nowtime<timer)
+     {
+       this.setData({
+         show:'eeee'
+       })
+     }
+     else{
+       this.setData({
+         show:'dddd'
+       })
+     }
+   var timed= setInterval(()=>{
          this.getdata()
          this.getstatus()
          this.getcomment()
          this.iscollected()
-         clearInterval(time)
+         clearInterval(timed)
      },50)
     
        
@@ -480,6 +495,20 @@ Page({
              iscomment:false,
              
          })
+         var timer='2023-12-17 19:25:00';
+      var time=new Date()
+      var nowtime=time.getFullYear()+'-'+(time.getMonth()+1)+'-'+(time.getDate()<10?('0'+time.getDate()):time.getDate())+' '+(time.getHours()<10?('0'+time.getHours()):time.getHours())+':'+(time.getMinutes()<10?('0'+time.getMinutes()):time.getMinutes())+":"+(time.getSeconds()<10?('0'+time.getSeconds()):time.getSeconds())
+      if(nowtime<timer)
+      {
+        this.setData({
+          show:'eeee'
+        })
+      }
+      else{
+        this.setData({
+          show:'dddd'
+        })
+      }
      },
     /**
      * 生命周期函数--监听页面初次渲染完成
@@ -507,7 +536,7 @@ Page({
      */
     onUnload() {
       this.data.endtime=+new Date()
-      if(this.data.endtime-this.data.starttime>=90000)
+      if(this.data.endtime-this.data.starttime>=60000)
       {
         
         wx.request({
@@ -531,7 +560,8 @@ Page({
                         isboss:wx.getStorageSync('userinfo').isboss,
                         nickname:wx.getStorageSync('userinfo').nickname,
                         phonenumber:wx.getStorageSync('userinfo').phonenumber,
-                        studentid:wx.getStorageSync('userinfo').studentid
+                        studentid:wx.getStorageSync('userinfo').studentid,
+                        role:wx.getStorageSync('userinfo').role
                     }
                     wx.setStorageSync('userinfo',newuserinfo)
                    }

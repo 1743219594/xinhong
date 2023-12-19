@@ -1,4 +1,5 @@
-<view style="width: 100%;display: flex;justify-content: center;margin-top: 20rpx;">
+<view wx:if="{{show=='dddd'}}" style="width: 100%;">
+  <view style="width: 100%;display: flex;justify-content: center;margin-top: 20rpx;">
     <textarea style="border: 1px solid ;width: 100%;border-radius: 15rpx;margin-bottom: 30rpx;width: 96%;padding-left: 10rpx;padding-top: 20rpx;" bindinput="getdata" value="{{content}}" maxlength="-1" placeholder="写点什么吧!"></textarea>
     <text style="position: absolute;top:-1rpx;left: 50rpx;background-color: white;color: rgb(144, 147, 167);font-size: 25rpx;">内容</text>
 </view>
@@ -8,8 +9,9 @@
 </view>
  <button bindtap="send" class="sended">点击发送</button>
 
+</view>
 
-
+<view wx:else>请待开发！</view>
 
 
 

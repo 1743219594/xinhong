@@ -17,10 +17,12 @@
     <van-icon name="good-job-o" style="font-size: 20px;color: {{isselected}};"  />
     <text style="font-size: 12px;">{{likenum}}</text>
    </view>
-   <view class="comment" bindtap="commented" >
+  <view wx:if="{{show=='dddd'}}">
+    <view class="comment" bindtap="commented" >
     <van-icon name="comment-o"  style="font-size: 20px;color: #6AC41B;"/>
     <text style="font-size: 12px;">评论</text>
    </view>
+  </view>
    <view class="good" bindtap="collect">
     <van-icon name="flower-o"  style="font-size: 20px;color: {{iscollect}};"/>
     <text style="font-size: 12px;">收藏</text>

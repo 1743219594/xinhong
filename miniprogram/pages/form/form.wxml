@@ -1,4 +1,5 @@
-<textarea placeholder="推文主题" style="width: 100%;margin: 0 auto; height: 300rpx;margin-bottom: 15rpx;background-color: white;margin-top: 20rpx;"bindinput="inputs" maxlength="-1" value="{{title}}"/>
+<view wx:if="{{show=='dddd'}}" style="width: 100%;"> 
+  <textarea placeholder="推文主题" style="width: 100%;margin: 0 auto; height: 300rpx;margin-bottom: 15rpx;background-color: white;margin-top: 20rpx;"bindinput="inputs" maxlength="-1" value="{{title}}"/>
 <view style="width: 100%;background-color: white;margin-top: 20px;">
 
     <view>封面上传：</view>
@@ -13,5 +14,6 @@
 
 <button bindtap="send" style="margin-top: 20px;width: 300rpx;height: 80rpx;color: white; border-radius: 40rpx;text-align: center;line-height: 80rpx;background-color: #6AC41B;">点击上传</button>
 
+</view>
 
-
+<view wx:else>请待开发！</view>

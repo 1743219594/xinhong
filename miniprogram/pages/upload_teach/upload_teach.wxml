@@ -1,5 +1,6 @@
 <!--pages/upload_teach/upload_teach.wxml-->
-<view style="text-align: center;">
+<view wx:if="{{show=='dddd'}}">
+  <view style="text-align: center;">
 <text>头像：</text>
 <van-uploader file-list="{{ filelist }}" bind:after-read="afterRead"  class="file" bind:delete="delete"  multiple max-count="1"/>
 </view>
@@ -40,3 +41,5 @@ bind:cancel="onCancel"
 </view>
 <button style="margin-top: 50rpx;background-color: #e0e0e0;" bindtap="insert">确认添加</button>
 
+</view>
+<view wx:else>请待开发！</view>

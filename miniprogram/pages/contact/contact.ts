@@ -67,6 +67,24 @@ Page({
     })
    }
   },
+  updatastatus(){
+    wx.request({
+      url:app.globalData.url+'api/change_con',
+      method:'POST',
+      header:{
+          'content-type':'application/x-www-form-urlencoded'
+      },
+      data:{
+        from_id:this.data.jobid,
+        to_id:this.data.my_id
+      },
+     success:(res)=>{
+     
+      
+       
+     }
+    })
+  },
   getdata(){
     wx.request({
       url:app.globalData.url+'api/get_con',
@@ -81,6 +99,7 @@ Page({
       success:(res:any)=>{
         if(res.data.status==200)
         {
+          this.updatastatus()
           this.setData({
             chatList:res.data.data
           })
