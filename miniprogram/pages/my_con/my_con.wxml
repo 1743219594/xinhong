@@ -19,7 +19,7 @@
       
        <view wx:else>
         <view style="text-align: left;width: 100%;">{{item.from_id}}</view>
-        <view style="display: flex;flex-direction: row;justify-content: flex-end;">
+        <view style="display: flex;flex-direction: row;justify-content: space-between;">
         <text style=" background: linear-gradient(to right, red, blue);-webkit-background-clip: text;color: transparent;">#{{item.remark}}</text>
           <view style="display: flex;">
             <view bind:tap="remarks" data-from_id="{{item.from_id}}" data-to_id="{{item.to_id}}">备注</view>

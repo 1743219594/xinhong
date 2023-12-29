@@ -17,7 +17,8 @@ Page({
       isshow:"show 1s forwards",
       page:0,
       hasremain:true,
-      show:true
+      show:true,
+      randomnumber:2
     },
     onClickHide(){
       this.setData({
@@ -88,6 +89,10 @@ Page({
              menuBot:app.globalData.menuBot,
              list:[]
          })
+         const randomValue = Math.floor(Math.random() * 2) + 1;
+       this.setData({
+         randomnumber:randomValue
+       })
           this.getlist()
           if(wx.getStorageSync('userinfo').isboss=="1")
           {
