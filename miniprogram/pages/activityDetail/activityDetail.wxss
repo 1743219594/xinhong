@@ -1,0 +1,15 @@
+/* pages/activityDetail/activityDetail.wxss */
+page{
+  display: flex;
+  justify-content: center;
+}
+.content{
+  border: 1px solid #87715d;
+  width: 90%;
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  background-color: #fefaee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -23,16 +23,25 @@
         "pages/about/about",
         "pages/check/check",
         "pages/contact/contact",
-        "pages/my_con/my_con"
+        "pages/my_con/my_con",
+        "pages/overview/overview",
+        "pages/acrivity/activity",
+        "pages/activityDetail/activityDetail"
     ],
     "tabBar": {
         "backgroundColor": "#EEF2E4",
         "list": [
             {
                 "pagePath": "pages/list/list",
-                "text": "首页",
+                "text": "动态百科",
                 "selectedIconPath": "/image/tweet_selected.png",
                 "iconPath": "/image/tweet.png"
+            },
+            {
+                "pagePath": "pages/overview/overview",
+                "text": "活力四射",
+                "selectedIconPath": "/image/function_selected.png",
+                "iconPath": "/image/function.png"
             },
             {
                 "pagePath": "pages/suggestion/suggestion",

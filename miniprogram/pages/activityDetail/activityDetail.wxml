@@ -1,0 +1,14 @@
+<view class="content">
+  <view style="width: 90%;height: 100rpx;margin-bottom: 30rpx;">
+      <view style="height: 100rpx;line-height: 100rpx;text-align: center;color: white;background-color: #fd915b;font-size: 40rpx;margin-left: auto;width: fit-content;padding-left: 10rpx;padding-right: 10rpx;box-sizing: content-box; ">
+        电影封面
+      </view>
+  </view>
+  <image src="{{moviecover}}" mode="scaleToFill" style="height: 300rpx;width: 90%;"/>
+  <view style="background-color: #87715d;margin-top: 30px;height: 1px;width: 90%;"/>
+  <view style="width: 90%;height: 100rpx;margin-bottom: 10rpx;margin-top: 30rpx;">
+      <view style="height: 100rpx;line-height: 100rpx;text-align: center;color: white;background-color: #fd915b;font-size: 40rpx;width: fit-content;padding-left: 10rpx;padding-right: 10rpx;box-sizing: content-box; ">
+        电影简介
+      </view>
+  </view>
+</view>

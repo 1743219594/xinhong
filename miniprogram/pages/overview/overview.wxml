@@ -1,0 +1,36 @@
+<view style="height: {{menuBot+navHeight}}px;line-height: {{(menuBot+navHeight+menuBot)}}px;" class="nav">
+  <text style="font-size: 30rpx;margin-left: 50%;transform:translateX(-50%);">活力四射</text>
+</view>
+<view class="header" style="margin-top:{{menuBot+navHeight+5}}px;height: 400rpx;position: relative;">
+<!--pages/home/index.wxml-->
+<swiper 
+	class="imageContainer" 
+	bindchange="handleChange" 
+	previous-margin="80rpx" 
+	next-margin="80rpx" 
+	circular 
+	autoplay
+>
+  <block wx:for="{{imagelist}}" wx:key="id">
+    <swiper-item class="item">
+      <image class="itemImg {{currentIndex == index ? 'active': ''}}" src="{{item}}" mode="scaleToFill"></image>
+    </swiper-item>
+  </block>
+ 
+</swiper>
+<view class="point">
+  
+    <view class="{{currentIndex == index ? 'selected':'noselected'}}" wx:for="{{imagelist}}" wx:key="index"></view>
+  </view>
+</view>
+<view class="content">
+  <view class="con_item" style="background-color:#d66356 ;" bind:tap="router_act">
+    <van-icon name="sign"/>活动报名</view>
+  <view class="con_item" style="background-color:#e68b44 ;">
+    <van-icon name="todo-list-o" />赛事预约</view>
+  <view class="con_item" style="background-color:#98c355 ;">
+    <van-icon name="bulb-o" />风采展示</view>
+  <view class="con_item" style="background-color:#6cb966 ;">
+    <van-icon name="gift-o" />有奖竞猜</view>
+
+</view>

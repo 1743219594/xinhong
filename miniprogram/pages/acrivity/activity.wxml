@@ -1,0 +1,11 @@
+<view class="item" wx:for="{{datalist}}" wx:key="id">
+  <view class="left">
+    <image src="{{item.moviecover}}" mode="" class="cover" mode="scaleToFill"/>
+  </view>
+  <view class="right">
+    <text style="margin-left: 5%;">{{item.title}}</text>
+    <view> 
+      <navigator style="width: 25%;height: 60rpx;font-size: 25rpx;line-height: 60rpx;background-color:#f2d2c3;margin-left: 70%;border: 1px solid #333;text-align:center;border-radius: 10rpx;" url="../activityDetail/activityDetail?title={{item.title}}&benefit={{item.benefit}}&content={{item.content}}&description={{item.description}}&group={{item.group}}&id={{item.id}}&movie={{item.movie}}&loaction={{item.loaction}}&moviecover={{item.moviecover}}&numberlimit={{item.numberlimit}}&object={{item.object}}&time={{item.time}}&timelimit={{item.timelimit}}">报名</navigator>
+    </view>
+  </view>
+</view>
