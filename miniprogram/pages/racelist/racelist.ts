@@ -1,51 +1,42 @@
-// pages/activity/activity.ts
+// pages/racelist/racelist.ts
 export{}
- const app=getApp()
+const app=getApp()
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-      navHeight:0,
-      menuBot:0,
-      currentIndex: 0,
-      imagelist:['../../image/swiper1.png','../../image/swiper2.jpg','../../image/swiper3.jpg']
+      datalist:[]
     },
-    handleChange: function (e:any) {
-      this.setData({
-        currentIndex: e.detail.current
-      })
-
-    },
-    router_act(){
-      wx.navigateTo({
-        url:'../acrivity/activity'
-      })
-    },
-    router_race(){
-      wx.navigateTo({
-        url:'../racelist/racelist'
-      })
-    },
-    router_rank(){
-      wx.navigateTo({
-        url:'../ranking/ranking'
-      })
-    },
-    router_question(){
-      wx.navigateTo({
-        url:'../questionlist/questionlist'
+    getdatalist(){
+      wx.request({
+            method:'POST',
+            url:app.globalData.url+'api/getrace',
+            header:{
+                'content-type':'application/x-www-form-urlencoded'
+            },
+            success:(res:any)=>{
+              if(res.data.status==200)
+              {
+                this.setData({
+                  datalist:res.data.data
+                })
+              }
+              else{
+                wx.showToast({
+                  icon:'none',
+                  title:"获取失败"
+                })
+              }
+            }
       })
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad() {
-      this.setData({
-        navHeight:app.globalData.menuHeight,
-        menuBot:app.globalData.menuBot,
-       })
+      
     },
 
     /**
@@ -59,7 +50,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow() {
-
+      this.getdatalist()
     },
 
     /**

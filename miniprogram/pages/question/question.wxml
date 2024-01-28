@@ -1,0 +1,42 @@
+<!-- pages/question/question.wxml -->
+
+<view class="question-container">
+  <!-- 题目 -->
+  <view class="question">
+    {{title}}
+  </view>
+  <view class="type">
+    {{type=='a'?'单选题':'多选题'}}
+  </view>
+  <!-- 选项 -->
+  <view class="option" data-index="A" bindtap="selectOption" style="margin-top: 30rpx;" data-type="{{type}}">
+    <view class="{{Aissel? 'selected' : ''}}" style="padding:30rpx;display: block;word-wrap: break-word;">
+      A. {{Aselection}}
+    </view>
+    <van-icon name="success" class="iconselected" wx:if="{{Aissel}}"/>
+  </view>
+
+  <view class="option" data-index="B" bindtap="selectOption" data-type="{{type}}">
+    <view class="{{Bissel ? 'selected' : ''}}" style="padding:30rpx;display: block;word-wrap: break-word;">
+      B. {{Bselection}}
+    </view>
+    <van-icon name="success" class="iconselected" wx:if="{{Bissel}}"/>
+  </view>
+
+  <view class="option" data-index="C" bindtap="selectOption" data-type="{{type}}">
+    <view class="{{Cissel? 'selected' : ''}}" style="padding:30rpx;display: block;word-wrap: break-word;">
+      C. {{Cselection}}
+    </view>
+    <van-icon name="success" class="iconselected" wx:if="{{Cissel}}"/>
+  </view>
+
+  <view class="option" data-index="D" bindtap="selectOption" data-type="{{type}}">
+    <view class="{{Dissel? 'selected' : ''}}" style="padding:30rpx;display: block;word-wrap: break-word;">
+      D. {{Dselection}}
+    </view>
+    <van-icon name="success" class="iconselected" wx:if="{{Dissel}}"/>
+  </view>
+  <view style="color: orange;"><van-icon name="info-o" />截止时间为{{time}}，截止时间后会发布正确结果!</view>
+  <view wx:if="{{Isovertime}}" style="color: rgb(116, 197, 116);">结果为：{{result}}</view>
+  <button style="width: 150rpx;height: 90rpx;line-height: 90rpx;text-align: center;background-color:#d8f4e8;font-size: 30rpx;" bind:tap="upload" disabled="{{Isovertime||IsRegistration}}">{{textmessage}}</button>
+</view>

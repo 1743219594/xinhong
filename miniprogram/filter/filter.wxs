@@ -1,19 +1,16 @@
 
- 
-findKeyByValue=function(keyid){
-  if(keyid=='11')
-  {
-    return '吕志涛'
-  }
-  else if(keyid=='13457')
-  {
-    return '卢佳静'
-  }
-
-  // 如果找不到对应的键，返回 null 或其他合适的值
-  return keyid;
+Datechange=function(time){
+  const dateObject = new Date(time)
+  const year = dateObject.getFullYear();
+  const month = dateObject.getMonth() + 1; // 月份是从 0 开始的，所以需要加 1
+  const day = dateObject.getDate();
+  const hours = dateObject.getHours();
+  const minutes = dateObject.getMinutes();
+  const seconds = dateObject.getSeconds();
+  const humanReadableTime = year+'-'+month+'-'+day+' '+hours+':'+minutes+':'+seconds;
+return humanReadableTime
 }
 
 module.exports={
-  filter:findKeyByValue
+  filter:Datechange
 }

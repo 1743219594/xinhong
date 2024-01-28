@@ -1,0 +1,6 @@
+<view class="item" wx:for="{{datalist}}" wx:key="id">
+  <view style="font-size: 38rpx;font-weight: 400;">{{item.theme}}</view>
+  <view style="display: flex;justify-content: flex-end;">
+    <navigator url="../question/question?theme={{item.theme}}&Aselection={{item.Aselection}}&Bselection={{item.Bselection}}&Cselection={{item.Cselection}}&Dselection={{item.Dselection}}&id={{item.id}}&time={{item.time}}&title={{item.title}}&type={{item.type}}&result={{item.result}}" style="width:fit-content;">参与<van-icon name="arrow" /></navigator>
+  </view>
+</view>

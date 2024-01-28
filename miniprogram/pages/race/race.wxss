@@ -1,0 +1,18 @@
+/* pages/race/race.wxss */
+page{
+  background-color:rgb(240,239,245);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container{
+  margin-top: 15rpx;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx;
+  justify-content: center;
+  align-items: flex-start;
+
+}

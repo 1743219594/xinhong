@@ -104,13 +104,6 @@
     </swiper-item>
 </swiper>
 <view class="function" style="width: 100%;border-radius: 30rpx;padding-top: 30rpx;margin-bottom: 30rpx;"> 
-    <navigator class="Integral" url="../ranking/ranking">
-    <view>
-        <van-icon name="medal-o" style="margin-right:40rpx ;margin-left: 10rpx;color: #F7C643;"/>
-    <text>我的积分</text>
-    </view>
-    <van-icon name="arrow" />
-</navigator>
 <navigator class="myself" url="../my_con/my_con">
     <view>
       <van-icon name="user-o" style="margin-right:35rpx ;margin-left: 10rpx;color: #87cd5f;" />

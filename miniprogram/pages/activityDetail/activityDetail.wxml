@@ -6,9 +6,43 @@
   </view>
   <image src="{{moviecover}}" mode="scaleToFill" style="height: 300rpx;width: 90%;"/>
   <view style="background-color: #87715d;margin-top: 30px;height: 1px;width: 90%;"/>
-  <view style="width: 90%;height: 100rpx;margin-bottom: 10rpx;margin-top: 30rpx;">
+  <view style="width: 90%;height: 100rpx;margin-bottom: 10rpx;margin-top: 30rpx;margin-bottom: 30rpx;">
       <view style="height: 100rpx;line-height: 100rpx;text-align: center;color: white;background-color: #fd915b;font-size: 40rpx;width: fit-content;padding-left: 10rpx;padding-right: 10rpx;box-sizing: content-box; ">
         电影简介
       </view>
   </view>
+  <text style="width: 90%;background-color: white;color:#b36925;  border: 1px solid #87715d;white-space: pre-wrap;padding: 20rpx;box-sizing: border-box;">{{movie}}</text>
+  <view style="background-color: #87715d;margin-top: 30px;height: 1px;width: 90%;margin-bottom: 30rpx;"/>
+  <view style="width: 90%;border: 1px solid #87715d;background-color: #feefd3;padding: 20rpx;box-sizing: border-box;">
+    <view style="color: #ac683e;font-weight: 600;font-size: 40rpx;margin-bottom: 30rpx;">活动简介</view>
+    <view style="background-color: white;color: #edb736;box-sizing: border-box;padding: 20rpx;">
+      <view>活动报名截止时间：{{timelimit}}</view>
+       <view> 活动面对对象：{{object}}</view>    
+      <view>活动时间：{{time}}</view>
+     <view>活动地点：{{loaction}}</view>
+      <view>活动内容：{{content}}</view>
+      <view>活动福利：{{benefit}}</view>  
+    </view>
+  </view>
+  <view style="background-color: #87715d;margin-top: 30px;height: 1px;width: 90%;margin-bottom: 30rpx;"/>
+ 
+    <view style="width: 90%;height: 100rpx;margin-bottom: 30rpx;">
+      <view style="height: 100rpx;line-height: 100rpx;text-align: center;color: white;background-color: #fd915b;font-size: 40rpx;margin-left: auto;width: fit-content;padding-left: 10rpx;padding-right: 10rpx;box-sizing: content-box; ">
+        活动注意事项
+      </view>
+  </view>
+    <view style="background-color: white;padding: 20rpx;box-sizing: border-box;width: 90%;">
+      <text style="color:#b36925;white-space: pre-wrap;width: 100%;">{{description}}</text>
+    </view>
+
+  <view style="background-color: #87715d;margin-top: 30px;height: 1px;width: 90%;margin-bottom: 30rpx;"/>
+  <view style="width: 90%;box-sizing: border-box;padding: 20rpx;">
+    <view style="color: #ac683e;font-weight: 600;font-size: 40rpx;margin-bottom: 30rpx;">活动群</view>
+    <image src="{{group}}" mode="scaleToFill" bind:tap="previewGroup" style="width: 100%;"/>
+  </view>
+  <view style="width: 90%;box-sizing: border-box;padding: 20rpx;">
+    <view style="color: #ac683e;font-weight: 600;font-size: 40rpx;margin-bottom: 30rpx;">心协公众号</view>
+    <image src="https://www.xhmental.cn/9e07959415263eadd0d991a38038229.jpg" mode="scaleToFill" bind:tap="previewOffice" style="width: 100%;"/>
+  </view>
+  <button disabled="{{Isovertime||IsRegistration}}" style="margin-top: 30rpx;background-color: orange;color: white;" bind:tap="Registration">{{textmessage}}</button>
 </view>

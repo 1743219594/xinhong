@@ -1,0 +1,6 @@
+<view class="item" wx:for="{{datalist}}" wx:key="id">
+  <view style="font-size: 38rpx;font-weight: 400;">{{item.racename}}</view>
+  <view style="display: flex;justify-content: flex-end;">
+    <navigator url="../race/race?class={{item.class}}&content={{item.content}}&id={{item.id}}&loaction={{item.loaction}}&matchid={{item.matchid}}&name={{item.name}}&number={{item.number}}&racename={{item.racename}}&result={{item.result}}&studentid={{item.studentid}}&team={{item.team}}&time={{item.time}}&responsesName={{item.responsesName}}">参与<van-icon name="arrow" /></navigator>
+  </view>
+</view>

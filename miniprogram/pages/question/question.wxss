@@ -1,0 +1,45 @@
+/* pages/question/question.wxss */
+/* styles/question.wxss */
+
+.question-container {
+  padding: 20rpx;
+}
+
+.question {
+  font-size: 35rpx;
+  margin-bottom: 20rpx;
+}
+
+.option {
+  margin-bottom: 30rpx;
+  cursor: pointer;
+  border: 1px solid #333;
+  border-radius: 10rpx;
+  box-sizing:border-box;
+  color: #000701;
+  overflow: hidden;
+  position: relative;
+}
+.iconselected{
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  color: white;
+  background-color: green;
+  position: absolute;
+  bottom: 30rpx;
+  right: 30rpx;
+}
+
+.selected {
+  background-color: #d8f4e8; /* 选中时的背景样式 */
+  border-radius: 10rpx;
+}
+.type{
+  background-color: #68707d;
+  color: white;
+  border-radius: 6rpx;
+  display: inline;
+  padding: 10rpx;
+  margin-bottom: 10rpx !important;
+}

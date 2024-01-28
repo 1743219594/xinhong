@@ -1,0 +1,33 @@
+<van-cell-group>
+  <van-field
+    model:value="{{team}}"
+    required
+    clearable
+    label="应战方"
+    placeholder="如：计科231"
+    bind:click-icon="onClickIcon"
+  />
+
+  <van-field
+  model:value="{{ responsesName }}"
+    label="姓名"
+    placeholder="请输入姓名"
+    clearable
+    required
+  />
+  <van-field
+  model:value="{{ class }}"
+    label="班级"
+    placeholder="请输入班级"
+    required
+    border="{{ false }}"
+  />
+  <van-field
+  model:value="{{ studentid }}"
+    label="学号"
+    placeholder="请输入学号"
+    clearable
+    required
+  />
+</van-cell-group>
+<button  style="width: 150rpx;height: 90rpx;line-height: 90rpx;text-align: center;background-color:orange;color: white;font-size: 30rpx;margin-top: 30rpx;font-size: 35rpx;" bind:tap="Register">报名</button>

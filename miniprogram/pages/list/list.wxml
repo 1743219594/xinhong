@@ -22,8 +22,7 @@
     <van-icon name="cross" style="width: 60rpx;height: 60rpx;border: 1px solid rgb(231, 222, 210);border-radius: 50%;color: rgb(231, 222, 210);margin-top: 50rpx;" bind:tap="onClickHide"/>
   </view>
 </van-overlay>
-<!-- 发布推文跳转导航 -->
-<navigator url="../form/form" class="navig" wx:if="{{isboss}}"><image src="../../image/puton.png" style="width: 120rpx;height: 120rpx;" mode=""/></navigator>
+
 
 
 

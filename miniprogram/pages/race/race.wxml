@@ -1,0 +1,52 @@
+<view class="container">
+  <text style="font-size: 50rpx;color: black;margin-bottom: 15rpx;">{{racename}}</text>
+  <view style="margin-bottom: 15rpx;">
+    <text style="color: grey;">比赛地点：</text>
+    <text>{{loaction}}</text>
+  </view>
+  <view style="margin-bottom: 15rpx;">
+    <text style="color: grey;">比赛内容：</text>
+    <text>{{content}}</text>
+  </view>
+  <view style="margin-bottom: 15rpx;">
+    <text style="color: grey;">比赛时间：</text>
+    <text>{{time}}</text>
+  </view>
+  <view style="margin-bottom: 15rpx;">
+    <text style="color: grey;">比赛人数：</text>
+    <text>{{number}}人</text>
+  </view>
+  <view style="margin-bottom: 15rpx;">
+    <text style="color: grey;">比赛发布者：</text>
+    <text>{{name}}</text>
+  </view>
+  <view style="margin-bottom: 15rpx;width: 100%;text-align: right;">
+    <text style="border-radius: 10rpx;background-color: grey;padding: 15rpx;" wx:if="{{!hasteam}}">未报名</text>
+    <text style="border-radius: 10rpx;background-color: green;padding: 15rpx;color: white;" wx:else>已报名</text>
+  </view>
+</view>
+<view class="container" wx:if="{{hasteam}}">
+  <view style="margin-bottom: 15rpx;">
+    <text style="color: grey;">迎战方：</text>
+    <text>{{team}}</text>
+  </view>
+  <view style="margin-bottom: 15rpx;">
+    <text style="color: grey;">姓名：</text>
+    <text>{{responseName}}</text>
+  </view>
+  <view style="margin-bottom: 15rpx;">
+    <text style="color: grey;">学号：</text>
+    <text>{{studentid}}</text>
+  </view>
+  <view style="margin-bottom: 15rpx;">
+    <text style="color: grey;">班级：</text>
+    <text>{{class}}</text>
+  </view>
+</view>
+<view class="container" wx:if="{{hasresult}}">
+  <view style="margin-bottom: 15rpx;">
+    <text style="color: grey;">比赛结果：</text>
+    <text>{{result}}</text>
+  </view>
+</view>
+<button wx:if="{{!hasteam}}" style="width: 150rpx;height: 90rpx;line-height: 90rpx;text-align: center;background-color:orange;color: white;font-size: 30rpx;margin-top: 30rpx;font-size: 35rpx;" bind:tap="Register">报名</button>

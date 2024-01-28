@@ -26,7 +26,12 @@
         "pages/my_con/my_con",
         "pages/overview/overview",
         "pages/acrivity/activity",
-        "pages/activityDetail/activityDetail"
+        "pages/activityDetail/activityDetail",
+        "pages/question/question",
+        "pages/questionlist/questionlist",
+        "pages/racelist/racelist",
+        "pages/race/race",
+        "pages/register/register"
     ],
     "tabBar": {
         "backgroundColor": "#EEF2E4",
@@ -38,16 +43,16 @@
                 "iconPath": "/image/tweet.png"
             },
             {
-                "pagePath": "pages/overview/overview",
-                "text": "活力四射",
-                "selectedIconPath": "/image/function_selected.png",
-                "iconPath": "/image/function.png"
-            },
-            {
                 "pagePath": "pages/suggestion/suggestion",
                 "text": "聊天",
                 "selectedIconPath": "/image/suggestion.active.png",
                 "iconPath": "/image/suggestion.png"
+            },
+            {
+                "pagePath": "pages/overview/overview",
+                "text": "活力四射",
+                "selectedIconPath": "/image/function_selected.png",
+                "iconPath": "/image/function.png"
             },
             {
                 "pagePath": "pages/consulation/consulation",

@@ -26,11 +26,11 @@
 <view class="content">
   <view class="con_item" style="background-color:#d66356 ;" bind:tap="router_act">
     <van-icon name="sign"/>活动报名</view>
-  <view class="con_item" style="background-color:#e68b44 ;">
+  <view class="con_item" style="background-color:#e68b44 ;" bind:tap="router_race">
     <van-icon name="todo-list-o" />赛事预约</view>
-  <view class="con_item" style="background-color:#98c355 ;">
-    <van-icon name="bulb-o" />风采展示</view>
-  <view class="con_item" style="background-color:#6cb966 ;">
+  <view class="con_item" style="background-color:#98c355 ;" bind:tap="router_rank">
+    <van-icon name="medal-o" />积分排行</view>
+  <view class="con_item" style="background-color:#6cb966 ;" bind:tap="router_question">
     <van-icon name="gift-o" />有奖竞猜</view>
 
 </view>
