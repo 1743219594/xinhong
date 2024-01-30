@@ -11,12 +11,20 @@
     <text>Nickname</text>
    </view>
    <view style="display: flex;flex-direction: column;justify-content: center;align-items: center;flex: 1;">
-    <text style="font-size: 40rpx;text-align: center;font-weight: bold;">{{user.integral}}分</text>
+    <text style="font-size: 40rpx;text-align: center;font-weight: bold;" wx:if="{{selected==0}}">{{user.integral}}分</text>
+    <text style="font-size: 40rpx;text-align: center;font-weight: bold;" wx:if="{{selected==1}}">{{user.yearintegral}}分</text>
+    <text style="font-size: 40rpx;text-align: center;font-weight: bold;" wx:if="{{selected==2}}">{{user.yearintegral}}分</text>
     <text>Score</text>
    </view>
 
 
  </view>
+</view>
+<view style="height: 80rpx;display: flex;width: 100%;">
+  <view style="flex:1;text-align: center;line-height: 80rpx;background-color: #98FB98;" bind:tap="sortTotalScore">总积分</view>
+  <view style="flex:1;text-align: center;line-height: 80rpx;background-color: #b2eeb2" bind:tap="sortAnnualScore">年度积分</view>
+  <view style="flex:1;text-align: center;line-height: 80rpx;background-color: #9bfc00" bind:tap="sortMonthlyScore">月度积分</view>
+  
 </view>
 <view style="height: 5vh;width: 100%;background-color:rgb(150, 211, 142);display: flex;align-items: center;">
   <text style="width: 70rpx;text-align: center;margin-left: 30rpx;">排名</text>
@@ -36,8 +44,9 @@
 
 
  <text style="margin-right: 100rpx;width: 230rpx;font-size: 35rpx;text-align: center;">{{item.nick_name}}</text>
- <text style="text-align: center;width: 150rpx;font-size: 35rpx;color: grey;font-weight:bold;;">{{item.integral}}分</text>
- 
+ <text style="text-align: center;width: 150rpx;font-size: 35rpx;color: grey;font-weight:bold;;" wx:if="{{selected==0}}">{{item.integral}}分</text>
+ <text style="text-align: center;width: 150rpx;font-size: 35rpx;color: grey;font-weight:bold;;" wx:if="{{selected==1}}">{{item.yearintegral}}分</text>
+ <text style="text-align: center;width: 150rpx;font-size: 35rpx;color: grey;font-weight:bold;;" wx:if="{{selected==2}}">{{item.monthlyintegral}}分</text>
  </view>
 
 </scroll-view>

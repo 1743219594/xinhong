@@ -1,4 +1,5 @@
-<van-cell-group>
+<view style="width: 100%;" wx:if="{{show=='dddd'}}">
+  <van-cell-group>
   <van-field
     model:value="{{team}}"
     required
@@ -31,3 +32,7 @@
   />
 </van-cell-group>
 <button  style="width: 150rpx;height: 90rpx;line-height: 90rpx;text-align: center;background-color:orange;color: white;font-size: 30rpx;margin-top: 30rpx;font-size: 35rpx;" bind:tap="Register">报名</button>
+</view>
+<view wx:else>
+  等待开发
+</view>

@@ -11,7 +11,8 @@ Page({
       team:'',
       class:'',
       responsesName:'',
-      studentid:''
+      studentid:'',
+      show:'eeee'
     },
     Register(){
       if(this.data.matchid!=''&&this.data.responsesName!=''&&this.data.studentid!=''&&this.data.team!=''&&this.data.class!='')
@@ -66,6 +67,22 @@ Page({
       this.setData({
         matchid:options.matchid
       })
+      var timer='2024-01-29 12:00:00';
+      var time=new Date()
+      var nowtime=time.getFullYear()+'-'+(time.getMonth()+1)+'-'+(time.getDate()<10?('0'+time.getDate()):time.getDate())+' '+(time.getHours()<10?('0'+time.getHours()):time.getHours())+':'+(time.getMinutes()<10?('0'+time.getMinutes()):time.getMinutes())+":"+(time.getSeconds()<10?('0'+time.getSeconds()):time.getSeconds())
+      var timerDate = new Date(timer);
+      var nowtimeDate = new Date(nowtime);
+      if(nowtimeDate<timerDate)
+      {
+        this.setData({
+          show:'eeee'
+        })
+      }
+      else{
+        this.setData({
+          show:'dddd'
+        })
+      }
     },
 
     /**

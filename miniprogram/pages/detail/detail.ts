@@ -497,20 +497,7 @@ Page({
              iscomment:false,
              
          })
-         var timer='2023-12-17 19:25:00';
-      var time=new Date()
-      var nowtime=time.getFullYear()+'-'+(time.getMonth()+1)+'-'+(time.getDate()<10?('0'+time.getDate()):time.getDate())+' '+(time.getHours()<10?('0'+time.getHours()):time.getHours())+':'+(time.getMinutes()<10?('0'+time.getMinutes()):time.getMinutes())+":"+(time.getSeconds()<10?('0'+time.getSeconds()):time.getSeconds())
-      if(nowtime<timer)
-      {
-        this.setData({
-          show:'eeee'
-        })
-      }
-      else{
-        this.setData({
-          show:'dddd'
-        })
-      }
+         
      },
     /**
      * 生命周期函数--监听页面初次渲染完成
