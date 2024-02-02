@@ -465,7 +465,7 @@ Page({
          starttime:+new Date(),
          studentid:wx.getStorageSync('userinfo').studentid
      })
-     var timer='2024-01-04 12:00:00';
+     var timer='2024-02-03 12:00:00';
      var time=new Date()
      var nowtime=time.getFullYear()+'-'+(time.getMonth()+1)+'-'+(time.getDate()<10?('0'+time.getDate()):time.getDate())+' '+(time.getHours()<10?('0'+time.getHours()):time.getHours())+':'+(time.getMinutes()<10?('0'+time.getMinutes()):time.getMinutes())+":"+(time.getSeconds()<10?('0'+time.getSeconds()):time.getSeconds())
      var timerDate = new Date(timer);

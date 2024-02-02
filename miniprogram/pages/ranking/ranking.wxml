@@ -13,7 +13,7 @@
    <view style="display: flex;flex-direction: column;justify-content: center;align-items: center;flex: 1;">
     <text style="font-size: 40rpx;text-align: center;font-weight: bold;" wx:if="{{selected==0}}">{{user.integral}}分</text>
     <text style="font-size: 40rpx;text-align: center;font-weight: bold;" wx:if="{{selected==1}}">{{user.yearintegral}}分</text>
-    <text style="font-size: 40rpx;text-align: center;font-weight: bold;" wx:if="{{selected==2}}">{{user.yearintegral}}分</text>
+    <text style="font-size: 40rpx;text-align: center;font-weight: bold;" wx:if="{{selected==2}}">{{user.monthlyintegral}}分</text>
     <text>Score</text>
    </view>
 
